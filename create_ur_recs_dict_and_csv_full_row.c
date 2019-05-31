@@ -1139,6 +1139,14 @@ static CYTHON_INLINE void __Pyx__ExceptionReset(PyThreadState *tstate, PyObject 
 #define __Pyx_ExceptionReset(type, value, tb)  PyErr_SetExcInfo(type, value, tb)
 #endif
 
+/* PyErrExceptionMatches.proto */
+#if CYTHON_FAST_THREAD_STATE
+#define __Pyx_PyErr_ExceptionMatches(err) __Pyx_PyErr_ExceptionMatchesInState(__pyx_tstate, err)
+static CYTHON_INLINE int __Pyx_PyErr_ExceptionMatchesInState(PyThreadState* tstate, PyObject* err);
+#else
+#define __Pyx_PyErr_ExceptionMatches(err)  PyErr_ExceptionMatches(err)
+#endif
+
 /* GetException.proto */
 #if CYTHON_FAST_THREAD_STATE
 #define __Pyx_GetException(type, value, tb)  __Pyx__GetException(__pyx_tstate, type, value, tb)
@@ -1257,6 +1265,7 @@ int __pyx_module_is_main_cython_home__create_ur_recs_dict_and_csv_full_row = 0;
 /* Implementation of 'cython_home.create_ur_recs_dict_and_csv_full_row' */
 static PyObject *__pyx_builtin_open;
 static PyObject *__pyx_builtin_enumerate;
+static const char __pyx_k_e[] = "e";
 static const char __pyx_k_i[] = "i";
 static const char __pyx_k_r[] = "r";
 static const char __pyx_k_w[] = "w";
@@ -1307,6 +1316,7 @@ static const char __pyx_k_print_every[] = "print_every";
 static const char __pyx_k_row_skipped[] = "row {} skipped";
 static const char __pyx_k_CURRENT_QUERY[] = "CURRENT_QUERY";
 static const char __pyx_k_test_set_pids[] = "test_set_pids";
+static const char __pyx_k_Exception_type[] = "Exception type: ";
 static const char __pyx_k_application_json[] = "application/json";
 static const char __pyx_k_Saved_recs_file_as[] = "Saved recs file as {}";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
@@ -1316,6 +1326,7 @@ static const char __pyx_k_create_ur_recs_dict_and_csv_full_2[] = "create_ur_recs
 static const char __pyx_k_create_ur_recs_dict_and_csv_full_3[] = "create_ur_recs_dict_and_csv_full_row";
 static PyObject *__pyx_n_s_Accept;
 static PyObject *__pyx_n_s_CURRENT_QUERY;
+static PyObject *__pyx_kp_s_Exception_type;
 static PyObject *__pyx_n_s_PIO_HOST;
 static PyObject *__pyx_kp_s_Saved_recs_file_as;
 static PyObject *__pyx_kp_s__3;
@@ -1332,6 +1343,7 @@ static PyObject *__pyx_n_s_cython_home_create_ur_recs_dict;
 static PyObject *__pyx_n_s_data;
 static PyObject *__pyx_n_s_delimiter;
 static PyObject *__pyx_n_s_dumps;
+static PyObject *__pyx_n_s_e;
 static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_enter;
 static PyObject *__pyx_n_s_enumerate;
@@ -1825,6 +1837,7 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   PyObject *__pyx_v_writer = NULL;
   PyObject *__pyx_v_anch = NULL;
   PyObject *__pyx_v_recs = NULL;
+  PyObject *__pyx_v_e = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1842,11 +1855,12 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   PyObject *__pyx_t_13 = NULL;
   PyObject *__pyx_t_14 = NULL;
   PyObject *__pyx_t_15 = NULL;
-  PyObject *__pyx_t_16 = NULL;
+  int __pyx_t_16;
   PyObject *__pyx_t_17 = NULL;
   PyObject *__pyx_t_18 = NULL;
-  int __pyx_t_19;
+  PyObject *__pyx_t_19 = NULL;
   int __pyx_t_20;
+  int __pyx_t_21;
   __Pyx_RefNannySetupContext("create_ur_recs_dict_and_csv_full_row", 0);
 
   /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":8
@@ -2078,7 +2092,7 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
  *                 writer.writerow([anch, recs])
  *                 output[anch] = recs             # <<<<<<<<<<<<<<
  * 
- *             except:
+ *             except Exception as e:
  */
                 if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_anch, __pyx_v_recs) < 0)) __PYX_ERR(0, 27, __pyx_L15_error)
 
@@ -2103,51 +2117,73 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
               /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":29
  *                 output[anch] = recs
  * 
- *             except:             # <<<<<<<<<<<<<<
+ *             except Exception as e:             # <<<<<<<<<<<<<<
  *                 print("row {} skipped".format(i))
- * 
+ *                 print("Exception type: ", e)
  */
-              /*except:*/ {
+              __pyx_t_16 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
+              if (__pyx_t_16) {
                 __Pyx_AddTraceback("cython_home.create_ur_recs_dict_and_csv_full_row.create_ur_recs_dict_and_csv_full_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
                 if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_3) < 0) __PYX_ERR(0, 29, __pyx_L17_except_error)
                 __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_GOTREF(__pyx_t_1);
                 __Pyx_GOTREF(__pyx_t_3);
+                __Pyx_INCREF(__pyx_t_1);
+                __Pyx_XDECREF_SET(__pyx_v_e, __pyx_t_1);
 
                 /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":30
  * 
- *             except:
+ *             except Exception as e:
  *                 print("row {} skipped".format(i))             # <<<<<<<<<<<<<<
+ *                 print("Exception type: ", e)
+ * 
+ */
+                __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_row_skipped, __pyx_n_s_format); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 30, __pyx_L17_except_error)
+                __Pyx_GOTREF(__pyx_t_17);
+                __pyx_t_18 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 30, __pyx_L17_except_error)
+                __Pyx_GOTREF(__pyx_t_18);
+                __pyx_t_19 = NULL;
+                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
+                  __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_17);
+                  if (likely(__pyx_t_19)) {
+                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
+                    __Pyx_INCREF(__pyx_t_19);
+                    __Pyx_INCREF(function);
+                    __Pyx_DECREF_SET(__pyx_t_17, function);
+                  }
+                }
+                __pyx_t_15 = (__pyx_t_19) ? __Pyx_PyObject_Call2Args(__pyx_t_17, __pyx_t_19, __pyx_t_18) : __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_18);
+                __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+                __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+                if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 30, __pyx_L17_except_error)
+                __Pyx_GOTREF(__pyx_t_15);
+                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+                if (__Pyx_PrintOne(0, __pyx_t_15) < 0) __PYX_ERR(0, 30, __pyx_L17_except_error)
+                __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
+
+                /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":31
+ *             except Exception as e:
+ *                 print("row {} skipped".format(i))
+ *                 print("Exception type: ", e)             # <<<<<<<<<<<<<<
  * 
  *             if print_every and i % print_every == 0:
  */
-                __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_row_skipped, __pyx_n_s_format); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 30, __pyx_L17_except_error)
-                __Pyx_GOTREF(__pyx_t_16);
-                __pyx_t_17 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 30, __pyx_L17_except_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_18 = NULL;
-                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
-                  __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_16);
-                  if (likely(__pyx_t_18)) {
-                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
-                    __Pyx_INCREF(__pyx_t_18);
-                    __Pyx_INCREF(function);
-                    __Pyx_DECREF_SET(__pyx_t_16, function);
-                  }
-                }
-                __pyx_t_15 = (__pyx_t_18) ? __Pyx_PyObject_Call2Args(__pyx_t_16, __pyx_t_18, __pyx_t_17) : __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_17);
-                __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 30, __pyx_L17_except_error)
+                __pyx_t_15 = PyTuple_New(2); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 31, __pyx_L17_except_error)
                 __Pyx_GOTREF(__pyx_t_15);
-                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-                if (__Pyx_PrintOne(0, __pyx_t_15) < 0) __PYX_ERR(0, 30, __pyx_L17_except_error)
+                __Pyx_INCREF(__pyx_kp_s_Exception_type);
+                __Pyx_GIVEREF(__pyx_kp_s_Exception_type);
+                PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_kp_s_Exception_type);
+                __Pyx_INCREF(__pyx_v_e);
+                __Pyx_GIVEREF(__pyx_v_e);
+                PyTuple_SET_ITEM(__pyx_t_15, 1, __pyx_v_e);
+                if (__Pyx_PrintOne(0, __pyx_t_15) < 0) __PYX_ERR(0, 31, __pyx_L17_except_error)
                 __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
                 __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
                 __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
                 __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
                 goto __pyx_L16_exception_handled;
               }
+              goto __pyx_L17_except_error;
               __pyx_L17_except_error:;
 
               /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":24
@@ -2170,44 +2206,44 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
               __pyx_L22_try_end:;
             }
 
-            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":32
- *                 print("row {} skipped".format(i))
+            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":33
+ *                 print("Exception type: ", e)
  * 
  *             if print_every and i % print_every == 0:             # <<<<<<<<<<<<<<
  *                     print(i, recs)
  * 
  */
-            __pyx_t_20 = __Pyx_PyObject_IsTrue(__pyx_v_print_every); if (unlikely(__pyx_t_20 < 0)) __PYX_ERR(0, 32, __pyx_L7_error)
-            if (__pyx_t_20) {
+            __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_v_print_every); if (unlikely(__pyx_t_21 < 0)) __PYX_ERR(0, 33, __pyx_L7_error)
+            if (__pyx_t_21) {
             } else {
-              __pyx_t_19 = __pyx_t_20;
+              __pyx_t_20 = __pyx_t_21;
               goto __pyx_L26_bool_binop_done;
             }
-            __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L7_error)
+            __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_1 = PyNumber_Remainder(__pyx_t_3, __pyx_v_print_every); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L7_error)
+            __pyx_t_1 = PyNumber_Remainder(__pyx_t_3, __pyx_v_print_every); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_1);
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L7_error)
+            __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_20 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_20 < 0)) __PYX_ERR(0, 32, __pyx_L7_error)
+            __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_21 < 0)) __PYX_ERR(0, 33, __pyx_L7_error)
             __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_19 = __pyx_t_20;
+            __pyx_t_20 = __pyx_t_21;
             __pyx_L26_bool_binop_done:;
-            if (__pyx_t_19) {
+            if (__pyx_t_20) {
 
-              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":33
+              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":34
  * 
  *             if print_every and i % print_every == 0:
  *                     print(i, recs)             # <<<<<<<<<<<<<<
  * 
  *     print("Saved recs file as {}".format(save_path))
  */
-              __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L7_error)
+              __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 34, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_3);
-              if (unlikely(!__pyx_v_recs)) { __Pyx_RaiseUnboundLocalError("recs"); __PYX_ERR(0, 33, __pyx_L7_error) }
-              __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L7_error)
+              if (unlikely(!__pyx_v_recs)) { __Pyx_RaiseUnboundLocalError("recs"); __PYX_ERR(0, 34, __pyx_L7_error) }
+              __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_1);
               __Pyx_GIVEREF(__pyx_t_3);
               PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3);
@@ -2215,11 +2251,11 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
               __Pyx_GIVEREF(__pyx_v_recs);
               PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_recs);
               __pyx_t_3 = 0;
-              if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 33, __pyx_L7_error)
+              if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 34, __pyx_L7_error)
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":32
- *                 print("row {} skipped".format(i))
+              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":33
+ *                 print("Exception type: ", e)
  * 
  *             if print_every and i % print_every == 0:             # <<<<<<<<<<<<<<
  *                     print(i, recs)
@@ -2252,9 +2288,9 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
         __pyx_L7_error:;
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
-        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
         __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
         __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
+        __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -2271,11 +2307,11 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 20, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_14);
-          __pyx_t_19 = __Pyx_PyObject_IsTrue(__pyx_t_14);
+          __pyx_t_20 = __Pyx_PyObject_IsTrue(__pyx_t_14);
           __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          if (__pyx_t_19 < 0) __PYX_ERR(0, 20, __pyx_L9_except_error)
-          __pyx_t_20 = ((!(__pyx_t_19 != 0)) != 0);
-          if (__pyx_t_20) {
+          if (__pyx_t_20 < 0) __PYX_ERR(0, 20, __pyx_L9_except_error)
+          __pyx_t_21 = ((!(__pyx_t_20 != 0)) != 0);
+          if (__pyx_t_21) {
             __Pyx_GIVEREF(__pyx_t_5);
             __Pyx_GIVEREF(__pyx_t_1);
             __Pyx_XGIVEREF(__pyx_t_3);
@@ -2322,14 +2358,14 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
     __pyx_L31:;
   }
 
-  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":35
+  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":36
  *                     print(i, recs)
  * 
  *     print("Saved recs file as {}".format(save_path))             # <<<<<<<<<<<<<<
  * 
  *     return output
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Saved_recs_file_as, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Saved_recs_file_as, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2343,13 +2379,13 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   }
   __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_v_save_path) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_save_path);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":37
+  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":38
  *     print("Saved recs file as {}".format(save_path))
  * 
  *     return output             # <<<<<<<<<<<<<<
@@ -2374,9 +2410,9 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_15);
-  __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_17);
   __Pyx_XDECREF(__pyx_t_18);
+  __Pyx_XDECREF(__pyx_t_19);
   __Pyx_AddTraceback("cython_home.create_ur_recs_dict_and_csv_full_row.create_ur_recs_dict_and_csv_full_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2386,6 +2422,7 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   __Pyx_XDECREF(__pyx_v_writer);
   __Pyx_XDECREF(__pyx_v_anch);
   __Pyx_XDECREF(__pyx_v_recs);
+  __Pyx_XDECREF(__pyx_v_e);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -2439,6 +2476,7 @@ static struct PyModuleDef __pyx_moduledef = {
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_Accept, __pyx_k_Accept, sizeof(__pyx_k_Accept), 0, 0, 1, 1},
   {&__pyx_n_s_CURRENT_QUERY, __pyx_k_CURRENT_QUERY, sizeof(__pyx_k_CURRENT_QUERY), 0, 0, 1, 1},
+  {&__pyx_kp_s_Exception_type, __pyx_k_Exception_type, sizeof(__pyx_k_Exception_type), 0, 0, 1, 0},
   {&__pyx_n_s_PIO_HOST, __pyx_k_PIO_HOST, sizeof(__pyx_k_PIO_HOST), 0, 0, 1, 1},
   {&__pyx_kp_s_Saved_recs_file_as, __pyx_k_Saved_recs_file_as, sizeof(__pyx_k_Saved_recs_file_as), 0, 0, 1, 0},
   {&__pyx_kp_s__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 0, 1, 0},
@@ -2455,6 +2493,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
   {&__pyx_n_s_delimiter, __pyx_k_delimiter, sizeof(__pyx_k_delimiter), 0, 0, 1, 1},
   {&__pyx_n_s_dumps, __pyx_k_dumps, sizeof(__pyx_k_dumps), 0, 0, 1, 1},
+  {&__pyx_n_s_e, __pyx_k_e, sizeof(__pyx_k_e), 0, 0, 1, 1},
   {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
   {&__pyx_n_s_enter, __pyx_k_enter, sizeof(__pyx_k_enter), 0, 0, 1, 1},
   {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
@@ -2538,10 +2577,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     cdef int i
  *     cdef list row
  */
-  __pyx_tuple__6 = PyTuple_Pack(14, __pyx_n_s_test_set_pids, __pyx_n_s_CURRENT_QUERY, __pyx_n_s_PIO_HOST, __pyx_n_s_save_path, __pyx_n_s_print_every, __pyx_n_s_i, __pyx_n_s_row, __pyx_n_s_output, __pyx_n_s_getPIO, __pyx_n_s_getPIO, __pyx_n_s_csvfile, __pyx_n_s_writer, __pyx_n_s_anch, __pyx_n_s_recs); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(15, __pyx_n_s_test_set_pids, __pyx_n_s_CURRENT_QUERY, __pyx_n_s_PIO_HOST, __pyx_n_s_save_path, __pyx_n_s_print_every, __pyx_n_s_i, __pyx_n_s_row, __pyx_n_s_output, __pyx_n_s_getPIO, __pyx_n_s_getPIO, __pyx_n_s_csvfile, __pyx_n_s_writer, __pyx_n_s_anch, __pyx_n_s_recs, __pyx_n_s_e); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(5, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_create_ur_recs_dict_and_csv_full, __pyx_n_s_create_ur_recs_dict_and_csv_full_3, 5, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(5, 0, 15, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_create_ur_recs_dict_and_csv_full, __pyx_n_s_create_ur_recs_dict_and_csv_full_3, 5, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4131,6 +4170,31 @@ static CYTHON_INLINE void __Pyx__ExceptionReset(PyThreadState *tstate, PyObject 
     Py_XDECREF(tmp_type);
     Py_XDECREF(tmp_value);
     Py_XDECREF(tmp_tb);
+}
+#endif
+
+/* PyErrExceptionMatches */
+#if CYTHON_FAST_THREAD_STATE
+static int __Pyx_PyErr_ExceptionMatchesTuple(PyObject *exc_type, PyObject *tuple) {
+    Py_ssize_t i, n;
+    n = PyTuple_GET_SIZE(tuple);
+#if PY_MAJOR_VERSION >= 3
+    for (i=0; i<n; i++) {
+        if (exc_type == PyTuple_GET_ITEM(tuple, i)) return 1;
+    }
+#endif
+    for (i=0; i<n; i++) {
+        if (__Pyx_PyErr_GivenExceptionMatches(exc_type, PyTuple_GET_ITEM(tuple, i))) return 1;
+    }
+    return 0;
+}
+static CYTHON_INLINE int __Pyx_PyErr_ExceptionMatchesInState(PyThreadState* tstate, PyObject* err) {
+    PyObject *exc_type = tstate->curexc_type;
+    if (exc_type == err) return 1;
+    if (unlikely(!exc_type)) return 0;
+    if (unlikely(PyTuple_Check(err)))
+        return __Pyx_PyErr_ExceptionMatchesTuple(exc_type, err);
+    return __Pyx_PyErr_GivenExceptionMatches(exc_type, err);
 }
 #endif
 

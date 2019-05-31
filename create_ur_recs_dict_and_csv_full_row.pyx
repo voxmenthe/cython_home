@@ -20,13 +20,18 @@ def create_ur_recs_dict_and_csv_full_row(test_set_pids, CURRENT_QUERY, PIO_HOST,
     with open(save_path, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter='\t')
         for i, anch in enumerate(test_set_pids):
-            try:
-                recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
-                writer.writerow(anch, recs)
-                output[anch] = recs
 
-            except:
-                print("row {} skipped".format(i))
+            recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
+            writer.writerow(anch, recs)
+            output[anch] = recs
+            
+            # try:
+            #     recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
+            #     writer.writerow(anch, recs)
+            #     output[anch] = recs
+
+            # except:
+            #     print("row {} skipped".format(i))
 
             if print_every and i % print_every == 0:
                     print(i, recs)

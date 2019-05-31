@@ -26,8 +26,9 @@ def create_ur_recs_dict_and_csv_full_row(test_set_pids, CURRENT_QUERY, PIO_HOST,
                 writer.writerow([anch, recs])
                 output[anch] = recs
 
-            except:
+            except Exception as e:
                 print("row {} skipped".format(i))
+                print("Exception type: ", e)
 
             if print_every and i % print_every == 0:
                     print(i, recs)

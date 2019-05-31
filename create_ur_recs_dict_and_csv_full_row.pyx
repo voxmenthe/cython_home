@@ -17,6 +17,7 @@ def create_ur_recs_dict_and_csv_full_row(test_set_pids, CURRENT_QUERY, PIO_HOST,
         item_list = [item['item'] for item in json_res['itemScores']]
         return item_list
 
+    with open(save_path, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter='\t')
         for i, anch in enumerate(test_set_pids):
             try:

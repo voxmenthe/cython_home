@@ -1112,6 +1112,9 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 #define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
 #endif
 
+/* PyIntCompare.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, long intval, long inplace);
+
 /* GetTopmostException.proto */
 #if CYTHON_USE_EXC_INFO_STACK
 static _PyErr_StackItem * __Pyx_PyErr_GetTopmostException(PyThreadState *tstate);
@@ -1146,12 +1149,6 @@ static int __Pyx__GetException(PyThreadState *tstate, PyObject **type, PyObject 
 #else
 static int __Pyx_GetException(PyObject **type, PyObject **value, PyObject **tb);
 #endif
-
-/* PyIntCompare.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, long intval, long inplace);
-
-/* None.proto */
-static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
 
 /* PyErrFetchRestore.proto */
 #if CYTHON_FAST_THREAD_STATE
@@ -1304,7 +1301,6 @@ static const char __pyx_k_productid[] = "productid";
 static const char __pyx_k_save_path[] = "save_path";
 static const char __pyx_k_itemScores[] = "itemScores";
 static const char __pyx_k_print_every[] = "print_every";
-static const char __pyx_k_row_skipped[] = "row {} skipped";
 static const char __pyx_k_CURRENT_QUERY[] = "CURRENT_QUERY";
 static const char __pyx_k_test_set_pids[] = "test_set_pids";
 static const char __pyx_k_application_json[] = "application/json";
@@ -1363,7 +1359,6 @@ static PyObject *__pyx_n_s_r;
 static PyObject *__pyx_n_s_recs;
 static PyObject *__pyx_n_s_requests;
 static PyObject *__pyx_n_s_row;
-static PyObject *__pyx_kp_s_row_skipped;
 static PyObject *__pyx_n_s_save_path;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_test_set_pids;
@@ -1838,16 +1833,11 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   int __pyx_t_9;
   Py_ssize_t __pyx_t_10;
   PyObject *(*__pyx_t_11)(PyObject *);
-  PyObject *__pyx_t_12 = NULL;
+  int __pyx_t_12;
   PyObject *__pyx_t_13 = NULL;
-  PyObject *__pyx_t_14 = NULL;
+  int __pyx_t_14;
   int __pyx_t_15;
   PyObject *__pyx_t_16 = NULL;
-  PyObject *__pyx_t_17 = NULL;
-  PyObject *__pyx_t_18 = NULL;
-  PyObject *__pyx_t_19 = NULL;
-  int __pyx_t_20;
-  int __pyx_t_21;
   __Pyx_RefNannySetupContext("create_ur_recs_dict_and_csv_full_row", 0);
 
   /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":8
@@ -1936,7 +1926,7 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
  *     with open(save_path, 'w', newline='') as csvfile:
  *         writer = csv.writer(csvfile, delimiter='\t')             # <<<<<<<<<<<<<<
  *         for i, anch in enumerate(test_set_pids):
- *             try:
+ * 
  */
           __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_csv); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_1);
@@ -1963,8 +1953,8 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
  *     with open(save_path, 'w', newline='') as csvfile:
  *         writer = csv.writer(csvfile, delimiter='\t')
  *         for i, anch in enumerate(test_set_pids):             # <<<<<<<<<<<<<<
- *             try:
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
+ * 
+ *             recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
  */
           __pyx_t_9 = 0;
           if (likely(PyList_CheckExact(__pyx_v_test_set_pids)) || PyTuple_CheckExact(__pyx_v_test_set_pids)) {
@@ -2011,237 +2001,132 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
             __pyx_v_i = __pyx_t_9;
             __pyx_t_9 = (__pyx_t_9 + 1);
 
-            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":23
- *         writer = csv.writer(csvfile, delimiter='\t')
+            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":24
  *         for i, anch in enumerate(test_set_pids):
- *             try:             # <<<<<<<<<<<<<<
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
- *                 writer.writerow(anch, recs)
+ * 
+ *             recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)             # <<<<<<<<<<<<<<
+ *             writer.writerow(anch, recs)
+ *             output[anch] = recs
  */
-            {
-              __Pyx_PyThreadState_declare
-              __Pyx_PyThreadState_assign
-              __Pyx_ExceptionSave(&__pyx_t_12, &__pyx_t_13, &__pyx_t_14);
-              __Pyx_XGOTREF(__pyx_t_12);
-              __Pyx_XGOTREF(__pyx_t_13);
-              __Pyx_XGOTREF(__pyx_t_14);
-              /*try:*/ {
+            __pyx_t_2 = __pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_36create_ur_recs_dict_and_csv_full_row_getPIO(__pyx_v_getPIO, __pyx_v_PIO_HOST, __pyx_v_anch, __pyx_v_CURRENT_QUERY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_2);
+            __Pyx_XDECREF_SET(__pyx_v_recs, __pyx_t_2);
+            __pyx_t_2 = 0;
 
-                /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":24
- *         for i, anch in enumerate(test_set_pids):
- *             try:
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)             # <<<<<<<<<<<<<<
- *                 writer.writerow(anch, recs)
- *                 output[anch] = recs
- */
-                __pyx_t_2 = __pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_36create_ur_recs_dict_and_csv_full_row_getPIO(__pyx_v_getPIO, __pyx_v_PIO_HOST, __pyx_v_anch, __pyx_v_CURRENT_QUERY); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L15_error)
-                __Pyx_GOTREF(__pyx_t_2);
-                __Pyx_XDECREF_SET(__pyx_v_recs, __pyx_t_2);
-                __pyx_t_2 = 0;
-
-                /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":25
- *             try:
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
- *                 writer.writerow(anch, recs)             # <<<<<<<<<<<<<<
- *                 output[anch] = recs
+            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":25
+ * 
+ *             recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
+ *             writer.writerow(anch, recs)             # <<<<<<<<<<<<<<
+ *             output[anch] = recs
  * 
  */
-                __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_writer, __pyx_n_s_writerow); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L15_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                __pyx_t_3 = NULL;
-                __pyx_t_15 = 0;
-                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-                  __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-                  if (likely(__pyx_t_3)) {
-                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-                    __Pyx_INCREF(__pyx_t_3);
-                    __Pyx_INCREF(function);
-                    __Pyx_DECREF_SET(__pyx_t_1, function);
-                    __pyx_t_15 = 1;
-                  }
-                }
-                #if CYTHON_FAST_PYCALL
-                if (PyFunction_Check(__pyx_t_1)) {
-                  PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_anch, __pyx_v_recs};
-                  __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_15, 2+__pyx_t_15); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L15_error)
-                  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-                  __Pyx_GOTREF(__pyx_t_2);
-                } else
-                #endif
-                #if CYTHON_FAST_PYCCALL
-                if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
-                  PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_anch, __pyx_v_recs};
-                  __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_15, 2+__pyx_t_15); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L15_error)
-                  __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-                  __Pyx_GOTREF(__pyx_t_2);
-                } else
-                #endif
-                {
-                  __pyx_t_16 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 25, __pyx_L15_error)
-                  __Pyx_GOTREF(__pyx_t_16);
-                  if (__pyx_t_3) {
-                    __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_3); __pyx_t_3 = NULL;
-                  }
-                  __Pyx_INCREF(__pyx_v_anch);
-                  __Pyx_GIVEREF(__pyx_v_anch);
-                  PyTuple_SET_ITEM(__pyx_t_16, 0+__pyx_t_15, __pyx_v_anch);
-                  __Pyx_INCREF(__pyx_v_recs);
-                  __Pyx_GIVEREF(__pyx_v_recs);
-                  PyTuple_SET_ITEM(__pyx_t_16, 1+__pyx_t_15, __pyx_v_recs);
-                  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L15_error)
-                  __Pyx_GOTREF(__pyx_t_2);
-                  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-                }
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-                /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":26
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
- *                 writer.writerow(anch, recs)
- *                 output[anch] = recs             # <<<<<<<<<<<<<<
- * 
- *             except:
- */
-                if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_anch, __pyx_v_recs) < 0)) __PYX_ERR(0, 26, __pyx_L15_error)
-
-                /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":23
- *         writer = csv.writer(csvfile, delimiter='\t')
- *         for i, anch in enumerate(test_set_pids):
- *             try:             # <<<<<<<<<<<<<<
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
- *                 writer.writerow(anch, recs)
- */
+            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_writer, __pyx_n_s_writerow); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_3 = NULL;
+            __pyx_t_12 = 0;
+            if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
+              __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+              if (likely(__pyx_t_3)) {
+                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+                __Pyx_INCREF(__pyx_t_3);
+                __Pyx_INCREF(function);
+                __Pyx_DECREF_SET(__pyx_t_1, function);
+                __pyx_t_12 = 1;
               }
-              __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-              __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-              goto __pyx_L22_try_end;
-              __pyx_L15_error:;
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":28
- *                 output[anch] = recs
- * 
- *             except:             # <<<<<<<<<<<<<<
- *                 print("row {} skipped".format(i))
- * 
- */
-              /*except:*/ {
-                __Pyx_AddTraceback("cython_home.create_ur_recs_dict_and_csv_full_row.create_ur_recs_dict_and_csv_full_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_1, &__pyx_t_16) < 0) __PYX_ERR(0, 28, __pyx_L17_except_error)
-                __Pyx_GOTREF(__pyx_t_2);
-                __Pyx_GOTREF(__pyx_t_1);
-                __Pyx_GOTREF(__pyx_t_16);
-
-                /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":29
- * 
- *             except:
- *                 print("row {} skipped".format(i))             # <<<<<<<<<<<<<<
- * 
- *             if print_every and i % print_every == 0:
- */
-                __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_row_skipped, __pyx_n_s_format); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 29, __pyx_L17_except_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_18 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 29, __pyx_L17_except_error)
-                __Pyx_GOTREF(__pyx_t_18);
-                __pyx_t_19 = NULL;
-                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-                  __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_17);
-                  if (likely(__pyx_t_19)) {
-                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-                    __Pyx_INCREF(__pyx_t_19);
-                    __Pyx_INCREF(function);
-                    __Pyx_DECREF_SET(__pyx_t_17, function);
-                  }
-                }
-                __pyx_t_3 = (__pyx_t_19) ? __Pyx_PyObject_Call2Args(__pyx_t_17, __pyx_t_19, __pyx_t_18) : __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_18);
-                __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
-                __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-                if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L17_except_error)
-                __Pyx_GOTREF(__pyx_t_3);
-                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(0, 29, __pyx_L17_except_error)
-                __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-                __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-                __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-                goto __pyx_L16_exception_handled;
-              }
-              __pyx_L17_except_error:;
-
-              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":23
- *         writer = csv.writer(csvfile, delimiter='\t')
- *         for i, anch in enumerate(test_set_pids):
- *             try:             # <<<<<<<<<<<<<<
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
- *                 writer.writerow(anch, recs)
- */
-              __Pyx_XGIVEREF(__pyx_t_12);
-              __Pyx_XGIVEREF(__pyx_t_13);
-              __Pyx_XGIVEREF(__pyx_t_14);
-              __Pyx_ExceptionReset(__pyx_t_12, __pyx_t_13, __pyx_t_14);
-              goto __pyx_L7_error;
-              __pyx_L16_exception_handled:;
-              __Pyx_XGIVEREF(__pyx_t_12);
-              __Pyx_XGIVEREF(__pyx_t_13);
-              __Pyx_XGIVEREF(__pyx_t_14);
-              __Pyx_ExceptionReset(__pyx_t_12, __pyx_t_13, __pyx_t_14);
-              __pyx_L22_try_end:;
             }
+            #if CYTHON_FAST_PYCALL
+            if (PyFunction_Check(__pyx_t_1)) {
+              PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_anch, __pyx_v_recs};
+              __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_12, 2+__pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L7_error)
+              __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+              __Pyx_GOTREF(__pyx_t_2);
+            } else
+            #endif
+            #if CYTHON_FAST_PYCCALL
+            if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
+              PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_anch, __pyx_v_recs};
+              __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_12, 2+__pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L7_error)
+              __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+              __Pyx_GOTREF(__pyx_t_2);
+            } else
+            #endif
+            {
+              __pyx_t_13 = PyTuple_New(2+__pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 25, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_13);
+              if (__pyx_t_3) {
+                __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_3); __pyx_t_3 = NULL;
+              }
+              __Pyx_INCREF(__pyx_v_anch);
+              __Pyx_GIVEREF(__pyx_v_anch);
+              PyTuple_SET_ITEM(__pyx_t_13, 0+__pyx_t_12, __pyx_v_anch);
+              __Pyx_INCREF(__pyx_v_recs);
+              __Pyx_GIVEREF(__pyx_v_recs);
+              PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_12, __pyx_v_recs);
+              __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_13, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+            }
+            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":31
- *                 print("row {} skipped".format(i))
+            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":26
+ *             recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
+ *             writer.writerow(anch, recs)
+ *             output[anch] = recs             # <<<<<<<<<<<<<<
+ * 
+ *             # try:
+ */
+            if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_anch, __pyx_v_recs) < 0)) __PYX_ERR(0, 26, __pyx_L7_error)
+
+            /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":36
+ *             #     print("row {} skipped".format(i))
  * 
  *             if print_every and i % print_every == 0:             # <<<<<<<<<<<<<<
  *                     print(i, recs)
  * 
  */
-            __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_v_print_every); if (unlikely(__pyx_t_21 < 0)) __PYX_ERR(0, 31, __pyx_L7_error)
-            if (__pyx_t_21) {
+            __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_v_print_every); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 36, __pyx_L7_error)
+            if (__pyx_t_15) {
             } else {
-              __pyx_t_20 = __pyx_t_21;
-              goto __pyx_L26_bool_binop_done;
+              __pyx_t_14 = __pyx_t_15;
+              goto __pyx_L16_bool_binop_done;
             }
-            __pyx_t_16 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 31, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_1 = PyNumber_Remainder(__pyx_t_16, __pyx_v_print_every); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_2);
+            __pyx_t_1 = PyNumber_Remainder(__pyx_t_2, __pyx_v_print_every); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_16 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 31, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_16);
+            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+            __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_2);
             __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_21 < 0)) __PYX_ERR(0, 31, __pyx_L7_error)
-            __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __pyx_t_20 = __pyx_t_21;
-            __pyx_L26_bool_binop_done:;
-            if (__pyx_t_20) {
+            __pyx_t_15 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_15 < 0)) __PYX_ERR(0, 36, __pyx_L7_error)
+            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+            __pyx_t_14 = __pyx_t_15;
+            __pyx_L16_bool_binop_done:;
+            if (__pyx_t_14) {
 
-              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":32
+              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":37
  * 
  *             if print_every and i % print_every == 0:
  *                     print(i, recs)             # <<<<<<<<<<<<<<
  * 
  *     print("Saved recs file as {}".format(save_path))
  */
-              __pyx_t_16 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 32, __pyx_L7_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              if (unlikely(!__pyx_v_recs)) { __Pyx_RaiseUnboundLocalError("recs"); __PYX_ERR(0, 32, __pyx_L7_error) }
-              __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L7_error)
+              __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L7_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L7_error)
               __Pyx_GOTREF(__pyx_t_1);
-              __Pyx_GIVEREF(__pyx_t_16);
-              PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_16);
+              __Pyx_GIVEREF(__pyx_t_2);
+              PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
               __Pyx_INCREF(__pyx_v_recs);
               __Pyx_GIVEREF(__pyx_v_recs);
               PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_recs);
-              __pyx_t_16 = 0;
-              if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 32, __pyx_L7_error)
+              __pyx_t_2 = 0;
+              if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 37, __pyx_L7_error)
               __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":31
- *                 print("row {} skipped".format(i))
+              /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":36
+ *             #     print("row {} skipped".format(i))
  * 
  *             if print_every and i % print_every == 0:             # <<<<<<<<<<<<<<
  *                     print(i, recs)
@@ -2253,8 +2138,8 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
  *     with open(save_path, 'w', newline='') as csvfile:
  *         writer = csv.writer(csvfile, delimiter='\t')
  *         for i, anch in enumerate(test_set_pids):             # <<<<<<<<<<<<<<
- *             try:
- *                 recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
+ * 
+ *             recs = getPIO(PIO_HOST, anch, CURRENT_QUERY)
  */
           }
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -2273,41 +2158,38 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
         goto __pyx_L12_try_end;
         __pyx_L7_error:;
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-        __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("cython_home.create_ur_recs_dict_and_csv_full_row.create_ur_recs_dict_and_csv_full_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_16) < 0) __PYX_ERR(0, 20, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 20, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_2 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_1, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, NULL);
+          __pyx_t_13 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 20, __pyx_L9_except_error)
+          __Pyx_GOTREF(__pyx_t_13);
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_13, NULL);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 20, __pyx_L9_except_error)
-          __Pyx_GOTREF(__pyx_t_14);
-          __pyx_t_20 = __Pyx_PyObject_IsTrue(__pyx_t_14);
-          __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-          if (__pyx_t_20 < 0) __PYX_ERR(0, 20, __pyx_L9_except_error)
-          __pyx_t_21 = ((!(__pyx_t_20 != 0)) != 0);
-          if (__pyx_t_21) {
+          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+          if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 20, __pyx_L9_except_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __pyx_t_14 = __Pyx_PyObject_IsTrue(__pyx_t_16);
+          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+          if (__pyx_t_14 < 0) __PYX_ERR(0, 20, __pyx_L9_except_error)
+          __pyx_t_15 = ((!(__pyx_t_14 != 0)) != 0);
+          if (__pyx_t_15) {
             __Pyx_GIVEREF(__pyx_t_5);
             __Pyx_GIVEREF(__pyx_t_1);
-            __Pyx_XGIVEREF(__pyx_t_16);
-            __Pyx_ErrRestoreWithState(__pyx_t_5, __pyx_t_1, __pyx_t_16);
-            __pyx_t_5 = 0; __pyx_t_1 = 0; __pyx_t_16 = 0; 
+            __Pyx_XGIVEREF(__pyx_t_2);
+            __Pyx_ErrRestoreWithState(__pyx_t_5, __pyx_t_1, __pyx_t_2);
+            __pyx_t_5 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0; 
             __PYX_ERR(0, 20, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           goto __pyx_L8_exception_handled;
         }
         __pyx_L9_except_error:;
@@ -2337,21 +2219,21 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
       }
       __pyx_L6:;
     }
-    goto __pyx_L31;
+    goto __pyx_L21;
     __pyx_L3_error:;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     goto __pyx_L1_error;
-    __pyx_L31:;
+    __pyx_L21:;
   }
 
-  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":34
+  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":39
  *                     print(i, recs)
  * 
  *     print("Saved recs file as {}".format(save_path))             # <<<<<<<<<<<<<<
  * 
  *     return output
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Saved_recs_file_as, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Saved_recs_file_as, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -2363,15 +2245,15 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
       __Pyx_DECREF_SET(__pyx_t_1, function);
     }
   }
-  __pyx_t_16 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_v_save_path) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_save_path);
+  __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_v_save_path) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_save_path);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_16);
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_16) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+  if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":36
+  /* "cython_home/create_ur_recs_dict_and_csv_full_row.pyx":41
  *     print("Saved recs file as {}".format(save_path))
  * 
  *     return output             # <<<<<<<<<<<<<<
@@ -2395,10 +2277,7 @@ static PyObject *__pyx_pf_11cython_home_36create_ur_recs_dict_and_csv_full_row_c
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_16);
-  __Pyx_XDECREF(__pyx_t_17);
-  __Pyx_XDECREF(__pyx_t_18);
-  __Pyx_XDECREF(__pyx_t_19);
+  __Pyx_XDECREF(__pyx_t_13);
   __Pyx_AddTraceback("cython_home.create_ur_recs_dict_and_csv_full_row.create_ur_recs_dict_and_csv_full_row", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -2508,7 +2387,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_recs, __pyx_k_recs, sizeof(__pyx_k_recs), 0, 0, 1, 1},
   {&__pyx_n_s_requests, __pyx_k_requests, sizeof(__pyx_k_requests), 0, 0, 1, 1},
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
-  {&__pyx_kp_s_row_skipped, __pyx_k_row_skipped, sizeof(__pyx_k_row_skipped), 0, 0, 1, 0},
   {&__pyx_n_s_save_path, __pyx_k_save_path, sizeof(__pyx_k_save_path), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_test_set_pids, __pyx_k_test_set_pids, sizeof(__pyx_k_test_set_pids), 0, 0, 1, 1},
@@ -4100,6 +3978,73 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
 }
 #endif
 
+/* PyIntCompare */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, CYTHON_UNUSED long inplace) {
+    if (op1 == op2) {
+        Py_RETURN_TRUE;
+    }
+    #if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_CheckExact(op1))) {
+        const long b = intval;
+        long a = PyInt_AS_LONG(op1);
+        if (a == b) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+    }
+    #endif
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (likely(PyLong_CheckExact(op1))) {
+        int unequal;
+        unsigned long uintval;
+        Py_ssize_t size = Py_SIZE(op1);
+        const digit* digits = ((PyLongObject*)op1)->ob_digit;
+        if (intval == 0) {
+            if (size == 0) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+        } else if (intval < 0) {
+            if (size >= 0)
+                Py_RETURN_FALSE;
+            intval = -intval;
+            size = -size;
+        } else {
+            if (size <= 0)
+                Py_RETURN_FALSE;
+        }
+        uintval = (unsigned long) intval;
+#if PyLong_SHIFT * 4 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 4)) {
+            unequal = (size != 5) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[3] != ((uintval >> (3 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[4] != ((uintval >> (4 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+#if PyLong_SHIFT * 3 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 3)) {
+            unequal = (size != 4) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[3] != ((uintval >> (3 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+#if PyLong_SHIFT * 2 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 2)) {
+            unequal = (size != 3) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+#if PyLong_SHIFT * 1 < SIZEOF_LONG*8
+        if (uintval >> (PyLong_SHIFT * 1)) {
+            unequal = (size != 2) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
+                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
+        } else
+#endif
+            unequal = (size != 1) || (((unsigned long) digits[0]) != (uintval & (unsigned long) PyLong_MASK));
+        if (unequal == 0) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+    }
+    #endif
+    if (PyFloat_CheckExact(op1)) {
+        const long b = intval;
+        double a = PyFloat_AS_DOUBLE(op1);
+        if ((double)a == (double)b) Py_RETURN_TRUE; else Py_RETURN_FALSE;
+    }
+    return (
+        PyObject_RichCompare(op1, op2, Py_EQ));
+}
+
 /* GetTopmostException */
 #if CYTHON_USE_EXC_INFO_STACK
 static _PyErr_StackItem *
@@ -4228,78 +4173,6 @@ bad:
     Py_XDECREF(local_value);
     Py_XDECREF(local_tb);
     return -1;
-}
-
-/* PyIntCompare */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_EqObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, CYTHON_UNUSED long inplace) {
-    if (op1 == op2) {
-        Py_RETURN_TRUE;
-    }
-    #if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_CheckExact(op1))) {
-        const long b = intval;
-        long a = PyInt_AS_LONG(op1);
-        if (a == b) Py_RETURN_TRUE; else Py_RETURN_FALSE;
-    }
-    #endif
-    #if CYTHON_USE_PYLONG_INTERNALS
-    if (likely(PyLong_CheckExact(op1))) {
-        int unequal;
-        unsigned long uintval;
-        Py_ssize_t size = Py_SIZE(op1);
-        const digit* digits = ((PyLongObject*)op1)->ob_digit;
-        if (intval == 0) {
-            if (size == 0) Py_RETURN_TRUE; else Py_RETURN_FALSE;
-        } else if (intval < 0) {
-            if (size >= 0)
-                Py_RETURN_FALSE;
-            intval = -intval;
-            size = -size;
-        } else {
-            if (size <= 0)
-                Py_RETURN_FALSE;
-        }
-        uintval = (unsigned long) intval;
-#if PyLong_SHIFT * 4 < SIZEOF_LONG*8
-        if (uintval >> (PyLong_SHIFT * 4)) {
-            unequal = (size != 5) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
-                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[3] != ((uintval >> (3 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[4] != ((uintval >> (4 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
-        } else
-#endif
-#if PyLong_SHIFT * 3 < SIZEOF_LONG*8
-        if (uintval >> (PyLong_SHIFT * 3)) {
-            unequal = (size != 4) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
-                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[3] != ((uintval >> (3 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
-        } else
-#endif
-#if PyLong_SHIFT * 2 < SIZEOF_LONG*8
-        if (uintval >> (PyLong_SHIFT * 2)) {
-            unequal = (size != 3) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
-                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK)) | (digits[2] != ((uintval >> (2 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
-        } else
-#endif
-#if PyLong_SHIFT * 1 < SIZEOF_LONG*8
-        if (uintval >> (PyLong_SHIFT * 1)) {
-            unequal = (size != 2) || (digits[0] != (uintval & (unsigned long) PyLong_MASK))
-                 | (digits[1] != ((uintval >> (1 * PyLong_SHIFT)) & (unsigned long) PyLong_MASK));
-        } else
-#endif
-            unequal = (size != 1) || (((unsigned long) digits[0]) != (uintval & (unsigned long) PyLong_MASK));
-        if (unequal == 0) Py_RETURN_TRUE; else Py_RETURN_FALSE;
-    }
-    #endif
-    if (PyFloat_CheckExact(op1)) {
-        const long b = intval;
-        double a = PyFloat_AS_DOUBLE(op1);
-        if ((double)a == (double)b) Py_RETURN_TRUE; else Py_RETURN_FALSE;
-    }
-    return (
-        PyObject_RichCompare(op1, op2, Py_EQ));
-}
-
-/* None */
-static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
-    PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
 }
 
 /* PyErrFetchRestore */

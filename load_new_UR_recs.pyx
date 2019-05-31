@@ -13,7 +13,7 @@ def load_new_UR_recs(path,numrows=None):
         csv_reader = csv.reader(view_file, delimiter="\t")
         for row in csv_reader:
             anchor_pid = row[0]
-            recs = row[1]
+            recs = eval(row[1])
             all_rows[anchor_pid] = recs
             if numrows and len(all_rows) >= numrows:
                 break

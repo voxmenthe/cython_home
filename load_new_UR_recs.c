@@ -1024,6 +1024,14 @@ static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_ve
 static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name);
 #endif
 
+/* PyIntBinop.proto */
+#if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check);
+#else
+#define __Pyx_PyInt_AddObjC(op1, op2, intval, inplace, zerodivision_check)\
+    (inplace ? PyNumber_InPlaceAdd(op1, op2) : PyNumber_Add(op1, op2))
+#endif
+
 /* GetItemInt.proto */
 #define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
     (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
@@ -1177,8 +1185,10 @@ int __pyx_module_is_main_cython_home__load_new_UR_recs = 0;
 
 /* Implementation of 'cython_home.load_new_UR_recs' */
 static PyObject *__pyx_builtin_open;
+static PyObject *__pyx_builtin_enumerate;
 static PyObject *__pyx_builtin_eval;
 static const char __pyx_k_[] = "\t";
+static const char __pyx_k_i[] = "i";
 static const char __pyx_k_r[] = "r";
 static const char __pyx_k_csv[] = "csv";
 static const char __pyx_k_row[] = "row";
@@ -1195,7 +1205,9 @@ static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_reader[] = "reader";
 static const char __pyx_k_numrows[] = "numrows";
 static const char __pyx_k_all_rows[] = "all_rows";
+static const char __pyx_k_skiprows[] = "skiprows";
 static const char __pyx_k_delimiter[] = "delimiter";
+static const char __pyx_k_enumerate[] = "enumerate";
 static const char __pyx_k_view_file[] = "view_file";
 static const char __pyx_k_anchor_pid[] = "anchor_pid";
 static const char __pyx_k_csv_reader[] = "csv_reader";
@@ -1212,8 +1224,10 @@ static PyObject *__pyx_n_s_csv_reader;
 static PyObject *__pyx_n_s_cython_home_load_new_UR_recs;
 static PyObject *__pyx_n_s_delimiter;
 static PyObject *__pyx_n_s_enter;
+static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_eval;
 static PyObject *__pyx_n_s_exit;
+static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_load_new_UR_recs;
 static PyObject *__pyx_kp_s_load_new_UR_recs_pyx;
@@ -1226,9 +1240,12 @@ static PyObject *__pyx_n_s_r;
 static PyObject *__pyx_n_s_reader;
 static PyObject *__pyx_n_s_recs;
 static PyObject *__pyx_n_s_row;
+static PyObject *__pyx_n_s_skiprows;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_view_file;
-static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows); /* proto */
+static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_skiprows); /* proto */
+static PyObject *__pyx_int_0;
+static PyObject *__pyx_int_1;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
@@ -1237,7 +1254,7 @@ static PyObject *__pyx_codeobj__4;
 /* "cython_home/load_new_UR_recs.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None):             # <<<<<<<<<<<<<<
+ * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
  *     """
  *     Function for loading UR recs csvs that have format:
  */
@@ -1249,17 +1266,21 @@ static PyMethodDef __pyx_mdef_11cython_home_16load_new_UR_recs_1load_new_UR_recs
 static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_path = 0;
   PyObject *__pyx_v_numrows = 0;
+  PyObject *__pyx_v_skiprows = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("load_new_UR_recs (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_path,&__pyx_n_s_numrows,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_path,&__pyx_n_s_numrows,&__pyx_n_s_skiprows,0};
+    PyObject* values[3] = {0,0,0};
     values[1] = ((PyObject *)Py_None);
+    values[2] = ((PyObject *)Py_None);
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -1278,12 +1299,20 @@ static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyO
           PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_numrows);
           if (value) { values[1] = value; kw_args--; }
         }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_skiprows);
+          if (value) { values[2] = value; kw_args--; }
+        }
       }
       if (unlikely(kw_args > 0)) {
         if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_new_UR_recs") < 0)) __PYX_ERR(0, 3, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
@@ -1293,28 +1322,30 @@ static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyO
     }
     __pyx_v_path = values[0];
     __pyx_v_numrows = values[1];
+    __pyx_v_skiprows = values[2];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("load_new_UR_recs", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 3, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("load_new_UR_recs", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 3, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cython_home.load_new_UR_recs.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(__pyx_self, __pyx_v_path, __pyx_v_numrows);
+  __pyx_r = __pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(__pyx_self, __pyx_v_path, __pyx_v_numrows, __pyx_v_skiprows);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows) {
+static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_skiprows) {
   PyObject *__pyx_v_all_rows = 0;
   PyObject *__pyx_v_row = 0;
   PyObject *__pyx_v_recs = 0;
   PyObject *__pyx_v_view_file = NULL;
   PyObject *__pyx_v_csv_reader = NULL;
+  PyObject *__pyx_v_i = NULL;
   PyObject *__pyx_v_anchor_pid = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -1328,11 +1359,12 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
   PyObject *__pyx_t_8 = NULL;
   Py_ssize_t __pyx_t_9;
   PyObject *(*__pyx_t_10)(PyObject *);
-  PyObject *__pyx_t_11 = NULL;
+  int __pyx_t_11;
   int __pyx_t_12;
-  int __pyx_t_13;
-  Py_ssize_t __pyx_t_14;
-  PyObject *__pyx_t_15 = NULL;
+  PyObject *__pyx_t_13 = NULL;
+  PyObject *__pyx_t_14 = NULL;
+  Py_ssize_t __pyx_t_15;
+  PyObject *__pyx_t_16 = NULL;
   __Pyx_RefNannySetupContext("load_new_UR_recs", 0);
 
   /* "cython_home/load_new_UR_recs.pyx":8
@@ -1352,7 +1384,7 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
  *     #cdef str anchor_pid
  *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
  *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for row in csv_reader:
+ *         for i, row in enumerate(csv_reader):
  */
   /*with:*/ {
     __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
@@ -1404,8 +1436,8 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
  *     #cdef str anchor_pid
  *     with open(path, "r") as view_file:
  *         csv_reader = csv.reader(view_file, delimiter="\t")             # <<<<<<<<<<<<<<
- *         for row in csv_reader:
- *             anchor_pid = row[0]
+ *         for i, row in enumerate(csv_reader):
+ *             if skiprows and i < skiprows:
  */
           __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_csv); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 13, __pyx_L7_error)
           __Pyx_GOTREF(__pyx_t_4);
@@ -1431,40 +1463,42 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
           /* "cython_home/load_new_UR_recs.pyx":14
  *     with open(path, "r") as view_file:
  *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for row in csv_reader:             # <<<<<<<<<<<<<<
- *             anchor_pid = row[0]
- *             recs = eval(row[1])
+ *         for i, row in enumerate(csv_reader):             # <<<<<<<<<<<<<<
+ *             if skiprows and i < skiprows:
+ *                 continue
  */
+          __Pyx_INCREF(__pyx_int_0);
+          __pyx_t_5 = __pyx_int_0;
           if (likely(PyList_CheckExact(__pyx_v_csv_reader)) || PyTuple_CheckExact(__pyx_v_csv_reader)) {
-            __pyx_t_5 = __pyx_v_csv_reader; __Pyx_INCREF(__pyx_t_5); __pyx_t_9 = 0;
+            __pyx_t_1 = __pyx_v_csv_reader; __Pyx_INCREF(__pyx_t_1); __pyx_t_9 = 0;
             __pyx_t_10 = NULL;
           } else {
-            __pyx_t_9 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_csv_reader); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 14, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_10 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 14, __pyx_L7_error)
+            __pyx_t_9 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_csv_reader); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_10 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 14, __pyx_L7_error)
           }
           for (;;) {
             if (likely(!__pyx_t_10)) {
-              if (likely(PyList_CheckExact(__pyx_t_5))) {
-                if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_5)) break;
+              if (likely(PyList_CheckExact(__pyx_t_1))) {
+                if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_1)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_1 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L7_error)
+                __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L7_error)
                 #else
-                __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L7_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L7_error)
+                __Pyx_GOTREF(__pyx_t_4);
                 #endif
               } else {
-                if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
+                if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L7_error)
+                __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L7_error)
                 #else
-                __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L7_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L7_error)
+                __Pyx_GOTREF(__pyx_t_4);
                 #endif
               }
             } else {
-              __pyx_t_1 = __pyx_t_10(__pyx_t_5);
-              if (unlikely(!__pyx_t_1)) {
+              __pyx_t_4 = __pyx_t_10(__pyx_t_1);
+              if (unlikely(!__pyx_t_4)) {
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -1472,30 +1506,75 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
                 }
                 break;
               }
-              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_GOTREF(__pyx_t_4);
             }
-            if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 14, __pyx_L7_error)
-            __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
-            __pyx_t_1 = 0;
+            if (!(likely(PyList_CheckExact(__pyx_t_4))||((__pyx_t_4) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_4)->tp_name), 0))) __PYX_ERR(0, 14, __pyx_L7_error)
+            __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_4));
+            __pyx_t_4 = 0;
+            __Pyx_INCREF(__pyx_t_5);
+            __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
+            __pyx_t_4 = __Pyx_PyInt_AddObjC(__pyx_t_5, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_4);
+            __Pyx_DECREF(__pyx_t_5);
+            __pyx_t_5 = __pyx_t_4;
+            __pyx_t_4 = 0;
 
             /* "cython_home/load_new_UR_recs.pyx":15
  *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for row in csv_reader:
+ *         for i, row in enumerate(csv_reader):
+ *             if skiprows and i < skiprows:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             anchor_pid = row[0]
+ */
+            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_skiprows); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 15, __pyx_L7_error)
+            if (__pyx_t_12) {
+            } else {
+              __pyx_t_11 = __pyx_t_12;
+              goto __pyx_L16_bool_binop_done;
+            }
+            __pyx_t_4 = PyObject_RichCompare(__pyx_v_i, __pyx_v_skiprows, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 15, __pyx_L7_error)
+            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 15, __pyx_L7_error)
+            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+            __pyx_t_11 = __pyx_t_12;
+            __pyx_L16_bool_binop_done:;
+            if (__pyx_t_11) {
+
+              /* "cython_home/load_new_UR_recs.pyx":16
+ *         for i, row in enumerate(csv_reader):
+ *             if skiprows and i < skiprows:
+ *                 continue             # <<<<<<<<<<<<<<
+ *             anchor_pid = row[0]
+ *             recs = eval(row[1])
+ */
+              goto __pyx_L13_continue;
+
+              /* "cython_home/load_new_UR_recs.pyx":15
+ *         csv_reader = csv.reader(view_file, delimiter="\t")
+ *         for i, row in enumerate(csv_reader):
+ *             if skiprows and i < skiprows:             # <<<<<<<<<<<<<<
+ *                 continue
+ *             anchor_pid = row[0]
+ */
+            }
+
+            /* "cython_home/load_new_UR_recs.pyx":17
+ *             if skiprows and i < skiprows:
+ *                 continue
  *             anchor_pid = row[0]             # <<<<<<<<<<<<<<
  *             recs = eval(row[1])
  *             all_rows[anchor_pid] = recs
  */
             if (unlikely(__pyx_v_row == Py_None)) {
               PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-              __PYX_ERR(0, 15, __pyx_L7_error)
+              __PYX_ERR(0, 17, __pyx_L7_error)
             }
-            __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_XDECREF_SET(__pyx_v_anchor_pid, __pyx_t_1);
-            __pyx_t_1 = 0;
+            __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_row, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 17, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_4);
+            __Pyx_XDECREF_SET(__pyx_v_anchor_pid, __pyx_t_4);
+            __pyx_t_4 = 0;
 
-            /* "cython_home/load_new_UR_recs.pyx":16
- *         for row in csv_reader:
+            /* "cython_home/load_new_UR_recs.pyx":18
+ *                 continue
  *             anchor_pid = row[0]
  *             recs = eval(row[1])             # <<<<<<<<<<<<<<
  *             all_rows[anchor_pid] = recs
@@ -1503,90 +1582,96 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
  */
             if (unlikely(__pyx_v_row == Py_None)) {
               PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-              __PYX_ERR(0, 16, __pyx_L7_error)
+              __PYX_ERR(0, 18, __pyx_L7_error)
             }
-            __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_4 = __Pyx_Globals(); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 16, __pyx_L7_error)
+            __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_row, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_2 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L7_error)
+            __pyx_t_2 = __Pyx_Globals(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L7_error)
             __Pyx_GOTREF(__pyx_t_2);
+            __pyx_t_13 = __Pyx_PyDict_NewPresized(10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 18, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_13);
             if (__pyx_v_all_rows) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_all_rows, __pyx_v_all_rows) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_all_rows, __pyx_v_all_rows) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_anchor_pid) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_anchor_pid, __pyx_v_anchor_pid) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_anchor_pid, __pyx_v_anchor_pid) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_csv_reader) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_csv_reader, __pyx_v_csv_reader) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_csv_reader, __pyx_v_csv_reader) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
+            }
+            if (__pyx_v_i) {
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_i, __pyx_v_i) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_numrows) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_numrows, __pyx_v_numrows) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_numrows, __pyx_v_numrows) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_path) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_recs) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_recs, __pyx_v_recs) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_recs, __pyx_v_recs) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_row) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_row, __pyx_v_row) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_row, __pyx_v_row) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
+            }
+            if (__pyx_v_skiprows) {
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_skiprows, __pyx_v_skiprows) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
             if (__pyx_v_view_file) {
-              if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_view_file, __pyx_v_view_file) < 0) __PYX_ERR(0, 16, __pyx_L7_error)
+              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_view_file, __pyx_v_view_file) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
             }
-            __pyx_t_11 = PyTuple_New(3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 16, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_11);
-            __Pyx_GIVEREF(__pyx_t_1);
-            PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_1);
+            __pyx_t_14 = PyTuple_New(3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 18, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_14);
             __Pyx_GIVEREF(__pyx_t_4);
-            PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_t_4);
+            PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_4);
             __Pyx_GIVEREF(__pyx_t_2);
-            PyTuple_SET_ITEM(__pyx_t_11, 2, __pyx_t_2);
-            __pyx_t_1 = 0;
+            PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_2);
+            __Pyx_GIVEREF(__pyx_t_13);
+            PyTuple_SET_ITEM(__pyx_t_14, 2, __pyx_t_13);
             __pyx_t_4 = 0;
             __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_eval, __pyx_t_11, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-            if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_2)->tp_name), 0))) __PYX_ERR(0, 16, __pyx_L7_error)
-            __Pyx_XDECREF_SET(__pyx_v_recs, ((PyObject*)__pyx_t_2));
-            __pyx_t_2 = 0;
+            __pyx_t_13 = 0;
+            __pyx_t_13 = __Pyx_PyObject_Call(__pyx_builtin_eval, __pyx_t_14, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 18, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_13);
+            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+            if (!(likely(PyList_CheckExact(__pyx_t_13))||((__pyx_t_13) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_13)->tp_name), 0))) __PYX_ERR(0, 18, __pyx_L7_error)
+            __Pyx_XDECREF_SET(__pyx_v_recs, ((PyObject*)__pyx_t_13));
+            __pyx_t_13 = 0;
 
-            /* "cython_home/load_new_UR_recs.pyx":17
+            /* "cython_home/load_new_UR_recs.pyx":19
  *             anchor_pid = row[0]
  *             recs = eval(row[1])
  *             all_rows[anchor_pid] = recs             # <<<<<<<<<<<<<<
  *             if numrows and len(all_rows) >= numrows:
  *                 break
  */
-            if (unlikely(PyDict_SetItem(__pyx_v_all_rows, __pyx_v_anchor_pid, __pyx_v_recs) < 0)) __PYX_ERR(0, 17, __pyx_L7_error)
+            if (unlikely(PyDict_SetItem(__pyx_v_all_rows, __pyx_v_anchor_pid, __pyx_v_recs) < 0)) __PYX_ERR(0, 19, __pyx_L7_error)
 
-            /* "cython_home/load_new_UR_recs.pyx":18
+            /* "cython_home/load_new_UR_recs.pyx":20
  *             recs = eval(row[1])
  *             all_rows[anchor_pid] = recs
  *             if numrows and len(all_rows) >= numrows:             # <<<<<<<<<<<<<<
  *                 break
  *     return all_rows
  */
-            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_numrows); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 18, __pyx_L7_error)
-            if (__pyx_t_13) {
-            } else {
-              __pyx_t_12 = __pyx_t_13;
-              goto __pyx_L16_bool_binop_done;
-            }
-            __pyx_t_14 = PyDict_Size(__pyx_v_all_rows); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 18, __pyx_L7_error)
-            __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_11 = PyObject_RichCompare(__pyx_t_2, __pyx_v_numrows, Py_GE); __Pyx_XGOTREF(__pyx_t_11); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_11); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-            __pyx_t_12 = __pyx_t_13;
-            __pyx_L16_bool_binop_done:;
+            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_numrows); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 20, __pyx_L7_error)
             if (__pyx_t_12) {
+            } else {
+              __pyx_t_11 = __pyx_t_12;
+              goto __pyx_L19_bool_binop_done;
+            }
+            __pyx_t_15 = PyDict_Size(__pyx_v_all_rows); if (unlikely(__pyx_t_15 == ((Py_ssize_t)-1))) __PYX_ERR(0, 20, __pyx_L7_error)
+            __pyx_t_13 = PyInt_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 20, __pyx_L7_error)
+            __Pyx_GOTREF(__pyx_t_13);
+            __pyx_t_14 = PyObject_RichCompare(__pyx_t_13, __pyx_v_numrows, Py_GE); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 20, __pyx_L7_error)
+            __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 20, __pyx_L7_error)
+            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+            __pyx_t_11 = __pyx_t_12;
+            __pyx_L19_bool_binop_done:;
+            if (__pyx_t_11) {
 
-              /* "cython_home/load_new_UR_recs.pyx":19
+              /* "cython_home/load_new_UR_recs.pyx":21
  *             all_rows[anchor_pid] = recs
  *             if numrows and len(all_rows) >= numrows:
  *                 break             # <<<<<<<<<<<<<<
@@ -1594,7 +1679,7 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
  */
               goto __pyx_L14_break;
 
-              /* "cython_home/load_new_UR_recs.pyx":18
+              /* "cython_home/load_new_UR_recs.pyx":20
  *             recs = eval(row[1])
  *             all_rows[anchor_pid] = recs
  *             if numrows and len(all_rows) >= numrows:             # <<<<<<<<<<<<<<
@@ -1606,12 +1691,14 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
             /* "cython_home/load_new_UR_recs.pyx":14
  *     with open(path, "r") as view_file:
  *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for row in csv_reader:             # <<<<<<<<<<<<<<
- *             anchor_pid = row[0]
- *             recs = eval(row[1])
+ *         for i, row in enumerate(csv_reader):             # <<<<<<<<<<<<<<
+ *             if skiprows and i < skiprows:
+ *                 continue
  */
+            __pyx_L13_continue:;
           }
           __pyx_L14_break:;
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
           /* "cython_home/load_new_UR_recs.pyx":12
@@ -1619,7 +1706,7 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
  *     #cdef str anchor_pid
  *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
  *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for row in csv_reader:
+ *         for i, row in enumerate(csv_reader):
  */
         }
         __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -1628,38 +1715,39 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
         goto __pyx_L12_try_end;
         __pyx_L7_error:;
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
+        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
+        __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         /*except:*/ {
           __Pyx_AddTraceback("cython_home.load_new_UR_recs.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_11, &__pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L9_except_error)
+          if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_14) < 0) __PYX_ERR(0, 12, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_5);
-          __Pyx_GOTREF(__pyx_t_11);
-          __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_4 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_11, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 12, __pyx_L9_except_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_15 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL);
+          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_GOTREF(__pyx_t_14);
+          __pyx_t_13 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_1, __pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 12, __pyx_L9_except_error)
+          __Pyx_GOTREF(__pyx_t_13);
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_13, NULL);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 12, __pyx_L9_except_error)
-          __Pyx_GOTREF(__pyx_t_15);
-          __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_15);
-          __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-          if (__pyx_t_12 < 0) __PYX_ERR(0, 12, __pyx_L9_except_error)
-          __pyx_t_13 = ((!(__pyx_t_12 != 0)) != 0);
-          if (__pyx_t_13) {
+          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+          if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 12, __pyx_L9_except_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_16);
+          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+          if (__pyx_t_11 < 0) __PYX_ERR(0, 12, __pyx_L9_except_error)
+          __pyx_t_12 = ((!(__pyx_t_11 != 0)) != 0);
+          if (__pyx_t_12) {
             __Pyx_GIVEREF(__pyx_t_5);
-            __Pyx_GIVEREF(__pyx_t_11);
-            __Pyx_XGIVEREF(__pyx_t_2);
-            __Pyx_ErrRestoreWithState(__pyx_t_5, __pyx_t_11, __pyx_t_2);
-            __pyx_t_5 = 0; __pyx_t_11 = 0; __pyx_t_2 = 0; 
+            __Pyx_GIVEREF(__pyx_t_1);
+            __Pyx_XGIVEREF(__pyx_t_14);
+            __Pyx_ErrRestoreWithState(__pyx_t_5, __pyx_t_1, __pyx_t_14);
+            __pyx_t_5 = 0; __pyx_t_1 = 0; __pyx_t_14 = 0; 
             __PYX_ERR(0, 12, __pyx_L9_except_error)
           }
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-          __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
           goto __pyx_L8_exception_handled;
         }
         __pyx_L9_except_error:;
@@ -1689,14 +1777,14 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
       }
       __pyx_L6:;
     }
-    goto __pyx_L21;
+    goto __pyx_L24;
     __pyx_L3_error:;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L1_error;
-    __pyx_L21:;
+    __pyx_L24:;
   }
 
-  /* "cython_home/load_new_UR_recs.pyx":20
+  /* "cython_home/load_new_UR_recs.pyx":22
  *             if numrows and len(all_rows) >= numrows:
  *                 break
  *     return all_rows             # <<<<<<<<<<<<<<
@@ -1709,7 +1797,7 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
   /* "cython_home/load_new_UR_recs.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None):             # <<<<<<<<<<<<<<
+ * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
  *     """
  *     Function for loading UR recs csvs that have format:
  */
@@ -1720,7 +1808,8 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_11);
+  __Pyx_XDECREF(__pyx_t_13);
+  __Pyx_XDECREF(__pyx_t_14);
   __Pyx_AddTraceback("cython_home.load_new_UR_recs.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -1729,6 +1818,7 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
   __Pyx_XDECREF(__pyx_v_recs);
   __Pyx_XDECREF(__pyx_v_view_file);
   __Pyx_XDECREF(__pyx_v_csv_reader);
+  __Pyx_XDECREF(__pyx_v_i);
   __Pyx_XDECREF(__pyx_v_anchor_pid);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -1790,8 +1880,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cython_home_load_new_UR_recs, __pyx_k_cython_home_load_new_UR_recs, sizeof(__pyx_k_cython_home_load_new_UR_recs), 0, 0, 1, 1},
   {&__pyx_n_s_delimiter, __pyx_k_delimiter, sizeof(__pyx_k_delimiter), 0, 0, 1, 1},
   {&__pyx_n_s_enter, __pyx_k_enter, sizeof(__pyx_k_enter), 0, 0, 1, 1},
+  {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
   {&__pyx_n_s_eval, __pyx_k_eval, sizeof(__pyx_k_eval), 0, 0, 1, 1},
   {&__pyx_n_s_exit, __pyx_k_exit, sizeof(__pyx_k_exit), 0, 0, 1, 1},
+  {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_load_new_UR_recs, __pyx_k_load_new_UR_recs, sizeof(__pyx_k_load_new_UR_recs), 0, 0, 1, 1},
   {&__pyx_kp_s_load_new_UR_recs_pyx, __pyx_k_load_new_UR_recs_pyx, sizeof(__pyx_k_load_new_UR_recs_pyx), 0, 0, 1, 0},
@@ -1804,13 +1896,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_reader, __pyx_k_reader, sizeof(__pyx_k_reader), 0, 0, 1, 1},
   {&__pyx_n_s_recs, __pyx_k_recs, sizeof(__pyx_k_recs), 0, 0, 1, 1},
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
+  {&__pyx_n_s_skiprows, __pyx_k_skiprows, sizeof(__pyx_k_skiprows), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_view_file, __pyx_k_view_file, sizeof(__pyx_k_view_file), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 12, __pyx_L1_error)
-  __pyx_builtin_eval = __Pyx_GetBuiltinName(__pyx_n_s_eval); if (!__pyx_builtin_eval) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_builtin_eval = __Pyx_GetBuiltinName(__pyx_n_s_eval); if (!__pyx_builtin_eval) __PYX_ERR(0, 18, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -1825,7 +1919,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     #cdef str anchor_pid
  *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
  *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for row in csv_reader:
+ *         for i, row in enumerate(csv_reader):
  */
   __pyx_tuple__2 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
@@ -1834,14 +1928,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "cython_home/load_new_UR_recs.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None):             # <<<<<<<<<<<<<<
+ * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
  *     """
  *     Function for loading UR recs csvs that have format:
  */
-  __pyx_tuple__3 = PyTuple_Pack(8, __pyx_n_s_path, __pyx_n_s_numrows, __pyx_n_s_all_rows, __pyx_n_s_row, __pyx_n_s_recs, __pyx_n_s_view_file, __pyx_n_s_csv_reader, __pyx_n_s_anchor_pid); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_numrows, __pyx_n_s_skiprows, __pyx_n_s_all_rows, __pyx_n_s_row, __pyx_n_s_recs, __pyx_n_s_view_file, __pyx_n_s_csv_reader, __pyx_n_s_i, __pyx_n_s_anchor_pid); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_load_new_UR_recs_pyx, __pyx_n_s_load_new_UR_recs, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(3, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_load_new_UR_recs_pyx, __pyx_n_s_load_new_UR_recs, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -1851,6 +1945,8 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
+  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2120,7 +2216,7 @@ if (!__Pyx_RefNanny) {
   /* "cython_home/load_new_UR_recs.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
- * def load_new_UR_recs(path,numrows=None):
+ * def load_new_UR_recs(path,numrows=None,skiprows=None):
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_csv, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2130,7 +2226,7 @@ if (!__Pyx_RefNanny) {
   /* "cython_home/load_new_UR_recs.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None):             # <<<<<<<<<<<<<<
+ * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
  *     """
  *     Function for loading UR recs csvs that have format:
  */
@@ -2142,7 +2238,7 @@ if (!__Pyx_RefNanny) {
   /* "cython_home/load_new_UR_recs.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
- * def load_new_UR_recs(path,numrows=None):
+ * def load_new_UR_recs(path,numrows=None,skiprows=None):
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2665,6 +2761,130 @@ static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
 #endif
     return __Pyx_GetBuiltinName(name);
 }
+
+/* PyIntBinop */
+#if !CYTHON_COMPILING_IN_PYPY
+static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, int inplace, int zerodivision_check) {
+    (void)inplace;
+    (void)zerodivision_check;
+    #if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_CheckExact(op1))) {
+        const long b = intval;
+        long x;
+        long a = PyInt_AS_LONG(op1);
+            x = (long)((unsigned long)a + b);
+            if (likely((x^a) >= 0 || (x^b) >= 0))
+                return PyInt_FromLong(x);
+            return PyLong_Type.tp_as_number->nb_add(op1, op2);
+    }
+    #endif
+    #if CYTHON_USE_PYLONG_INTERNALS
+    if (likely(PyLong_CheckExact(op1))) {
+        const long b = intval;
+        long a, x;
+#ifdef HAVE_LONG_LONG
+        const PY_LONG_LONG llb = intval;
+        PY_LONG_LONG lla, llx;
+#endif
+        const digit* digits = ((PyLongObject*)op1)->ob_digit;
+        const Py_ssize_t size = Py_SIZE(op1);
+        if (likely(__Pyx_sst_abs(size) <= 1)) {
+            a = likely(size) ? digits[0] : 0;
+            if (size == -1) a = -a;
+        } else {
+            switch (size) {
+                case -2:
+                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
+                        a = -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+#ifdef HAVE_LONG_LONG
+                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
+                        lla = -(PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+                        goto long_long;
+#endif
+                    }
+                    CYTHON_FALLTHROUGH;
+                case 2:
+                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
+                        a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+#ifdef HAVE_LONG_LONG
+                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
+                        lla = (PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+                        goto long_long;
+#endif
+                    }
+                    CYTHON_FALLTHROUGH;
+                case -3:
+                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
+                        a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+#ifdef HAVE_LONG_LONG
+                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
+                        lla = -(PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+                        goto long_long;
+#endif
+                    }
+                    CYTHON_FALLTHROUGH;
+                case 3:
+                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
+                        a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+#ifdef HAVE_LONG_LONG
+                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
+                        lla = (PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+                        goto long_long;
+#endif
+                    }
+                    CYTHON_FALLTHROUGH;
+                case -4:
+                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
+                        a = -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+#ifdef HAVE_LONG_LONG
+                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
+                        lla = -(PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+                        goto long_long;
+#endif
+                    }
+                    CYTHON_FALLTHROUGH;
+                case 4:
+                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
+                        a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
+                        break;
+#ifdef HAVE_LONG_LONG
+                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
+                        lla = (PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
+                        goto long_long;
+#endif
+                    }
+                    CYTHON_FALLTHROUGH;
+                default: return PyLong_Type.tp_as_number->nb_add(op1, op2);
+            }
+        }
+                x = a + b;
+            return PyLong_FromLong(x);
+#ifdef HAVE_LONG_LONG
+        long_long:
+                llx = lla + llb;
+            return PyLong_FromLongLong(llx);
+#endif
+        
+        
+    }
+    #endif
+    if (PyFloat_CheckExact(op1)) {
+        const long b = intval;
+        double a = PyFloat_AS_DOUBLE(op1);
+            double result;
+            PyFPE_START_PROTECT("add", return NULL)
+            result = ((double)a) + (double)b;
+            PyFPE_END_PROTECT(result)
+            return PyFloat_FromDouble(result);
+    }
+    return (inplace ? PyNumber_InPlaceAdd : PyNumber_Add)(op1, op2);
+}
+#endif
 
 /* GetItemInt */
 static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {

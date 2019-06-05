@@ -1,4 +1,4 @@
-# not working yet due to not adding pandas stuff
+# not working yet due to not adding pandas stuffx
 import csv
 
 def read_gensim_vocab_file(vocfile,veclen=128):

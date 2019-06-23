@@ -1,6 +1,14 @@
 import csv
 
 def get_csv_rows(path, numrows=None,numcols=None,truncate=False):
+    """
+    path: filepath :: the path of the csv file to be read
+    numrows: int or False/None :: the number of rows to load
+    numcols: int or False/None :: only load rows of length numcols
+    truncate: int or False/None :: automatically truncate rows to length truncate
+
+    Note: only numcols or truncate can be set but not both.
+    """
     cdef dict data
     cdef list row
     cdef int counter

@@ -1,6 +1,6 @@
 import csv
 
-def get_csv_rows(path, numrows=None,numcols=None,truncate=False):
+def get_csv_rows(path, truncate=None,numrows=None,numcols=None):
     """
     path: filepath :: the path of the csv file to be read
     numrows: int or False/None :: the number of rows to load

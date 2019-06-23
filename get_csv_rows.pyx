@@ -13,7 +13,7 @@ def get_csv_rows(path, numrows=None,numcols=None,truncate=False):
         for row in csv_reader:
 
             if numrows:
-                counter + =1
+                counter += 1
                 if counter >= numrows: break
 
             if truncate:

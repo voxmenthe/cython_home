@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "cython_home.load_new_UR_recs",
+        "name": "cython_home.get_csv_rows_mcols",
         "sources": [
-            "load_new_UR_recs.pyx"
+            "get_csv_rows_mcols.pyx"
         ]
     },
-    "module_name": "cython_home.load_new_UR_recs"
+    "module_name": "cython_home.get_csv_rows_mcols"
 }
 END: Cython Metadata */
 
@@ -597,8 +597,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__cython_home__load_new_UR_recs
-#define __PYX_HAVE_API__cython_home__load_new_UR_recs
+#define __PYX_HAVE__cython_home__get_csv_rows_mcols
+#define __PYX_HAVE_API__cython_home__get_csv_rows_mcols
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -808,7 +808,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "load_new_UR_recs.pyx",
+  "get_csv_rows_mcols.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -899,12 +899,50 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
 static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
     Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
 
+/* PyCFunctionFastCall.proto */
+#if CYTHON_FAST_PYCCALL
+static CYTHON_INLINE PyObject *__Pyx_PyCFunction_FastCall(PyObject *func, PyObject **args, Py_ssize_t nargs);
+#else
+#define __Pyx_PyCFunction_FastCall(func, args, nargs)  (assert(0), NULL)
+#endif
+
+/* PyFunctionFastCall.proto */
+#if CYTHON_FAST_PYCALL
+#define __Pyx_PyFunction_FastCall(func, args, nargs)\
+    __Pyx_PyFunction_FastCallDict((func), (args), (nargs), NULL)
+#if 1 || PY_VERSION_HEX < 0x030600B1
+static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, int nargs, PyObject *kwargs);
+#else
+#define __Pyx_PyFunction_FastCallDict(func, args, nargs, kwargs) _PyFunction_FastCallDict(func, args, nargs, kwargs)
+#endif
+#define __Pyx_BUILD_ASSERT_EXPR(cond)\
+    (sizeof(char [1 - 2*!(cond)]) - 1)
+#ifndef Py_MEMBER_SIZE
+#define Py_MEMBER_SIZE(type, member) sizeof(((type *)0)->member)
+#endif
+  static size_t __pyx_pyframe_localsplus_offset = 0;
+  #include "frameobject.h"
+  #define __Pxy_PyFrame_Initialize_Offsets()\
+    ((void)__Pyx_BUILD_ASSERT_EXPR(sizeof(PyFrameObject) == offsetof(PyFrameObject, f_localsplus) + Py_MEMBER_SIZE(PyFrameObject, f_localsplus)),\
+     (void)(__pyx_pyframe_localsplus_offset = ((size_t)PyFrame_Type.tp_basicsize) - Py_MEMBER_SIZE(PyFrameObject, f_localsplus)))
+  #define __Pyx_PyFrame_GetLocalsplus(frame)\
+    (assert(__pyx_pyframe_localsplus_offset), (PyObject **)(((char *)(frame)) + __pyx_pyframe_localsplus_offset))
+#endif
+
 /* PyObjectCall.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw);
 #else
 #define __Pyx_PyObject_Call(func, arg, kw) PyObject_Call(func, arg, kw)
 #endif
+
+/* PyObjectCallMethO.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
+#endif
+
+/* PyObjectCallOneArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
 /* PyObjectLookupSpecial.proto */
 #if CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
@@ -932,50 +970,12 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_LookupSpecial(PyObject* obj, PyObj
 #define __Pyx_PyObject_LookupSpecial(o,n) __Pyx_PyObject_GetAttrStr(o,n)
 #endif
 
-/* PyFunctionFastCall.proto */
-#if CYTHON_FAST_PYCALL
-#define __Pyx_PyFunction_FastCall(func, args, nargs)\
-    __Pyx_PyFunction_FastCallDict((func), (args), (nargs), NULL)
-#if 1 || PY_VERSION_HEX < 0x030600B1
-static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, int nargs, PyObject *kwargs);
-#else
-#define __Pyx_PyFunction_FastCallDict(func, args, nargs, kwargs) _PyFunction_FastCallDict(func, args, nargs, kwargs)
-#endif
-#define __Pyx_BUILD_ASSERT_EXPR(cond)\
-    (sizeof(char [1 - 2*!(cond)]) - 1)
-#ifndef Py_MEMBER_SIZE
-#define Py_MEMBER_SIZE(type, member) sizeof(((type *)0)->member)
-#endif
-  static size_t __pyx_pyframe_localsplus_offset = 0;
-  #include "frameobject.h"
-  #define __Pxy_PyFrame_Initialize_Offsets()\
-    ((void)__Pyx_BUILD_ASSERT_EXPR(sizeof(PyFrameObject) == offsetof(PyFrameObject, f_localsplus) + Py_MEMBER_SIZE(PyFrameObject, f_localsplus)),\
-     (void)(__pyx_pyframe_localsplus_offset = ((size_t)PyFrame_Type.tp_basicsize) - Py_MEMBER_SIZE(PyFrameObject, f_localsplus)))
-  #define __Pyx_PyFrame_GetLocalsplus(frame)\
-    (assert(__pyx_pyframe_localsplus_offset), (PyObject **)(((char *)(frame)) + __pyx_pyframe_localsplus_offset))
-#endif
-
-/* PyObjectCallMethO.proto */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
-#endif
-
 /* PyObjectCallNoArg.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
 #else
 #define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
 #endif
-
-/* PyCFunctionFastCall.proto */
-#if CYTHON_FAST_PYCCALL
-static CYTHON_INLINE PyObject *__Pyx_PyCFunction_FastCall(PyObject *func, PyObject **args, Py_ssize_t nargs);
-#else
-#define __Pyx_PyCFunction_FastCall(func, args, nargs)  (assert(0), NULL)
-#endif
-
-/* PyObjectCallOneArg.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
 /* PyDictVersioning.proto */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
@@ -1024,35 +1024,40 @@ static PyObject *__Pyx__GetModuleGlobalName(PyObject *name, PY_UINT64_T *dict_ve
 static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name);
 #endif
 
-/* PyIntBinop.proto */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, int inplace, int zerodivision_check);
+/* PySequenceContains.proto */
+static CYTHON_INLINE int __Pyx_PySequence_ContainsTF(PyObject* item, PyObject* seq, int eq) {
+    int result = PySequence_Contains(seq, item);
+    return unlikely(result < 0) ? result : (result == (eq == Py_EQ));
+}
+
+/* ListAppend.proto */
+#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
+static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
+    PyListObject* L = (PyListObject*) list;
+    Py_ssize_t len = Py_SIZE(list);
+    if (likely(L->allocated > len) & likely(len > (L->allocated >> 1))) {
+        Py_INCREF(x);
+        PyList_SET_ITEM(list, len, x);
+        Py_SIZE(list) = len+1;
+        return 0;
+    }
+    return PyList_Append(list, x);
+}
 #else
-#define __Pyx_PyInt_AddObjC(op1, op2, intval, inplace, zerodivision_check)\
-    (inplace ? PyNumber_InPlaceAdd(op1, op2) : PyNumber_Add(op1, op2))
+#define __Pyx_PyList_Append(L,x) PyList_Append(L,x)
 #endif
 
-/* GetItemInt.proto */
-#define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_Fast(o, (Py_ssize_t)i, is_list, wraparound, boundscheck) :\
-    (is_list ? (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL) :\
-               __Pyx_GetItemInt_Generic(o, to_py_func(i))))
-#define __Pyx_GetItemInt_List(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_List_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
-    (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL))
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              int wraparound, int boundscheck);
-#define __Pyx_GetItemInt_Tuple(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_Tuple_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
-    (PyErr_SetString(PyExc_IndexError, "tuple index out of range"), (PyObject*)NULL))
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              int wraparound, int boundscheck);
-static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
-                                                     int is_list, int wraparound, int boundscheck);
+/* None.proto */
+static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
+
+/* SliceTupleAndList.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyList_GetSlice(PyObject* src, Py_ssize_t start, Py_ssize_t stop);
+static CYTHON_INLINE PyObject* __Pyx_PyTuple_GetSlice(PyObject* src, Py_ssize_t start, Py_ssize_t stop);
+#else
+#define __Pyx_PyList_GetSlice(seq, start, stop)   PySequence_GetSlice(seq, start, stop)
+#define __Pyx_PyTuple_GetSlice(seq, start, stop)  PySequence_GetSlice(seq, start, stop)
+#endif
 
 /* GetTopmostException.proto */
 #if CYTHON_USE_EXC_INFO_STACK
@@ -1146,12 +1151,6 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
-/* GetAttr.proto */
-static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *, PyObject *);
-
-/* Globals.proto */
-static PyObject* __Pyx_Globals(void);
-
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
 
@@ -1178,107 +1177,106 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'cython_home.load_new_UR_recs' */
-#define __Pyx_MODULE_NAME "cython_home.load_new_UR_recs"
-extern int __pyx_module_is_main_cython_home__load_new_UR_recs;
-int __pyx_module_is_main_cython_home__load_new_UR_recs = 0;
+/* Module declarations from 'cython_home.get_csv_rows_mcols' */
+#define __Pyx_MODULE_NAME "cython_home.get_csv_rows_mcols"
+extern int __pyx_module_is_main_cython_home__get_csv_rows_mcols;
+int __pyx_module_is_main_cython_home__get_csv_rows_mcols = 0;
 
-/* Implementation of 'cython_home.load_new_UR_recs' */
+/* Implementation of 'cython_home.get_csv_rows_mcols' */
+static PyObject *__pyx_builtin_min;
 static PyObject *__pyx_builtin_open;
-static PyObject *__pyx_builtin_enumerate;
-static PyObject *__pyx_builtin_eval;
-static const char __pyx_k_[] = "\t";
-static const char __pyx_k_i[] = "i";
 static const char __pyx_k_r[] = "r";
+static const char __pyx_k__2[] = "\t";
 static const char __pyx_k_csv[] = "csv";
+static const char __pyx_k_min[] = "min";
 static const char __pyx_k_row[] = "row";
-static const char __pyx_k_eval[] = "eval";
+static const char __pyx_k_data[] = "data";
 static const char __pyx_k_exit[] = "__exit__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_open[] = "open";
 static const char __pyx_k_path[] = "path";
-static const char __pyx_k_recs[] = "recs";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_enter[] = "__enter__";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_reader[] = "reader";
+static const char __pyx_k_mincols[] = "mincols";
+static const char __pyx_k_numcols[] = "numcols";
 static const char __pyx_k_numrows[] = "numrows";
 static const char __pyx_k_all_rows[] = "all_rows";
-static const char __pyx_k_skiprows[] = "skiprows";
+static const char __pyx_k_truncate[] = "truncate";
+static const char __pyx_k_data_file[] = "data_file";
 static const char __pyx_k_delimiter[] = "delimiter";
-static const char __pyx_k_enumerate[] = "enumerate";
-static const char __pyx_k_view_file[] = "view_file";
-static const char __pyx_k_anchor_pid[] = "anchor_pid";
 static const char __pyx_k_csv_reader[] = "csv_reader";
-static const char __pyx_k_load_new_UR_recs[] = "load_new_UR_recs";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_load_new_UR_recs_pyx[] = "load_new_UR_recs.pyx";
-static const char __pyx_k_cython_home_load_new_UR_recs[] = "cython_home.load_new_UR_recs";
-static PyObject *__pyx_kp_s_;
+static const char __pyx_k_get_csv_rows_mcols[] = "get_csv_rows_mcols";
+static const char __pyx_k_get_csv_rows_mcols_pyx[] = "get_csv_rows_mcols.pyx";
+static const char __pyx_k_cython_home_get_csv_rows_mcols[] = "cython_home.get_csv_rows_mcols";
+static PyObject *__pyx_kp_s__2;
 static PyObject *__pyx_n_s_all_rows;
-static PyObject *__pyx_n_s_anchor_pid;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_csv;
 static PyObject *__pyx_n_s_csv_reader;
-static PyObject *__pyx_n_s_cython_home_load_new_UR_recs;
+static PyObject *__pyx_n_s_cython_home_get_csv_rows_mcols;
+static PyObject *__pyx_n_s_data;
+static PyObject *__pyx_n_s_data_file;
 static PyObject *__pyx_n_s_delimiter;
 static PyObject *__pyx_n_s_enter;
-static PyObject *__pyx_n_s_enumerate;
-static PyObject *__pyx_n_s_eval;
 static PyObject *__pyx_n_s_exit;
-static PyObject *__pyx_n_s_i;
+static PyObject *__pyx_n_s_get_csv_rows_mcols;
+static PyObject *__pyx_kp_s_get_csv_rows_mcols_pyx;
 static PyObject *__pyx_n_s_import;
-static PyObject *__pyx_n_s_load_new_UR_recs;
-static PyObject *__pyx_kp_s_load_new_UR_recs_pyx;
 static PyObject *__pyx_n_s_main;
+static PyObject *__pyx_n_s_min;
+static PyObject *__pyx_n_s_mincols;
 static PyObject *__pyx_n_s_name;
+static PyObject *__pyx_n_s_numcols;
 static PyObject *__pyx_n_s_numrows;
 static PyObject *__pyx_n_s_open;
 static PyObject *__pyx_n_s_path;
 static PyObject *__pyx_n_s_r;
 static PyObject *__pyx_n_s_reader;
-static PyObject *__pyx_n_s_recs;
 static PyObject *__pyx_n_s_row;
-static PyObject *__pyx_n_s_skiprows;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_view_file;
-static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_skiprows); /* proto */
-static PyObject *__pyx_int_0;
-static PyObject *__pyx_int_1;
-static PyObject *__pyx_tuple__2;
+static PyObject *__pyx_n_s_truncate;
+static PyObject *__pyx_pf_11cython_home_18get_csv_rows_mcols_get_csv_rows_mcols(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_numcols, PyObject *__pyx_v_truncate); /* proto */
+static PyObject *__pyx_k_;
 static PyObject *__pyx_tuple__3;
-static PyObject *__pyx_codeobj__4;
+static PyObject *__pyx_tuple__4;
+static PyObject *__pyx_codeobj__5;
 /* Late includes */
 
-/* "cython_home/load_new_UR_recs.pyx":3
+/* "cython_home/get_csv_rows_mcols.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
- *     """
- *     Function for loading UR recs csvs that have format:
+ * def get_csv_rows_mcols(path, numrows=None,numcols=[],truncate=True):             # <<<<<<<<<<<<<<
+ *     cdef dict data
+ *     cdef list row
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_11cython_home_16load_new_UR_recs_load_new_UR_recs[] = "\n    Function for loading UR recs csvs that have format:\n    ANCHOR_PID <tab> [list of recs pids]\n    ";
-static PyMethodDef __pyx_mdef_11cython_home_16load_new_UR_recs_1load_new_UR_recs = {"load_new_UR_recs", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs, METH_VARARGS|METH_KEYWORDS, __pyx_doc_11cython_home_16load_new_UR_recs_load_new_UR_recs};
-static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_11cython_home_18get_csv_rows_mcols_1get_csv_rows_mcols(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_18get_csv_rows_mcols_1get_csv_rows_mcols = {"get_csv_rows_mcols", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11cython_home_18get_csv_rows_mcols_1get_csv_rows_mcols, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_18get_csv_rows_mcols_1get_csv_rows_mcols(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_path = 0;
   PyObject *__pyx_v_numrows = 0;
-  PyObject *__pyx_v_skiprows = 0;
+  PyObject *__pyx_v_numcols = 0;
+  PyObject *__pyx_v_truncate = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("load_new_UR_recs (wrapper)", 0);
+  __Pyx_RefNannySetupContext("get_csv_rows_mcols (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_path,&__pyx_n_s_numrows,&__pyx_n_s_skiprows,0};
-    PyObject* values[3] = {0,0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_path,&__pyx_n_s_numrows,&__pyx_n_s_numcols,&__pyx_n_s_truncate,0};
+    PyObject* values[4] = {0,0,0,0};
     values[1] = ((PyObject *)Py_None);
-    values[2] = ((PyObject *)Py_None);
+    values[2] = __pyx_k_;
+    values[3] = ((PyObject *)Py_True);
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
         case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
         CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
@@ -1302,15 +1300,23 @@ static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyO
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_skiprows);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_numcols);
           if (value) { values[2] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_truncate);
+          if (value) { values[3] = value; kw_args--; }
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_new_UR_recs") < 0)) __PYX_ERR(0, 3, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_csv_rows_mcols") < 0)) __PYX_ERR(0, 3, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
         case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
         CYTHON_FALLTHROUGH;
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
@@ -1322,72 +1328,102 @@ static PyObject *__pyx_pw_11cython_home_16load_new_UR_recs_1load_new_UR_recs(PyO
     }
     __pyx_v_path = values[0];
     __pyx_v_numrows = values[1];
-    __pyx_v_skiprows = values[2];
+    __pyx_v_numcols = values[2];
+    __pyx_v_truncate = values[3];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("load_new_UR_recs", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 3, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_csv_rows_mcols", 0, 1, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 3, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("cython_home.load_new_UR_recs.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.get_csv_rows_mcols.get_csv_rows_mcols", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(__pyx_self, __pyx_v_path, __pyx_v_numrows, __pyx_v_skiprows);
+  __pyx_r = __pyx_pf_11cython_home_18get_csv_rows_mcols_get_csv_rows_mcols(__pyx_self, __pyx_v_path, __pyx_v_numrows, __pyx_v_numcols, __pyx_v_truncate);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_skiprows) {
-  PyObject *__pyx_v_all_rows = 0;
+static PyObject *__pyx_pf_11cython_home_18get_csv_rows_mcols_get_csv_rows_mcols(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_numcols, PyObject *__pyx_v_truncate) {
   PyObject *__pyx_v_row = 0;
-  PyObject *__pyx_v_recs = 0;
-  PyObject *__pyx_v_view_file = NULL;
+  PyObject *__pyx_v_all_rows = NULL;
+  PyObject *__pyx_v_mincols = NULL;
+  PyObject *__pyx_v_data_file = NULL;
   PyObject *__pyx_v_csv_reader = NULL;
-  PyObject *__pyx_v_i = NULL;
-  PyObject *__pyx_v_anchor_pid = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
+  int __pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
   PyObject *__pyx_t_7 = NULL;
   PyObject *__pyx_t_8 = NULL;
-  Py_ssize_t __pyx_t_9;
-  PyObject *(*__pyx_t_10)(PyObject *);
-  int __pyx_t_11;
-  int __pyx_t_12;
-  PyObject *__pyx_t_13 = NULL;
-  PyObject *__pyx_t_14 = NULL;
-  Py_ssize_t __pyx_t_15;
+  PyObject *__pyx_t_9 = NULL;
+  Py_ssize_t __pyx_t_10;
+  PyObject *(*__pyx_t_11)(PyObject *);
+  Py_ssize_t __pyx_t_12;
+  int __pyx_t_13;
+  Py_ssize_t __pyx_t_14;
+  int __pyx_t_15;
   PyObject *__pyx_t_16 = NULL;
-  __Pyx_RefNannySetupContext("load_new_UR_recs", 0);
+  __Pyx_RefNannySetupContext("get_csv_rows_mcols", 0);
 
-  /* "cython_home/load_new_UR_recs.pyx":8
- *     ANCHOR_PID <tab> [list of recs pids]
- *     """
- *     cdef dict all_rows = {}             # <<<<<<<<<<<<<<
+  /* "cython_home/get_csv_rows_mcols.pyx":6
+ *     cdef dict data
  *     cdef list row
- *     cdef list recs
+ *     all_rows = []             # <<<<<<<<<<<<<<
+ * 
+ *     if numcols:
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_all_rows = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cython_home/load_new_UR_recs.pyx":12
- *     cdef list recs
- *     #cdef str anchor_pid
- *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):
+  /* "cython_home/get_csv_rows_mcols.pyx":8
+ *     all_rows = []
+ * 
+ *     if numcols:             # <<<<<<<<<<<<<<
+ *         mincols = min(numcols)
+ * 
+ */
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_numcols); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (__pyx_t_2) {
+
+    /* "cython_home/get_csv_rows_mcols.pyx":9
+ * 
+ *     if numcols:
+ *         mincols = min(numcols)             # <<<<<<<<<<<<<<
+ * 
+ *     with open(path, "r") as data_file:
+ */
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_min, __pyx_v_numcols); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_v_mincols = __pyx_t_1;
+    __pyx_t_1 = 0;
+
+    /* "cython_home/get_csv_rows_mcols.pyx":8
+ *     all_rows = []
+ * 
+ *     if numcols:             # <<<<<<<<<<<<<<
+ *         mincols = min(numcols)
+ * 
+ */
+  }
+
+  /* "cython_home/get_csv_rows_mcols.pyx":11
+ *         mincols = min(numcols)
+ * 
+ *     with open(path, "r") as data_file:             # <<<<<<<<<<<<<<
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:
  */
   /*with:*/ {
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_path);
     __Pyx_GIVEREF(__pyx_v_path);
@@ -1395,396 +1431,374 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
     __Pyx_INCREF(__pyx_n_s_r);
     __Pyx_GIVEREF(__pyx_n_s_r);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_r);
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_3 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 12, __pyx_L3_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_4 = __Pyx_PyObject_LookupSpecial(__pyx_t_3, __pyx_n_s_exit); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 11, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = NULL;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
+    __pyx_t_5 = __Pyx_PyObject_LookupSpecial(__pyx_t_3, __pyx_n_s_enter); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 11, __pyx_L4_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = NULL;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+        __Pyx_INCREF(__pyx_t_6);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_5, function);
       }
     }
-    __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
-    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L3_error)
+    __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 11, __pyx_L4_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __pyx_t_1;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_t_5 = __pyx_t_1;
     __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     /*try:*/ {
       {
         __Pyx_PyThreadState_declare
         __Pyx_PyThreadState_assign
-        __Pyx_ExceptionSave(&__pyx_t_6, &__pyx_t_7, &__pyx_t_8);
-        __Pyx_XGOTREF(__pyx_t_6);
+        __Pyx_ExceptionSave(&__pyx_t_7, &__pyx_t_8, &__pyx_t_9);
         __Pyx_XGOTREF(__pyx_t_7);
         __Pyx_XGOTREF(__pyx_t_8);
+        __Pyx_XGOTREF(__pyx_t_9);
         /*try:*/ {
-          __pyx_v_view_file = __pyx_t_4;
-          __pyx_t_4 = 0;
-
-          /* "cython_home/load_new_UR_recs.pyx":13
- *     #cdef str anchor_pid
- *     with open(path, "r") as view_file:
- *         csv_reader = csv.reader(view_file, delimiter="\t")             # <<<<<<<<<<<<<<
- *         for i, row in enumerate(csv_reader):
- *             if skiprows and i < skiprows:
- */
-          __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_csv); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 13, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_reader); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 13, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_INCREF(__pyx_v_view_file);
-          __Pyx_GIVEREF(__pyx_v_view_file);
-          PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_view_file);
-          __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_delimiter, __pyx_kp_s_) < 0) __PYX_ERR(0, 13, __pyx_L7_error)
-          __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 13, __pyx_L7_error)
-          __Pyx_GOTREF(__pyx_t_5);
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_v_csv_reader = __pyx_t_5;
+          __pyx_v_data_file = __pyx_t_5;
           __pyx_t_5 = 0;
 
-          /* "cython_home/load_new_UR_recs.pyx":14
- *     with open(path, "r") as view_file:
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):             # <<<<<<<<<<<<<<
- *             if skiprows and i < skiprows:
- *                 continue
+          /* "cython_home/get_csv_rows_mcols.pyx":12
+ * 
+ *     with open(path, "r") as data_file:
+ *         csv_reader = csv.reader(data_file, delimiter="\t")             # <<<<<<<<<<<<<<
+ *         for row in csv_reader:
+ *             if numcols:
  */
-          __Pyx_INCREF(__pyx_int_0);
-          __pyx_t_5 = __pyx_int_0;
+          __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_csv); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 12, __pyx_L8_error)
+          __Pyx_GOTREF(__pyx_t_5);
+          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_reader); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L8_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 12, __pyx_L8_error)
+          __Pyx_GOTREF(__pyx_t_5);
+          __Pyx_INCREF(__pyx_v_data_file);
+          __Pyx_GIVEREF(__pyx_v_data_file);
+          PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_data_file);
+          __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L8_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_delimiter, __pyx_kp_s__2) < 0) __PYX_ERR(0, 12, __pyx_L8_error)
+          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 12, __pyx_L8_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __pyx_v_csv_reader = __pyx_t_6;
+          __pyx_t_6 = 0;
+
+          /* "cython_home/get_csv_rows_mcols.pyx":13
+ *     with open(path, "r") as data_file:
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:             # <<<<<<<<<<<<<<
+ *             if numcols:
+ *                 if len(row) in numcols:
+ */
           if (likely(PyList_CheckExact(__pyx_v_csv_reader)) || PyTuple_CheckExact(__pyx_v_csv_reader)) {
-            __pyx_t_1 = __pyx_v_csv_reader; __Pyx_INCREF(__pyx_t_1); __pyx_t_9 = 0;
-            __pyx_t_10 = NULL;
+            __pyx_t_6 = __pyx_v_csv_reader; __Pyx_INCREF(__pyx_t_6); __pyx_t_10 = 0;
+            __pyx_t_11 = NULL;
           } else {
-            __pyx_t_9 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_csv_reader); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_10 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 14, __pyx_L7_error)
+            __pyx_t_10 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_csv_reader); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 13, __pyx_L8_error)
+            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_11 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 13, __pyx_L8_error)
           }
           for (;;) {
-            if (likely(!__pyx_t_10)) {
-              if (likely(PyList_CheckExact(__pyx_t_1))) {
-                if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_1)) break;
+            if (likely(!__pyx_t_11)) {
+              if (likely(PyList_CheckExact(__pyx_t_6))) {
+                if (__pyx_t_10 >= PyList_GET_SIZE(__pyx_t_6)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L7_error)
+                __pyx_t_1 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_10); __Pyx_INCREF(__pyx_t_1); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 13, __pyx_L8_error)
                 #else
-                __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L7_error)
-                __Pyx_GOTREF(__pyx_t_4);
+                __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L8_error)
+                __Pyx_GOTREF(__pyx_t_1);
                 #endif
               } else {
-                if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+                if (__pyx_t_10 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_9); __Pyx_INCREF(__pyx_t_4); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(0, 14, __pyx_L7_error)
+                __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_10); __Pyx_INCREF(__pyx_t_1); __pyx_t_10++; if (unlikely(0 < 0)) __PYX_ERR(0, 13, __pyx_L8_error)
                 #else
-                __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L7_error)
-                __Pyx_GOTREF(__pyx_t_4);
+                __pyx_t_1 = PySequence_ITEM(__pyx_t_6, __pyx_t_10); __pyx_t_10++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L8_error)
+                __Pyx_GOTREF(__pyx_t_1);
                 #endif
               }
             } else {
-              __pyx_t_4 = __pyx_t_10(__pyx_t_1);
-              if (unlikely(!__pyx_t_4)) {
+              __pyx_t_1 = __pyx_t_11(__pyx_t_6);
+              if (unlikely(!__pyx_t_1)) {
                 PyObject* exc_type = PyErr_Occurred();
                 if (exc_type) {
                   if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(0, 14, __pyx_L7_error)
+                  else __PYX_ERR(0, 13, __pyx_L8_error)
                 }
                 break;
               }
-              __Pyx_GOTREF(__pyx_t_4);
+              __Pyx_GOTREF(__pyx_t_1);
             }
-            if (!(likely(PyList_CheckExact(__pyx_t_4))||((__pyx_t_4) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_4)->tp_name), 0))) __PYX_ERR(0, 14, __pyx_L7_error)
-            __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_4));
-            __pyx_t_4 = 0;
-            __Pyx_INCREF(__pyx_t_5);
-            __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
-            __pyx_t_4 = __Pyx_PyInt_AddObjC(__pyx_t_5, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_5);
-            __pyx_t_5 = __pyx_t_4;
-            __pyx_t_4 = 0;
+            if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 13, __pyx_L8_error)
+            __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
+            __pyx_t_1 = 0;
 
-            /* "cython_home/load_new_UR_recs.pyx":15
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):
- *             if skiprows and i < skiprows:             # <<<<<<<<<<<<<<
- *                 continue
- *             anchor_pid = row[0]
+            /* "cython_home/get_csv_rows_mcols.pyx":14
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:
+ *             if numcols:             # <<<<<<<<<<<<<<
+ *                 if len(row) in numcols:
+ *                     if truncate:
  */
-            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_skiprows); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 15, __pyx_L7_error)
-            if (__pyx_t_12) {
-            } else {
-              __pyx_t_11 = __pyx_t_12;
-              goto __pyx_L16_bool_binop_done;
-            }
-            __pyx_t_4 = PyObject_RichCompare(__pyx_v_i, __pyx_v_skiprows, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 15, __pyx_L7_error)
-            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 15, __pyx_L7_error)
-            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __pyx_t_11 = __pyx_t_12;
-            __pyx_L16_bool_binop_done:;
-            if (__pyx_t_11) {
+            __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_numcols); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 14, __pyx_L8_error)
+            if (__pyx_t_2) {
 
-              /* "cython_home/load_new_UR_recs.pyx":16
- *         for i, row in enumerate(csv_reader):
- *             if skiprows and i < skiprows:
- *                 continue             # <<<<<<<<<<<<<<
- *             anchor_pid = row[0]
- *             recs = eval(row[1])
+              /* "cython_home/get_csv_rows_mcols.pyx":15
+ *         for row in csv_reader:
+ *             if numcols:
+ *                 if len(row) in numcols:             # <<<<<<<<<<<<<<
+ *                     if truncate:
+ *                         all_rows.append(row[:mincols])
  */
-              goto __pyx_L13_continue;
+              if (unlikely(__pyx_v_row == Py_None)) {
+                PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+                __PYX_ERR(0, 15, __pyx_L8_error)
+              }
+              __pyx_t_12 = PyList_GET_SIZE(__pyx_v_row); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 15, __pyx_L8_error)
+              __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L8_error)
+              __Pyx_GOTREF(__pyx_t_1);
+              __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_v_numcols, Py_EQ)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 15, __pyx_L8_error)
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __pyx_t_13 = (__pyx_t_2 != 0);
+              if (__pyx_t_13) {
 
-              /* "cython_home/load_new_UR_recs.pyx":15
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):
- *             if skiprows and i < skiprows:             # <<<<<<<<<<<<<<
- *                 continue
- *             anchor_pid = row[0]
+                /* "cython_home/get_csv_rows_mcols.pyx":16
+ *             if numcols:
+ *                 if len(row) in numcols:
+ *                     if truncate:             # <<<<<<<<<<<<<<
+ *                         all_rows.append(row[:mincols])
+ *                     else:
  */
-            }
+                __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_v_truncate); if (unlikely(__pyx_t_13 < 0)) __PYX_ERR(0, 16, __pyx_L8_error)
+                if (__pyx_t_13) {
 
-            /* "cython_home/load_new_UR_recs.pyx":17
- *             if skiprows and i < skiprows:
- *                 continue
- *             anchor_pid = row[0]             # <<<<<<<<<<<<<<
- *             recs = eval(row[1])
- *             all_rows[anchor_pid] = recs
+                  /* "cython_home/get_csv_rows_mcols.pyx":17
+ *                 if len(row) in numcols:
+ *                     if truncate:
+ *                         all_rows.append(row[:mincols])             # <<<<<<<<<<<<<<
+ *                     else:
+ *                         all_rows.append(row)
  */
-            if (unlikely(__pyx_v_row == Py_None)) {
-              PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-              __PYX_ERR(0, 17, __pyx_L7_error)
-            }
-            __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_row, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 17, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_XDECREF_SET(__pyx_v_anchor_pid, __pyx_t_4);
-            __pyx_t_4 = 0;
+                  if (unlikely(__pyx_v_row == Py_None)) {
+                    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+                    __PYX_ERR(0, 17, __pyx_L8_error)
+                  }
+                  if (unlikely(!__pyx_v_mincols)) { __Pyx_RaiseUnboundLocalError("mincols"); __PYX_ERR(0, 17, __pyx_L8_error) }
+                  __Pyx_INCREF(__pyx_v_mincols);
+                  __pyx_t_1 = __pyx_v_mincols;
+                  __pyx_t_13 = (__pyx_t_1 == Py_None);
+                  if (__pyx_t_13) {
+                    __pyx_t_12 = PY_SSIZE_T_MAX;
+                  } else {
+                    __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L8_error)
+                    __pyx_t_12 = __pyx_t_14;
+                  }
+                  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                  __pyx_t_1 = __Pyx_PyList_GetSlice(__pyx_v_row, 0, __pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L8_error)
+                  __Pyx_GOTREF(__pyx_t_1);
+                  __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_all_rows, __pyx_t_1); if (unlikely(__pyx_t_15 == ((int)-1))) __PYX_ERR(0, 17, __pyx_L8_error)
+                  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-            /* "cython_home/load_new_UR_recs.pyx":18
- *                 continue
- *             anchor_pid = row[0]
- *             recs = eval(row[1])             # <<<<<<<<<<<<<<
- *             all_rows[anchor_pid] = recs
- *             if numrows and len(all_rows) >= numrows:
+                  /* "cython_home/get_csv_rows_mcols.pyx":16
+ *             if numcols:
+ *                 if len(row) in numcols:
+ *                     if truncate:             # <<<<<<<<<<<<<<
+ *                         all_rows.append(row[:mincols])
+ *                     else:
  */
-            if (unlikely(__pyx_v_row == Py_None)) {
-              PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-              __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            __pyx_t_4 = __Pyx_GetItemInt_List(__pyx_v_row, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_2 = __Pyx_Globals(); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_13 = __Pyx_PyDict_NewPresized(10); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_13);
-            if (__pyx_v_all_rows) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_all_rows, __pyx_v_all_rows) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_anchor_pid) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_anchor_pid, __pyx_v_anchor_pid) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_csv_reader) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_csv_reader, __pyx_v_csv_reader) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_i) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_i, __pyx_v_i) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_numrows) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_numrows, __pyx_v_numrows) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_path) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_path, __pyx_v_path) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_recs) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_recs, __pyx_v_recs) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_row) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_row, __pyx_v_row) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_skiprows) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_skiprows, __pyx_v_skiprows) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            if (__pyx_v_view_file) {
-              if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_view_file, __pyx_v_view_file) < 0) __PYX_ERR(0, 18, __pyx_L7_error)
-            }
-            __pyx_t_14 = PyTuple_New(3); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_14);
-            __Pyx_GIVEREF(__pyx_t_4);
-            PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_4);
-            __Pyx_GIVEREF(__pyx_t_2);
-            PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_2);
-            __Pyx_GIVEREF(__pyx_t_13);
-            PyTuple_SET_ITEM(__pyx_t_14, 2, __pyx_t_13);
-            __pyx_t_4 = 0;
-            __pyx_t_2 = 0;
-            __pyx_t_13 = 0;
-            __pyx_t_13 = __Pyx_PyObject_Call(__pyx_builtin_eval, __pyx_t_14, NULL); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_13);
-            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            if (!(likely(PyList_CheckExact(__pyx_t_13))||((__pyx_t_13) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_13)->tp_name), 0))) __PYX_ERR(0, 18, __pyx_L7_error)
-            __Pyx_XDECREF_SET(__pyx_v_recs, ((PyObject*)__pyx_t_13));
-            __pyx_t_13 = 0;
+                  goto __pyx_L18;
+                }
 
-            /* "cython_home/load_new_UR_recs.pyx":19
- *             anchor_pid = row[0]
- *             recs = eval(row[1])
- *             all_rows[anchor_pid] = recs             # <<<<<<<<<<<<<<
+                /* "cython_home/get_csv_rows_mcols.pyx":19
+ *                         all_rows.append(row[:mincols])
+ *                     else:
+ *                         all_rows.append(row)             # <<<<<<<<<<<<<<
+ *             else:
+ *                 all_rows.append(row)
+ */
+                /*else*/ {
+                  __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_all_rows, __pyx_v_row); if (unlikely(__pyx_t_15 == ((int)-1))) __PYX_ERR(0, 19, __pyx_L8_error)
+                }
+                __pyx_L18:;
+
+                /* "cython_home/get_csv_rows_mcols.pyx":15
+ *         for row in csv_reader:
+ *             if numcols:
+ *                 if len(row) in numcols:             # <<<<<<<<<<<<<<
+ *                     if truncate:
+ *                         all_rows.append(row[:mincols])
+ */
+              }
+
+              /* "cython_home/get_csv_rows_mcols.pyx":14
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:
+ *             if numcols:             # <<<<<<<<<<<<<<
+ *                 if len(row) in numcols:
+ *                     if truncate:
+ */
+              goto __pyx_L16;
+            }
+
+            /* "cython_home/get_csv_rows_mcols.pyx":21
+ *                         all_rows.append(row)
+ *             else:
+ *                 all_rows.append(row)             # <<<<<<<<<<<<<<
  *             if numrows and len(all_rows) >= numrows:
  *                 break
  */
-            if (unlikely(PyDict_SetItem(__pyx_v_all_rows, __pyx_v_anchor_pid, __pyx_v_recs) < 0)) __PYX_ERR(0, 19, __pyx_L7_error)
+            /*else*/ {
+              __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_all_rows, __pyx_v_row); if (unlikely(__pyx_t_15 == ((int)-1))) __PYX_ERR(0, 21, __pyx_L8_error)
+            }
+            __pyx_L16:;
 
-            /* "cython_home/load_new_UR_recs.pyx":20
- *             recs = eval(row[1])
- *             all_rows[anchor_pid] = recs
+            /* "cython_home/get_csv_rows_mcols.pyx":22
+ *             else:
+ *                 all_rows.append(row)
  *             if numrows and len(all_rows) >= numrows:             # <<<<<<<<<<<<<<
  *                 break
  *     return all_rows
  */
-            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_v_numrows); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 20, __pyx_L7_error)
-            if (__pyx_t_12) {
+            __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_numrows); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 22, __pyx_L8_error)
+            if (__pyx_t_2) {
             } else {
-              __pyx_t_11 = __pyx_t_12;
-              goto __pyx_L19_bool_binop_done;
+              __pyx_t_13 = __pyx_t_2;
+              goto __pyx_L20_bool_binop_done;
             }
-            __pyx_t_15 = PyDict_Size(__pyx_v_all_rows); if (unlikely(__pyx_t_15 == ((Py_ssize_t)-1))) __PYX_ERR(0, 20, __pyx_L7_error)
-            __pyx_t_13 = PyInt_FromSsize_t(__pyx_t_15); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 20, __pyx_L7_error)
-            __Pyx_GOTREF(__pyx_t_13);
-            __pyx_t_14 = PyObject_RichCompare(__pyx_t_13, __pyx_v_numrows, Py_GE); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 20, __pyx_L7_error)
-            __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-            __pyx_t_12 = __Pyx_PyObject_IsTrue(__pyx_t_14); if (unlikely(__pyx_t_12 < 0)) __PYX_ERR(0, 20, __pyx_L7_error)
-            __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-            __pyx_t_11 = __pyx_t_12;
-            __pyx_L19_bool_binop_done:;
-            if (__pyx_t_11) {
+            __pyx_t_12 = PyList_GET_SIZE(__pyx_v_all_rows); if (unlikely(__pyx_t_12 == ((Py_ssize_t)-1))) __PYX_ERR(0, 22, __pyx_L8_error)
+            __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L8_error)
+            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_5 = PyObject_RichCompare(__pyx_t_1, __pyx_v_numrows, Py_GE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 22, __pyx_L8_error)
+            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+            __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 22, __pyx_L8_error)
+            __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+            __pyx_t_13 = __pyx_t_2;
+            __pyx_L20_bool_binop_done:;
+            if (__pyx_t_13) {
 
-              /* "cython_home/load_new_UR_recs.pyx":21
- *             all_rows[anchor_pid] = recs
+              /* "cython_home/get_csv_rows_mcols.pyx":23
+ *                 all_rows.append(row)
  *             if numrows and len(all_rows) >= numrows:
  *                 break             # <<<<<<<<<<<<<<
  *     return all_rows
  */
-              goto __pyx_L14_break;
+              goto __pyx_L15_break;
 
-              /* "cython_home/load_new_UR_recs.pyx":20
- *             recs = eval(row[1])
- *             all_rows[anchor_pid] = recs
+              /* "cython_home/get_csv_rows_mcols.pyx":22
+ *             else:
+ *                 all_rows.append(row)
  *             if numrows and len(all_rows) >= numrows:             # <<<<<<<<<<<<<<
  *                 break
  *     return all_rows
  */
             }
 
-            /* "cython_home/load_new_UR_recs.pyx":14
- *     with open(path, "r") as view_file:
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):             # <<<<<<<<<<<<<<
- *             if skiprows and i < skiprows:
- *                 continue
+            /* "cython_home/get_csv_rows_mcols.pyx":13
+ *     with open(path, "r") as data_file:
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:             # <<<<<<<<<<<<<<
+ *             if numcols:
+ *                 if len(row) in numcols:
  */
-            __pyx_L13_continue:;
           }
-          __pyx_L14_break:;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+          __pyx_L15_break:;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "cython_home/load_new_UR_recs.pyx":12
- *     cdef list recs
- *     #cdef str anchor_pid
- *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):
+          /* "cython_home/get_csv_rows_mcols.pyx":11
+ *         mincols = min(numcols)
+ * 
+ *     with open(path, "r") as data_file:             # <<<<<<<<<<<<<<
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:
  */
         }
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        goto __pyx_L12_try_end;
-        __pyx_L7_error:;
+        __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
+        goto __pyx_L13_try_end;
+        __pyx_L8_error:;
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_XDECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("cython_home.load_new_UR_recs.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
-          if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_14) < 0) __PYX_ERR(0, 12, __pyx_L9_except_error)
+          __Pyx_AddTraceback("cython_home.get_csv_rows_mcols.get_csv_rows_mcols", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_5, &__pyx_t_1) < 0) __PYX_ERR(0, 11, __pyx_L10_except_error)
+          __Pyx_GOTREF(__pyx_t_6);
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_GOTREF(__pyx_t_14);
-          __pyx_t_13 = PyTuple_Pack(3, __pyx_t_5, __pyx_t_1, __pyx_t_14); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 12, __pyx_L9_except_error)
-          __Pyx_GOTREF(__pyx_t_13);
-          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_13, NULL);
+          __pyx_t_3 = PyTuple_Pack(3, __pyx_t_6, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L10_except_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_3, NULL);
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-          if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 12, __pyx_L9_except_error)
+          if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 11, __pyx_L10_except_error)
           __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_16);
+          __pyx_t_13 = __Pyx_PyObject_IsTrue(__pyx_t_16);
           __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-          if (__pyx_t_11 < 0) __PYX_ERR(0, 12, __pyx_L9_except_error)
-          __pyx_t_12 = ((!(__pyx_t_11 != 0)) != 0);
-          if (__pyx_t_12) {
+          if (__pyx_t_13 < 0) __PYX_ERR(0, 11, __pyx_L10_except_error)
+          __pyx_t_2 = ((!(__pyx_t_13 != 0)) != 0);
+          if (__pyx_t_2) {
+            __Pyx_GIVEREF(__pyx_t_6);
             __Pyx_GIVEREF(__pyx_t_5);
-            __Pyx_GIVEREF(__pyx_t_1);
-            __Pyx_XGIVEREF(__pyx_t_14);
-            __Pyx_ErrRestoreWithState(__pyx_t_5, __pyx_t_1, __pyx_t_14);
-            __pyx_t_5 = 0; __pyx_t_1 = 0; __pyx_t_14 = 0; 
-            __PYX_ERR(0, 12, __pyx_L9_except_error)
+            __Pyx_XGIVEREF(__pyx_t_1);
+            __Pyx_ErrRestoreWithState(__pyx_t_6, __pyx_t_5, __pyx_t_1);
+            __pyx_t_6 = 0; __pyx_t_5 = 0; __pyx_t_1 = 0; 
+            __PYX_ERR(0, 11, __pyx_L10_except_error)
           }
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
           __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-          goto __pyx_L8_exception_handled;
+          goto __pyx_L9_exception_handled;
         }
-        __pyx_L9_except_error:;
-        __Pyx_XGIVEREF(__pyx_t_6);
+        __pyx_L10_except_error:;
         __Pyx_XGIVEREF(__pyx_t_7);
         __Pyx_XGIVEREF(__pyx_t_8);
-        __Pyx_ExceptionReset(__pyx_t_6, __pyx_t_7, __pyx_t_8);
+        __Pyx_XGIVEREF(__pyx_t_9);
+        __Pyx_ExceptionReset(__pyx_t_7, __pyx_t_8, __pyx_t_9);
         goto __pyx_L1_error;
-        __pyx_L8_exception_handled:;
-        __Pyx_XGIVEREF(__pyx_t_6);
+        __pyx_L9_exception_handled:;
         __Pyx_XGIVEREF(__pyx_t_7);
         __Pyx_XGIVEREF(__pyx_t_8);
-        __Pyx_ExceptionReset(__pyx_t_6, __pyx_t_7, __pyx_t_8);
-        __pyx_L12_try_end:;
+        __Pyx_XGIVEREF(__pyx_t_9);
+        __Pyx_ExceptionReset(__pyx_t_7, __pyx_t_8, __pyx_t_9);
+        __pyx_L13_try_end:;
       }
     }
     /*finally:*/ {
       /*normal exit:*/{
-        if (__pyx_t_3) {
-          __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__2, NULL);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 12, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_8);
-          __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+        if (__pyx_t_4) {
+          __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__3, NULL);
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 11, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_9);
+          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         }
-        goto __pyx_L6;
+        goto __pyx_L7;
       }
-      __pyx_L6:;
+      __pyx_L7:;
     }
-    goto __pyx_L24;
-    __pyx_L3_error:;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    goto __pyx_L25;
+    __pyx_L4_error:;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     goto __pyx_L1_error;
-    __pyx_L24:;
+    __pyx_L25:;
   }
 
-  /* "cython_home/load_new_UR_recs.pyx":22
+  /* "cython_home/get_csv_rows_mcols.pyx":24
  *             if numrows and len(all_rows) >= numrows:
  *                 break
  *     return all_rows             # <<<<<<<<<<<<<<
@@ -1794,32 +1808,28 @@ static PyObject *__pyx_pf_11cython_home_16load_new_UR_recs_load_new_UR_recs(CYTH
   __pyx_r = __pyx_v_all_rows;
   goto __pyx_L0;
 
-  /* "cython_home/load_new_UR_recs.pyx":3
+  /* "cython_home/get_csv_rows_mcols.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
- *     """
- *     Function for loading UR recs csvs that have format:
+ * def get_csv_rows_mcols(path, numrows=None,numcols=[],truncate=True):             # <<<<<<<<<<<<<<
+ *     cdef dict data
+ *     cdef list row
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_13);
-  __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("cython_home.load_new_UR_recs.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("cython_home.get_csv_rows_mcols.get_csv_rows_mcols", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_all_rows);
   __Pyx_XDECREF(__pyx_v_row);
-  __Pyx_XDECREF(__pyx_v_recs);
-  __Pyx_XDECREF(__pyx_v_view_file);
+  __Pyx_XDECREF(__pyx_v_all_rows);
+  __Pyx_XDECREF(__pyx_v_mincols);
+  __Pyx_XDECREF(__pyx_v_data_file);
   __Pyx_XDECREF(__pyx_v_csv_reader);
-  __Pyx_XDECREF(__pyx_v_i);
-  __Pyx_XDECREF(__pyx_v_anchor_pid);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -1832,17 +1842,17 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_load_new_UR_recs(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_get_csv_rows_mcols(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_load_new_UR_recs},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_get_csv_rows_mcols},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "load_new_UR_recs",
+    "get_csv_rows_mcols",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -1871,40 +1881,38 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_kp_s_, __pyx_k_, sizeof(__pyx_k_), 0, 0, 1, 0},
+  {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
   {&__pyx_n_s_all_rows, __pyx_k_all_rows, sizeof(__pyx_k_all_rows), 0, 0, 1, 1},
-  {&__pyx_n_s_anchor_pid, __pyx_k_anchor_pid, sizeof(__pyx_k_anchor_pid), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_csv, __pyx_k_csv, sizeof(__pyx_k_csv), 0, 0, 1, 1},
   {&__pyx_n_s_csv_reader, __pyx_k_csv_reader, sizeof(__pyx_k_csv_reader), 0, 0, 1, 1},
-  {&__pyx_n_s_cython_home_load_new_UR_recs, __pyx_k_cython_home_load_new_UR_recs, sizeof(__pyx_k_cython_home_load_new_UR_recs), 0, 0, 1, 1},
+  {&__pyx_n_s_cython_home_get_csv_rows_mcols, __pyx_k_cython_home_get_csv_rows_mcols, sizeof(__pyx_k_cython_home_get_csv_rows_mcols), 0, 0, 1, 1},
+  {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
+  {&__pyx_n_s_data_file, __pyx_k_data_file, sizeof(__pyx_k_data_file), 0, 0, 1, 1},
   {&__pyx_n_s_delimiter, __pyx_k_delimiter, sizeof(__pyx_k_delimiter), 0, 0, 1, 1},
   {&__pyx_n_s_enter, __pyx_k_enter, sizeof(__pyx_k_enter), 0, 0, 1, 1},
-  {&__pyx_n_s_enumerate, __pyx_k_enumerate, sizeof(__pyx_k_enumerate), 0, 0, 1, 1},
-  {&__pyx_n_s_eval, __pyx_k_eval, sizeof(__pyx_k_eval), 0, 0, 1, 1},
   {&__pyx_n_s_exit, __pyx_k_exit, sizeof(__pyx_k_exit), 0, 0, 1, 1},
-  {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
+  {&__pyx_n_s_get_csv_rows_mcols, __pyx_k_get_csv_rows_mcols, sizeof(__pyx_k_get_csv_rows_mcols), 0, 0, 1, 1},
+  {&__pyx_kp_s_get_csv_rows_mcols_pyx, __pyx_k_get_csv_rows_mcols_pyx, sizeof(__pyx_k_get_csv_rows_mcols_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
-  {&__pyx_n_s_load_new_UR_recs, __pyx_k_load_new_UR_recs, sizeof(__pyx_k_load_new_UR_recs), 0, 0, 1, 1},
-  {&__pyx_kp_s_load_new_UR_recs_pyx, __pyx_k_load_new_UR_recs_pyx, sizeof(__pyx_k_load_new_UR_recs_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
+  {&__pyx_n_s_min, __pyx_k_min, sizeof(__pyx_k_min), 0, 0, 1, 1},
+  {&__pyx_n_s_mincols, __pyx_k_mincols, sizeof(__pyx_k_mincols), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
+  {&__pyx_n_s_numcols, __pyx_k_numcols, sizeof(__pyx_k_numcols), 0, 0, 1, 1},
   {&__pyx_n_s_numrows, __pyx_k_numrows, sizeof(__pyx_k_numrows), 0, 0, 1, 1},
   {&__pyx_n_s_open, __pyx_k_open, sizeof(__pyx_k_open), 0, 0, 1, 1},
   {&__pyx_n_s_path, __pyx_k_path, sizeof(__pyx_k_path), 0, 0, 1, 1},
   {&__pyx_n_s_r, __pyx_k_r, sizeof(__pyx_k_r), 0, 0, 1, 1},
   {&__pyx_n_s_reader, __pyx_k_reader, sizeof(__pyx_k_reader), 0, 0, 1, 1},
-  {&__pyx_n_s_recs, __pyx_k_recs, sizeof(__pyx_k_recs), 0, 0, 1, 1},
   {&__pyx_n_s_row, __pyx_k_row, sizeof(__pyx_k_row), 0, 0, 1, 1},
-  {&__pyx_n_s_skiprows, __pyx_k_skiprows, sizeof(__pyx_k_skiprows), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_view_file, __pyx_k_view_file, sizeof(__pyx_k_view_file), 0, 0, 1, 1},
+  {&__pyx_n_s_truncate, __pyx_k_truncate, sizeof(__pyx_k_truncate), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 12, __pyx_L1_error)
-  __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 14, __pyx_L1_error)
-  __pyx_builtin_eval = __Pyx_GetBuiltinName(__pyx_n_s_eval); if (!__pyx_builtin_eval) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) __PYX_ERR(0, 11, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -1914,28 +1922,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "cython_home/load_new_UR_recs.pyx":12
- *     cdef list recs
- *     #cdef str anchor_pid
- *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
- *         csv_reader = csv.reader(view_file, delimiter="\t")
- *         for i, row in enumerate(csv_reader):
- */
-  __pyx_tuple__2 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 12, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
-
-  /* "cython_home/load_new_UR_recs.pyx":3
- * import csv
+  /* "cython_home/get_csv_rows_mcols.pyx":11
+ *         mincols = min(numcols)
  * 
- * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
- *     """
- *     Function for loading UR recs csvs that have format:
+ *     with open(path, "r") as data_file:             # <<<<<<<<<<<<<<
+ *         csv_reader = csv.reader(data_file, delimiter="\t")
+ *         for row in csv_reader:
  */
-  __pyx_tuple__3 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_numrows, __pyx_n_s_skiprows, __pyx_n_s_all_rows, __pyx_n_s_row, __pyx_n_s_recs, __pyx_n_s_view_file, __pyx_n_s_csv_reader, __pyx_n_s_i, __pyx_n_s_anchor_pid); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(3, Py_None, Py_None, Py_None); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(3, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_load_new_UR_recs_pyx, __pyx_n_s_load_new_UR_recs, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 3, __pyx_L1_error)
+
+  /* "cython_home/get_csv_rows_mcols.pyx":3
+ * import csv
+ * 
+ * def get_csv_rows_mcols(path, numrows=None,numcols=[],truncate=True):             # <<<<<<<<<<<<<<
+ *     cdef dict data
+ *     cdef list row
+ */
+  __pyx_tuple__4 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_numrows, __pyx_n_s_numcols, __pyx_n_s_truncate, __pyx_n_s_data, __pyx_n_s_row, __pyx_n_s_all_rows, __pyx_n_s_mincols, __pyx_n_s_data_file, __pyx_n_s_csv_reader); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(4, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_get_csv_rows_mcols_pyx, __pyx_n_s_get_csv_rows_mcols, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -1945,8 +1953,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
-  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2033,11 +2039,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initload_new_UR_recs(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initload_new_UR_recs(void)
+__Pyx_PyMODINIT_FUNC initget_csv_rows_mcols(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initget_csv_rows_mcols(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_load_new_UR_recs(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_load_new_UR_recs(void)
+__Pyx_PyMODINIT_FUNC PyInit_get_csv_rows_mcols(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_get_csv_rows_mcols(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -2104,7 +2110,7 @@ bad:
 }
 
 
-static CYTHON_SMALL_CODE int __pyx_pymod_exec_load_new_UR_recs(PyObject *__pyx_pyinit_module)
+static CYTHON_SMALL_CODE int __pyx_pymod_exec_get_csv_rows_mcols(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -2113,7 +2119,7 @@ static CYTHON_SMALL_CODE int __pyx_pymod_exec_load_new_UR_recs(PyObject *__pyx_p
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   if (__pyx_m) {
     if (__pyx_m == __pyx_pyinit_module) return 0;
-    PyErr_SetString(PyExc_RuntimeError, "Module 'load_new_UR_recs' has already been imported. Re-initialisation is not supported.");
+    PyErr_SetString(PyExc_RuntimeError, "Module 'get_csv_rows_mcols' has already been imported. Re-initialisation is not supported.");
     return -1;
   }
   #elif PY_MAJOR_VERSION >= 3
@@ -2128,7 +2134,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_load_new_UR_recs(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_get_csv_rows_mcols(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #ifdef __Pxy_PyFrame_Initialize_Offsets
   __Pxy_PyFrame_Initialize_Offsets();
@@ -2167,7 +2173,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("load_new_UR_recs", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("get_csv_rows_mcols", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -2185,14 +2191,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_cython_home__load_new_UR_recs) {
+  if (__pyx_module_is_main_cython_home__get_csv_rows_mcols) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "cython_home.load_new_UR_recs")) {
-      if (unlikely(PyDict_SetItemString(modules, "cython_home.load_new_UR_recs", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cython_home.get_csv_rows_mcols")) {
+      if (unlikely(PyDict_SetItemString(modules, "cython_home.get_csv_rows_mcols", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2213,32 +2219,37 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cython_home/load_new_UR_recs.pyx":1
+  /* "cython_home/get_csv_rows_mcols.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
- * def load_new_UR_recs(path,numrows=None,skiprows=None):
+ * def get_csv_rows_mcols(path, numrows=None,numcols=[],truncate=True):
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_csv, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cython_home/load_new_UR_recs.pyx":3
+  /* "cython_home/get_csv_rows_mcols.pyx":3
  * import csv
  * 
- * def load_new_UR_recs(path,numrows=None,skiprows=None):             # <<<<<<<<<<<<<<
- *     """
- *     Function for loading UR recs csvs that have format:
+ * def get_csv_rows_mcols(path, numrows=None,numcols=[],truncate=True):             # <<<<<<<<<<<<<<
+ *     cdef dict data
+ *     cdef list row
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_16load_new_UR_recs_1load_new_UR_recs, NULL, __pyx_n_s_cython_home_load_new_UR_recs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_load_new_UR_recs, __pyx_t_1) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_k_ = __pyx_t_1;
+  __Pyx_GIVEREF(__pyx_t_1);
+  __pyx_t_1 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_18get_csv_rows_mcols_1get_csv_rows_mcols, NULL, __pyx_n_s_cython_home_get_csv_rows_mcols); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_csv_rows_mcols, __pyx_t_1) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cython_home/load_new_UR_recs.pyx":1
+  /* "cython_home/get_csv_rows_mcols.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
- * def load_new_UR_recs(path,numrows=None,skiprows=None):
+ * def get_csv_rows_mcols(path, numrows=None,numcols=[],truncate=True):
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2252,11 +2263,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init cython_home.load_new_UR_recs", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cython_home.get_csv_rows_mcols", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init cython_home.load_new_UR_recs");
+    PyErr_SetString(PyExc_ImportError, "init cython_home.get_csv_rows_mcols");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2457,23 +2468,26 @@ static void __Pyx_RaiseArgtupleInvalid(
                  (num_expected == 1) ? "" : "s", num_found);
 }
 
-/* PyObjectCall */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
-    PyObject *result;
-    ternaryfunc call = func->ob_type->tp_call;
-    if (unlikely(!call))
-        return PyObject_Call(func, arg, kw);
-    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
-        return NULL;
-    result = (*call)(func, arg, kw);
-    Py_LeaveRecursiveCall();
-    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
-        PyErr_SetString(
-            PyExc_SystemError,
-            "NULL result without error in PyObject_Call");
+/* PyCFunctionFastCall */
+#if CYTHON_FAST_PYCCALL
+static CYTHON_INLINE PyObject * __Pyx_PyCFunction_FastCall(PyObject *func_obj, PyObject **args, Py_ssize_t nargs) {
+    PyCFunctionObject *func = (PyCFunctionObject*)func_obj;
+    PyCFunction meth = PyCFunction_GET_FUNCTION(func);
+    PyObject *self = PyCFunction_GET_SELF(func);
+    int flags = PyCFunction_GET_FLAGS(func);
+    assert(PyCFunction_Check(func));
+    assert(METH_FASTCALL == (flags & ~(METH_CLASS | METH_STATIC | METH_COEXIST | METH_KEYWORDS | METH_STACKLESS)));
+    assert(nargs >= 0);
+    assert(nargs == 0 || args != NULL);
+    /* _PyCFunction_FastCallDict() must not be called with an exception set,
+       because it may clear it (directly or indirectly) and so the
+       caller loses its exception */
+    assert(!PyErr_Occurred());
+    if ((PY_VERSION_HEX < 0x030700A0) || unlikely(flags & METH_KEYWORDS)) {
+        return (*((__Pyx_PyCFunctionFastWithKeywords)(void*)meth)) (self, args, nargs, NULL);
+    } else {
+        return (*((__Pyx_PyCFunctionFast)(void*)meth)) (self, args, nargs);
     }
-    return result;
 }
 #endif
 
@@ -2596,6 +2610,26 @@ done:
 #endif
 #endif
 
+/* PyObjectCall */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_Call(PyObject *func, PyObject *arg, PyObject *kw) {
+    PyObject *result;
+    ternaryfunc call = func->ob_type->tp_call;
+    if (unlikely(!call))
+        return PyObject_Call(func, arg, kw);
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    result = (*call)(func, arg, kw);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
+    return result;
+}
+#endif
+
 /* PyObjectCallMethO */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
@@ -2613,51 +2647,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
             "NULL result without error in PyObject_Call");
     }
     return result;
-}
-#endif
-
-/* PyObjectCallNoArg */
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
-#if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(func)) {
-        return __Pyx_PyFunction_FastCall(func, NULL, 0);
-    }
-#endif
-#ifdef __Pyx_CyFunction_USED
-    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
-#else
-    if (likely(PyCFunction_Check(func)))
-#endif
-    {
-        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
-            return __Pyx_PyObject_CallMethO(func, NULL);
-        }
-    }
-    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
-}
-#endif
-
-/* PyCFunctionFastCall */
-#if CYTHON_FAST_PYCCALL
-static CYTHON_INLINE PyObject * __Pyx_PyCFunction_FastCall(PyObject *func_obj, PyObject **args, Py_ssize_t nargs) {
-    PyCFunctionObject *func = (PyCFunctionObject*)func_obj;
-    PyCFunction meth = PyCFunction_GET_FUNCTION(func);
-    PyObject *self = PyCFunction_GET_SELF(func);
-    int flags = PyCFunction_GET_FLAGS(func);
-    assert(PyCFunction_Check(func));
-    assert(METH_FASTCALL == (flags & ~(METH_CLASS | METH_STATIC | METH_COEXIST | METH_KEYWORDS | METH_STACKLESS)));
-    assert(nargs >= 0);
-    assert(nargs == 0 || args != NULL);
-    /* _PyCFunction_FastCallDict() must not be called with an exception set,
-       because it may clear it (directly or indirectly) and so the
-       caller loses its exception */
-    assert(!PyErr_Occurred());
-    if ((PY_VERSION_HEX < 0x030700A0) || unlikely(flags & METH_KEYWORDS)) {
-        return (*((__Pyx_PyCFunctionFastWithKeywords)(void*)meth)) (self, args, nargs, NULL);
-    } else {
-        return (*((__Pyx_PyCFunctionFast)(void*)meth)) (self, args, nargs);
-    }
 }
 #endif
 
@@ -2698,6 +2687,28 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
     result = __Pyx_PyObject_Call(func, args, NULL);
     Py_DECREF(args);
     return result;
+}
+#endif
+
+/* PyObjectCallNoArg */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+#if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(func)) {
+        return __Pyx_PyFunction_FastCall(func, NULL, 0);
+    }
+#endif
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
+#else
+    if (likely(PyCFunction_Check(func)))
+#endif
+    {
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
+            return __Pyx_PyObject_CallMethO(func, NULL);
+        }
+    }
+    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
 }
 #endif
 
@@ -2762,216 +2773,69 @@ static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
     return __Pyx_GetBuiltinName(name);
 }
 
-/* PyIntBinop */
-#if !CYTHON_COMPILING_IN_PYPY
-static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED long intval, int inplace, int zerodivision_check) {
-    (void)inplace;
-    (void)zerodivision_check;
-    #if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_CheckExact(op1))) {
-        const long b = intval;
-        long x;
-        long a = PyInt_AS_LONG(op1);
-            x = (long)((unsigned long)a + b);
-            if (likely((x^a) >= 0 || (x^b) >= 0))
-                return PyInt_FromLong(x);
-            return PyLong_Type.tp_as_number->nb_add(op1, op2);
-    }
-    #endif
-    #if CYTHON_USE_PYLONG_INTERNALS
-    if (likely(PyLong_CheckExact(op1))) {
-        const long b = intval;
-        long a, x;
-#ifdef HAVE_LONG_LONG
-        const PY_LONG_LONG llb = intval;
-        PY_LONG_LONG lla, llx;
-#endif
-        const digit* digits = ((PyLongObject*)op1)->ob_digit;
-        const Py_ssize_t size = Py_SIZE(op1);
-        if (likely(__Pyx_sst_abs(size) <= 1)) {
-            a = likely(size) ? digits[0] : 0;
-            if (size == -1) a = -a;
-        } else {
-            switch (size) {
-                case -2:
-                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
-                        a = -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
-                        lla = -(PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case 2:
-                    if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
-                        a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 2 * PyLong_SHIFT) {
-                        lla = (PY_LONG_LONG) (((((unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case -3:
-                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
-                        a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
-                        lla = -(PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case 3:
-                    if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
-                        a = (long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 3 * PyLong_SHIFT) {
-                        lla = (PY_LONG_LONG) (((((((unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case -4:
-                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
-                        a = -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
-                        lla = -(PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                case 4:
-                    if (8 * sizeof(long) - 1 > 4 * PyLong_SHIFT) {
-                        a = (long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
-                        break;
-#ifdef HAVE_LONG_LONG
-                    } else if (8 * sizeof(PY_LONG_LONG) - 1 > 4 * PyLong_SHIFT) {
-                        lla = (PY_LONG_LONG) (((((((((unsigned PY_LONG_LONG)digits[3]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[2]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[1]) << PyLong_SHIFT) | (unsigned PY_LONG_LONG)digits[0]));
-                        goto long_long;
-#endif
-                    }
-                    CYTHON_FALLTHROUGH;
-                default: return PyLong_Type.tp_as_number->nb_add(op1, op2);
-            }
-        }
-                x = a + b;
-            return PyLong_FromLong(x);
-#ifdef HAVE_LONG_LONG
-        long_long:
-                llx = lla + llb;
-            return PyLong_FromLongLong(llx);
-#endif
-        
-        
-    }
-    #endif
-    if (PyFloat_CheckExact(op1)) {
-        const long b = intval;
-        double a = PyFloat_AS_DOUBLE(op1);
-            double result;
-            PyFPE_START_PROTECT("add", return NULL)
-            result = ((double)a) + (double)b;
-            PyFPE_END_PROTECT(result)
-            return PyFloat_FromDouble(result);
-    }
-    return (inplace ? PyNumber_InPlaceAdd : PyNumber_Add)(op1, op2);
+/* None */
+static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
+    PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
 }
-#endif
 
-/* GetItemInt */
-static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
-    PyObject *r;
-    if (!j) return NULL;
-    r = PyObject_GetItem(o, j);
-    Py_DECREF(j);
-    return r;
+/* SliceTupleAndList */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE void __Pyx_crop_slice(Py_ssize_t* _start, Py_ssize_t* _stop, Py_ssize_t* _length) {
+    Py_ssize_t start = *_start, stop = *_stop, length = *_length;
+    if (start < 0) {
+        start += length;
+        if (start < 0)
+            start = 0;
+    }
+    if (stop < 0)
+        stop += length;
+    else if (stop > length)
+        stop = length;
+    *_length = stop - start;
+    *_start = start;
+    *_stop = stop;
 }
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyList_GET_SIZE(o);
+static CYTHON_INLINE void __Pyx_copy_object_array(PyObject** CYTHON_RESTRICT src, PyObject** CYTHON_RESTRICT dest, Py_ssize_t length) {
+    PyObject *v;
+    Py_ssize_t i;
+    for (i = 0; i < length; i++) {
+        v = dest[i] = src[i];
+        Py_INCREF(v);
     }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
-        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
+}
+static CYTHON_INLINE PyObject* __Pyx_PyList_GetSlice(
+            PyObject* src, Py_ssize_t start, Py_ssize_t stop) {
+    PyObject* dest;
+    Py_ssize_t length = PyList_GET_SIZE(src);
+    __Pyx_crop_slice(&start, &stop, &length);
+    if (unlikely(length <= 0))
+        return PyList_New(0);
+    dest = PyList_New(length);
+    if (unlikely(!dest))
+        return NULL;
+    __Pyx_copy_object_array(
+        ((PyListObject*)src)->ob_item + start,
+        ((PyListObject*)dest)->ob_item,
+        length);
+    return dest;
+}
+static CYTHON_INLINE PyObject* __Pyx_PyTuple_GetSlice(
+            PyObject* src, Py_ssize_t start, Py_ssize_t stop) {
+    PyObject* dest;
+    Py_ssize_t length = PyTuple_GET_SIZE(src);
+    __Pyx_crop_slice(&start, &stop, &length);
+    if (unlikely(length <= 0))
+        return PyTuple_New(0);
+    dest = PyTuple_New(length);
+    if (unlikely(!dest))
+        return NULL;
+    __Pyx_copy_object_array(
+        ((PyTupleObject*)src)->ob_item + start,
+        ((PyTupleObject*)dest)->ob_item,
+        length);
+    return dest;
+}
 #endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyTuple_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
-        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
-                                                     CYTHON_NCP_UNUSED int wraparound,
-                                                     CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
-    if (is_list || PyList_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
-        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
-            PyObject *r = PyList_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    }
-    else if (PyTuple_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
-        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
-            PyObject *r = PyTuple_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    } else {
-        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
-        if (likely(m && m->sq_item)) {
-            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
-                Py_ssize_t l = m->sq_length(o);
-                if (likely(l >= 0)) {
-                    i += l;
-                } else {
-                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
-                        return NULL;
-                    PyErr_Clear();
-                }
-            }
-            return m->sq_item(o, i);
-        }
-    }
-#else
-    if (is_list || PySequence_Check(o)) {
-        return PySequence_GetItem(o, i);
-    }
-#endif
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-}
 
 /* GetTopmostException */
 #if CYTHON_USE_EXC_INFO_STACK
@@ -3428,64 +3292,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
         return _PyLong_FromByteArray(bytes, sizeof(long),
                                      little, !is_unsigned);
     }
-}
-
-/* GetAttr */
-static CYTHON_INLINE PyObject *__Pyx_GetAttr(PyObject *o, PyObject *n) {
-#if CYTHON_USE_TYPE_SLOTS
-#if PY_MAJOR_VERSION >= 3
-    if (likely(PyUnicode_Check(n)))
-#else
-    if (likely(PyString_Check(n)))
-#endif
-        return __Pyx_PyObject_GetAttrStr(o, n);
-#endif
-    return PyObject_GetAttr(o, n);
-}
-
-/* Globals */
-static PyObject* __Pyx_Globals(void) {
-    Py_ssize_t i;
-    PyObject *names;
-    PyObject *globals = __pyx_d;
-    Py_INCREF(globals);
-    names = PyObject_Dir(__pyx_m);
-    if (!names)
-        goto bad;
-    for (i = PyList_GET_SIZE(names)-1; i >= 0; i--) {
-#if CYTHON_COMPILING_IN_PYPY
-        PyObject* name = PySequence_ITEM(names, i);
-        if (!name)
-            goto bad;
-#else
-        PyObject* name = PyList_GET_ITEM(names, i);
-#endif
-        if (!PyDict_Contains(globals, name)) {
-            PyObject* value = __Pyx_GetAttr(__pyx_m, name);
-            if (!value) {
-#if CYTHON_COMPILING_IN_PYPY
-                Py_DECREF(name);
-#endif
-                goto bad;
-            }
-            if (PyDict_SetItem(globals, name, value) < 0) {
-#if CYTHON_COMPILING_IN_PYPY
-                Py_DECREF(name);
-#endif
-                Py_DECREF(value);
-                goto bad;
-            }
-        }
-#if CYTHON_COMPILING_IN_PYPY
-        Py_DECREF(name);
-#endif
-    }
-    Py_DECREF(names);
-    return globals;
-bad:
-    Py_XDECREF(names);
-    Py_XDECREF(globals);
-    return NULL;
 }
 
 /* CIntFromPyVerify */

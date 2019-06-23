@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "get_baskets_cdef",
+        "name": "cython_home.get_baskets_cdef",
         "sources": [
             "get_baskets_cdef.pyx"
         ]
     },
-    "module_name": "get_baskets_cdef"
+    "module_name": "cython_home.get_baskets_cdef"
 }
 END: Cython Metadata */
 
@@ -597,8 +597,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__get_baskets_cdef
-#define __PYX_HAVE_API__get_baskets_cdef
+#define __PYX_HAVE__cython_home__get_baskets_cdef
+#define __PYX_HAVE_API__cython_home__get_baskets_cdef
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1281,12 +1281,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'get_baskets_cdef' */
-#define __Pyx_MODULE_NAME "get_baskets_cdef"
-extern int __pyx_module_is_main_get_baskets_cdef;
-int __pyx_module_is_main_get_baskets_cdef = 0;
+/* Module declarations from 'cython_home.get_baskets_cdef' */
+#define __Pyx_MODULE_NAME "cython_home.get_baskets_cdef"
+extern int __pyx_module_is_main_cython_home__get_baskets_cdef;
+int __pyx_module_is_main_cython_home__get_baskets_cdef = 0;
 
-/* Implementation of 'get_baskets_cdef' */
+/* Implementation of 'cython_home.get_baskets_cdef' */
 static PyObject *__pyx_builtin_open;
 static PyObject *__pyx_builtin_enumerate;
 static PyObject *__pyx_builtin_KeyError;
@@ -1321,12 +1321,14 @@ static const char __pyx_k_visitor_id[] = "visitor_id";
 static const char __pyx_k_get_baskets_cdef[] = "get_baskets_cdef";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_get_baskets_cdef_pyx[] = "get_baskets_cdef.pyx";
+static const char __pyx_k_cython_home_get_baskets_cdef[] = "cython_home.get_baskets_cdef";
 static PyObject *__pyx_kp_s_;
 static PyObject *__pyx_n_s_KeyError;
 static PyObject *__pyx_n_s_append;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_csv;
 static PyObject *__pyx_n_s_csv_reader;
+static PyObject *__pyx_n_s_cython_home_get_baskets_cdef;
 static PyObject *__pyx_n_s_data;
 static PyObject *__pyx_n_s_delimiter;
 static PyObject *__pyx_n_s_enter;
@@ -1352,7 +1354,7 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_v;
 static PyObject *__pyx_n_s_view_file;
 static PyObject *__pyx_n_s_visitor_id;
-static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_min_n, PyObject *__pyx_v_numrows); /* proto */
+static PyObject *__pyx_pf_11cython_home_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_min_n, PyObject *__pyx_v_numrows); /* proto */
 static __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_items = {0, &__pyx_n_s_items, 0, 0, 0};
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
@@ -1362,7 +1364,7 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
-/* "get_baskets_cdef.pyx":3
+/* "cython_home/get_baskets_cdef.pyx":3
  * import csv
  * 
  * def get_baskets_cdef(path,min_n=2,numrows=None):             # <<<<<<<<<<<<<<
@@ -1371,9 +1373,9 @@ static PyObject *__pyx_codeobj__4;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16get_baskets_cdef_1get_baskets_cdef(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_16get_baskets_cdef_1get_baskets_cdef = {"get_baskets_cdef", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_16get_baskets_cdef_1get_baskets_cdef, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_16get_baskets_cdef_1get_baskets_cdef(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_11cython_home_16get_baskets_cdef_1get_baskets_cdef(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_16get_baskets_cdef_1get_baskets_cdef = {"get_baskets_cdef", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11cython_home_16get_baskets_cdef_1get_baskets_cdef, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_16get_baskets_cdef_1get_baskets_cdef(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_path = 0;
   PyObject *__pyx_v_min_n = 0;
   PyObject *__pyx_v_numrows = 0;
@@ -1438,18 +1440,18 @@ static PyObject *__pyx_pw_16get_baskets_cdef_1get_baskets_cdef(PyObject *__pyx_s
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("get_baskets_cdef", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 3, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_16get_baskets_cdef_get_baskets_cdef(__pyx_self, __pyx_v_path, __pyx_v_min_n, __pyx_v_numrows);
+  __pyx_r = __pyx_pf_11cython_home_16get_baskets_cdef_get_baskets_cdef(__pyx_self, __pyx_v_path, __pyx_v_min_n, __pyx_v_numrows);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_min_n, PyObject *__pyx_v_numrows) {
+static PyObject *__pyx_pf_11cython_home_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_min_n, PyObject *__pyx_v_numrows) {
   PyObject *__pyx_v_data = 0;
   int __pyx_v_product;
   PyObject *__pyx_v_view_file = NULL;
@@ -1484,7 +1486,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
   PyObject *(*__pyx_t_21)(PyObject *);
   __Pyx_RefNannySetupContext("get_baskets_cdef", 0);
 
-  /* "get_baskets_cdef.pyx":5
+  /* "cython_home/get_baskets_cdef.pyx":5
  * def get_baskets_cdef(path,min_n=2,numrows=None):
  *     #data = dict()
  *     cdef dict data = {}             # <<<<<<<<<<<<<<
@@ -1496,7 +1498,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
   __pyx_v_data = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "get_baskets_cdef.pyx":6
+  /* "cython_home/get_baskets_cdef.pyx":6
  *     #data = dict()
  *     cdef dict data = {}
  *     cdef int product = 8888888             # <<<<<<<<<<<<<<
@@ -1505,7 +1507,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
  */
   __pyx_v_product = 0x87A238;
 
-  /* "get_baskets_cdef.pyx":8
+  /* "cython_home/get_baskets_cdef.pyx":8
  *     cdef int product = 8888888
  * 
  *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
@@ -1558,7 +1560,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
           __pyx_v_view_file = __pyx_t_4;
           __pyx_t_4 = 0;
 
-          /* "get_baskets_cdef.pyx":9
+          /* "cython_home/get_baskets_cdef.pyx":9
  * 
  *     with open(path, "r") as view_file:
  *         csv_reader = csv.reader(view_file, delimiter="\t")             # <<<<<<<<<<<<<<
@@ -1586,7 +1588,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
           __pyx_v_csv_reader = __pyx_t_5;
           __pyx_t_5 = 0;
 
-          /* "get_baskets_cdef.pyx":10
+          /* "cython_home/get_baskets_cdef.pyx":10
  *     with open(path, "r") as view_file:
  *         csv_reader = csv.reader(view_file, delimiter="\t")
  *         for id, row in enumerate(csv_reader):             # <<<<<<<<<<<<<<
@@ -1644,7 +1646,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
             __pyx_t_5 = __pyx_t_4;
             __pyx_t_4 = 0;
 
-            /* "get_baskets_cdef.pyx":11
+            /* "cython_home/get_baskets_cdef.pyx":11
  *         csv_reader = csv.reader(view_file, delimiter="\t")
  *         for id, row in enumerate(csv_reader):
  *             product = int(row[1])             # <<<<<<<<<<<<<<
@@ -1660,7 +1662,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             __pyx_v_product = __pyx_t_11;
 
-            /* "get_baskets_cdef.pyx":12
+            /* "cython_home/get_baskets_cdef.pyx":12
  *         for id, row in enumerate(csv_reader):
  *             product = int(row[1])
  *             visitor_id = str(row[3])             # <<<<<<<<<<<<<<
@@ -1675,7 +1677,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
             __Pyx_XDECREF_SET(__pyx_v_visitor_id, __pyx_t_4);
             __pyx_t_4 = 0;
 
-            /* "get_baskets_cdef.pyx":14
+            /* "cython_home/get_baskets_cdef.pyx":14
  *             visitor_id = str(row[3])
  * 
  *             if visitor_id not in data:             # <<<<<<<<<<<<<<
@@ -1686,7 +1688,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
             __pyx_t_13 = (__pyx_t_12 != 0);
             if (__pyx_t_13) {
 
-              /* "get_baskets_cdef.pyx":15
+              /* "cython_home/get_baskets_cdef.pyx":15
  * 
  *             if visitor_id not in data:
  *                 data[visitor_id] = []             # <<<<<<<<<<<<<<
@@ -1698,7 +1700,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
               if (unlikely(PyDict_SetItem(__pyx_v_data, __pyx_v_visitor_id, __pyx_t_4) < 0)) __PYX_ERR(0, 15, __pyx_L7_error)
               __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-              /* "get_baskets_cdef.pyx":14
+              /* "cython_home/get_baskets_cdef.pyx":14
  *             visitor_id = str(row[3])
  * 
  *             if visitor_id not in data:             # <<<<<<<<<<<<<<
@@ -1707,7 +1709,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
  */
             }
 
-            /* "get_baskets_cdef.pyx":16
+            /* "cython_home/get_baskets_cdef.pyx":16
  *             if visitor_id not in data:
  *                 data[visitor_id] = []
  *             try:             # <<<<<<<<<<<<<<
@@ -1723,7 +1725,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
               __Pyx_XGOTREF(__pyx_t_16);
               /*try:*/ {
 
-                /* "get_baskets_cdef.pyx":17
+                /* "cython_home/get_baskets_cdef.pyx":17
  *                 data[visitor_id] = []
  *             try:
  *                 data[str(visitor_id)].append(product)             # <<<<<<<<<<<<<<
@@ -1741,7 +1743,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
                 __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-                /* "get_baskets_cdef.pyx":16
+                /* "cython_home/get_baskets_cdef.pyx":16
  *             if visitor_id not in data:
  *                 data[visitor_id] = []
  *             try:             # <<<<<<<<<<<<<<
@@ -1757,7 +1759,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
               __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-              /* "get_baskets_cdef.pyx":18
+              /* "cython_home/get_baskets_cdef.pyx":18
  *             try:
  *                 data[str(visitor_id)].append(product)
  *             except KeyError:             # <<<<<<<<<<<<<<
@@ -1766,13 +1768,13 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
  */
               __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_KeyError);
               if (__pyx_t_11) {
-                __Pyx_AddTraceback("get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+                __Pyx_AddTraceback("cython_home.get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
                 if (__Pyx_GetException(&__pyx_t_4, &__pyx_t_2, &__pyx_t_18) < 0) __PYX_ERR(0, 18, __pyx_L18_except_error)
                 __Pyx_GOTREF(__pyx_t_4);
                 __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_GOTREF(__pyx_t_18);
 
-                /* "get_baskets_cdef.pyx":19
+                /* "cython_home/get_baskets_cdef.pyx":19
  *                 data[str(visitor_id)].append(product)
  *             except KeyError:
  *                  continue             # <<<<<<<<<<<<<<
@@ -1789,7 +1791,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
               goto __pyx_L18_except_error;
               __pyx_L18_except_error:;
 
-              /* "get_baskets_cdef.pyx":16
+              /* "cython_home/get_baskets_cdef.pyx":16
  *             if visitor_id not in data:
  *                 data[visitor_id] = []
  *             try:             # <<<<<<<<<<<<<<
@@ -1810,7 +1812,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
               __pyx_L23_try_end:;
             }
 
-            /* "get_baskets_cdef.pyx":20
+            /* "cython_home/get_baskets_cdef.pyx":20
  *             except KeyError:
  *                  continue
  *             if numrows and len(data) >= numrows:             # <<<<<<<<<<<<<<
@@ -1834,7 +1836,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
             __pyx_L27_bool_binop_done:;
             if (__pyx_t_13) {
 
-              /* "get_baskets_cdef.pyx":21
+              /* "cython_home/get_baskets_cdef.pyx":21
  *                  continue
  *             if numrows and len(data) >= numrows:
  *                 break             # <<<<<<<<<<<<<<
@@ -1843,7 +1845,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
  */
               goto __pyx_L14_break;
 
-              /* "get_baskets_cdef.pyx":20
+              /* "cython_home/get_baskets_cdef.pyx":20
  *             except KeyError:
  *                  continue
  *             if numrows and len(data) >= numrows:             # <<<<<<<<<<<<<<
@@ -1852,7 +1854,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
  */
             }
 
-            /* "get_baskets_cdef.pyx":10
+            /* "cython_home/get_baskets_cdef.pyx":10
  *     with open(path, "r") as view_file:
  *         csv_reader = csv.reader(view_file, delimiter="\t")
  *         for id, row in enumerate(csv_reader):             # <<<<<<<<<<<<<<
@@ -1865,7 +1867,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
           __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-          /* "get_baskets_cdef.pyx":8
+          /* "cython_home/get_baskets_cdef.pyx":8
  *     cdef int product = 8888888
  * 
  *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
@@ -1884,7 +1886,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         /*except:*/ {
-          __Pyx_AddTraceback("get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+          __Pyx_AddTraceback("cython_home.get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
           if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L9_except_error)
           __Pyx_GOTREF(__pyx_t_5);
           __Pyx_GOTREF(__pyx_t_1);
@@ -1947,7 +1949,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
     __pyx_L32:;
   }
 
-  /* "get_baskets_cdef.pyx":23
+  /* "cython_home/get_baskets_cdef.pyx":23
  *                 break
  *     # threshold
  *     data = {k:v for k, v in data.items() if len(v) > min_n-1}             # <<<<<<<<<<<<<<
@@ -2076,7 +2078,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
   __Pyx_DECREF_SET(__pyx_v_data, ((PyObject*)__pyx_t_2));
   __pyx_t_2 = 0;
 
-  /* "get_baskets_cdef.pyx":25
+  /* "cython_home/get_baskets_cdef.pyx":25
  *     data = {k:v for k, v in data.items() if len(v) > min_n-1}
  * 
  *     return data             # <<<<<<<<<<<<<<
@@ -2086,7 +2088,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
   __pyx_r = __pyx_v_data;
   goto __pyx_L0;
 
-  /* "get_baskets_cdef.pyx":3
+  /* "cython_home/get_baskets_cdef.pyx":3
  * import csv
  * 
  * def get_baskets_cdef(path,min_n=2,numrows=None):             # <<<<<<<<<<<<<<
@@ -2102,7 +2104,7 @@ static PyObject *__pyx_pf_16get_baskets_cdef_get_baskets_cdef(CYTHON_UNUSED PyOb
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_18);
   __Pyx_XDECREF(__pyx_t_20);
-  __Pyx_AddTraceback("get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.get_baskets_cdef.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_data);
@@ -2170,6 +2172,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_csv, __pyx_k_csv, sizeof(__pyx_k_csv), 0, 0, 1, 1},
   {&__pyx_n_s_csv_reader, __pyx_k_csv_reader, sizeof(__pyx_k_csv_reader), 0, 0, 1, 1},
+  {&__pyx_n_s_cython_home_get_baskets_cdef, __pyx_k_cython_home_get_baskets_cdef, sizeof(__pyx_k_cython_home_get_baskets_cdef), 0, 0, 1, 1},
   {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
   {&__pyx_n_s_delimiter, __pyx_k_delimiter, sizeof(__pyx_k_delimiter), 0, 0, 1, 1},
   {&__pyx_n_s_enter, __pyx_k_enter, sizeof(__pyx_k_enter), 0, 0, 1, 1},
@@ -2210,7 +2213,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "get_baskets_cdef.pyx":8
+  /* "cython_home/get_baskets_cdef.pyx":8
  *     cdef int product = 8888888
  * 
  *     with open(path, "r") as view_file:             # <<<<<<<<<<<<<<
@@ -2221,7 +2224,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "get_baskets_cdef.pyx":3
+  /* "cython_home/get_baskets_cdef.pyx":3
  * import csv
  * 
  * def get_baskets_cdef(path,min_n=2,numrows=None):             # <<<<<<<<<<<<<<
@@ -2483,14 +2486,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_get_baskets_cdef) {
+  if (__pyx_module_is_main_cython_home__get_baskets_cdef) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "get_baskets_cdef")) {
-      if (unlikely(PyDict_SetItemString(modules, "get_baskets_cdef", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cython_home.get_baskets_cdef")) {
+      if (unlikely(PyDict_SetItemString(modules, "cython_home.get_baskets_cdef", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2511,7 +2514,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "get_baskets_cdef.pyx":1
+  /* "cython_home/get_baskets_cdef.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
  * def get_baskets_cdef(path,min_n=2,numrows=None):
@@ -2521,19 +2524,19 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "get_baskets_cdef.pyx":3
+  /* "cython_home/get_baskets_cdef.pyx":3
  * import csv
  * 
  * def get_baskets_cdef(path,min_n=2,numrows=None):             # <<<<<<<<<<<<<<
  *     #data = dict()
  *     cdef dict data = {}
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_16get_baskets_cdef_1get_baskets_cdef, NULL, __pyx_n_s_get_baskets_cdef); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_16get_baskets_cdef_1get_baskets_cdef, NULL, __pyx_n_s_cython_home_get_baskets_cdef); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_baskets_cdef, __pyx_t_1) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "get_baskets_cdef.pyx":1
+  /* "cython_home/get_baskets_cdef.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
  * def get_baskets_cdef(path,min_n=2,numrows=None):
@@ -2550,11 +2553,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cython_home.get_baskets_cdef", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init get_baskets_cdef");
+    PyErr_SetString(PyExc_ImportError, "init cython_home.get_baskets_cdef");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

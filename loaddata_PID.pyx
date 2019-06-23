@@ -1,9 +1,12 @@
 import csv
 
 def loaddata_PID(data,path,numrows=None):
-    #data = dict()
-    cdef dict data = {}
-
+    """
+    Inputs:
+        data :: dict ::
+        path :: str :: a path to a tab-delimited csv file
+        numrows :: int :: how many rows to load
+    """
     with open(path, "r") as view_file:
         csv_reader = csv.reader(view_file, delimiter="\t")
         for id, row in enumerate(csv_reader):

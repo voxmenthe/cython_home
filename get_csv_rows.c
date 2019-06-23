@@ -1232,7 +1232,7 @@ static PyObject *__pyx_n_s_reader;
 static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_truncate;
-static PyObject *__pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_numcols, PyObject *__pyx_v_truncate); /* proto */
+static PyObject *__pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_truncate, PyObject *__pyx_v_numrows, PyObject *__pyx_v_numcols); /* proto */
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
@@ -1241,7 +1241,7 @@ static PyObject *__pyx_codeobj__4;
 /* "cython_home/get_csv_rows.pyx":3
  * import csv
  * 
- * def get_csv_rows(path, numrows=None,numcols=None,truncate=False):             # <<<<<<<<<<<<<<
+ * def get_csv_rows(path, truncate=None,numrows=None,numcols=None):             # <<<<<<<<<<<<<<
  *     """
  *     path: filepath :: the path of the csv file to be read
  */
@@ -1252,18 +1252,18 @@ static char __pyx_doc_11cython_home_12get_csv_rows_get_csv_rows[] = "\n    path:
 static PyMethodDef __pyx_mdef_11cython_home_12get_csv_rows_1get_csv_rows = {"get_csv_rows", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11cython_home_12get_csv_rows_1get_csv_rows, METH_VARARGS|METH_KEYWORDS, __pyx_doc_11cython_home_12get_csv_rows_get_csv_rows};
 static PyObject *__pyx_pw_11cython_home_12get_csv_rows_1get_csv_rows(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_path = 0;
+  PyObject *__pyx_v_truncate = 0;
   PyObject *__pyx_v_numrows = 0;
   PyObject *__pyx_v_numcols = 0;
-  PyObject *__pyx_v_truncate = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_csv_rows (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_path,&__pyx_n_s_numrows,&__pyx_n_s_numcols,&__pyx_n_s_truncate,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_path,&__pyx_n_s_truncate,&__pyx_n_s_numrows,&__pyx_n_s_numcols,0};
     PyObject* values[4] = {0,0,0,0};
     values[1] = ((PyObject *)Py_None);
     values[2] = ((PyObject *)Py_None);
-    values[3] = ((PyObject *)Py_False);
+    values[3] = ((PyObject *)Py_None);
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
@@ -1287,19 +1287,19 @@ static PyObject *__pyx_pw_11cython_home_12get_csv_rows_1get_csv_rows(PyObject *_
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_numrows);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_truncate);
           if (value) { values[1] = value; kw_args--; }
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_numcols);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_numrows);
           if (value) { values[2] = value; kw_args--; }
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_truncate);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_numcols);
           if (value) { values[3] = value; kw_args--; }
         }
       }
@@ -1320,9 +1320,9 @@ static PyObject *__pyx_pw_11cython_home_12get_csv_rows_1get_csv_rows(PyObject *_
       }
     }
     __pyx_v_path = values[0];
-    __pyx_v_numrows = values[1];
-    __pyx_v_numcols = values[2];
-    __pyx_v_truncate = values[3];
+    __pyx_v_truncate = values[1];
+    __pyx_v_numrows = values[2];
+    __pyx_v_numcols = values[3];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -1332,14 +1332,14 @@ static PyObject *__pyx_pw_11cython_home_12get_csv_rows_1get_csv_rows(PyObject *_
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(__pyx_self, __pyx_v_path, __pyx_v_numrows, __pyx_v_numcols, __pyx_v_truncate);
+  __pyx_r = __pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(__pyx_self, __pyx_v_path, __pyx_v_truncate, __pyx_v_numrows, __pyx_v_numcols);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_numrows, PyObject *__pyx_v_numcols, PyObject *__pyx_v_truncate) {
+static PyObject *__pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_path, PyObject *__pyx_v_truncate, PyObject *__pyx_v_numrows, PyObject *__pyx_v_numcols) {
   PyObject *__pyx_v_row = 0;
   int __pyx_v_counter;
   PyObject *__pyx_v_all_rows = NULL;
@@ -1818,7 +1818,7 @@ static PyObject *__pyx_pf_11cython_home_12get_csv_rows_get_csv_rows(CYTHON_UNUSE
   /* "cython_home/get_csv_rows.pyx":3
  * import csv
  * 
- * def get_csv_rows(path, numrows=None,numcols=None,truncate=False):             # <<<<<<<<<<<<<<
+ * def get_csv_rows(path, truncate=None,numrows=None,numcols=None):             # <<<<<<<<<<<<<<
  *     """
  *     path: filepath :: the path of the csv file to be read
  */
@@ -1941,11 +1941,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "cython_home/get_csv_rows.pyx":3
  * import csv
  * 
- * def get_csv_rows(path, numrows=None,numcols=None,truncate=False):             # <<<<<<<<<<<<<<
+ * def get_csv_rows(path, truncate=None,numrows=None,numcols=None):             # <<<<<<<<<<<<<<
  *     """
  *     path: filepath :: the path of the csv file to be read
  */
-  __pyx_tuple__3 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_numrows, __pyx_n_s_numcols, __pyx_n_s_truncate, __pyx_n_s_data, __pyx_n_s_row, __pyx_n_s_counter, __pyx_n_s_all_rows, __pyx_n_s_data_file, __pyx_n_s_csv_reader); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(10, __pyx_n_s_path, __pyx_n_s_truncate, __pyx_n_s_numrows, __pyx_n_s_numcols, __pyx_n_s_data, __pyx_n_s_row, __pyx_n_s_counter, __pyx_n_s_all_rows, __pyx_n_s_data_file, __pyx_n_s_csv_reader); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
   __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(4, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_get_csv_rows_pyx, __pyx_n_s_get_csv_rows, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -2227,7 +2227,7 @@ if (!__Pyx_RefNanny) {
   /* "cython_home/get_csv_rows.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
- * def get_csv_rows(path, numrows=None,numcols=None,truncate=False):
+ * def get_csv_rows(path, truncate=None,numrows=None,numcols=None):
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_csv, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2237,7 +2237,7 @@ if (!__Pyx_RefNanny) {
   /* "cython_home/get_csv_rows.pyx":3
  * import csv
  * 
- * def get_csv_rows(path, numrows=None,numcols=None,truncate=False):             # <<<<<<<<<<<<<<
+ * def get_csv_rows(path, truncate=None,numrows=None,numcols=None):             # <<<<<<<<<<<<<<
  *     """
  *     path: filepath :: the path of the csv file to be read
  */
@@ -2249,7 +2249,7 @@ if (!__Pyx_RefNanny) {
   /* "cython_home/get_csv_rows.pyx":1
  * import csv             # <<<<<<<<<<<<<<
  * 
- * def get_csv_rows(path, numrows=None,numcols=None,truncate=False):
+ * def get_csv_rows(path, truncate=None,numrows=None,numcols=None):
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

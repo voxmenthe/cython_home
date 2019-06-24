@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "threshold",
+        "name": "cython_home.threshold",
         "sources": [
             "threshold.pyx"
         ]
     },
-    "module_name": "threshold"
+    "module_name": "cython_home.threshold"
 }
 END: Cython Metadata */
 
@@ -597,8 +597,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__threshold
-#define __PYX_HAVE_API__threshold
+#define __PYX_HAVE__cython_home__threshold
+#define __PYX_HAVE_API__cython_home__threshold
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -1085,12 +1085,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'threshold' */
-#define __Pyx_MODULE_NAME "threshold"
-extern int __pyx_module_is_main_threshold;
-int __pyx_module_is_main_threshold = 0;
+/* Module declarations from 'cython_home.threshold' */
+#define __Pyx_MODULE_NAME "cython_home.threshold"
+extern int __pyx_module_is_main_cython_home__threshold;
+int __pyx_module_is_main_cython_home__threshold = 0;
 
-/* Implementation of 'threshold' */
+/* Implementation of 'cython_home.threshold' */
 static const char __pyx_k_k[] = "k";
 static const char __pyx_k_v[] = "v";
 static const char __pyx_k_dd[] = "dd";
@@ -1103,7 +1103,9 @@ static const char __pyx_k_data_dict[] = "data_dict";
 static const char __pyx_k_threshold[] = "threshold";
 static const char __pyx_k_threshold_pyx[] = "threshold.pyx";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_cython_home_threshold[] = "cython_home.threshold";
 static PyObject *__pyx_n_s_cline_in_traceback;
+static PyObject *__pyx_n_s_cython_home_threshold;
 static PyObject *__pyx_n_s_data_dict;
 static PyObject *__pyx_n_s_dd;
 static PyObject *__pyx_n_s_items;
@@ -1115,23 +1117,23 @@ static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_threshold;
 static PyObject *__pyx_kp_s_threshold_pyx;
 static PyObject *__pyx_n_s_v;
-static PyObject *__pyx_pf_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data_dict, PyObject *__pyx_v_min_n); /* proto */
+static PyObject *__pyx_pf_11cython_home_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data_dict, PyObject *__pyx_v_min_n); /* proto */
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_codeobj__2;
 /* Late includes */
 
-/* "threshold.pyx":1
+/* "cython_home/threshold.pyx":1
  * def threshold(data_dict, min_n=2):             # <<<<<<<<<<<<<<
  *     dd = {k:v for k, v in data_dict.items() if len(v) > min_n-1}
  *     return dd
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9threshold_1threshold(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_9threshold_1threshold = {"threshold", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_9threshold_1threshold, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9threshold_1threshold(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_11cython_home_9threshold_1threshold(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_9threshold_1threshold = {"threshold", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_11cython_home_9threshold_1threshold, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_9threshold_1threshold(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_data_dict = 0;
   PyObject *__pyx_v_min_n = 0;
   PyObject *__pyx_r = 0;
@@ -1183,18 +1185,18 @@ static PyObject *__pyx_pw_9threshold_1threshold(PyObject *__pyx_self, PyObject *
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("threshold", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("threshold.threshold", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.threshold.threshold", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_9threshold_threshold(__pyx_self, __pyx_v_data_dict, __pyx_v_min_n);
+  __pyx_r = __pyx_pf_11cython_home_9threshold_threshold(__pyx_self, __pyx_v_data_dict, __pyx_v_min_n);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data_dict, PyObject *__pyx_v_min_n) {
+static PyObject *__pyx_pf_11cython_home_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data_dict, PyObject *__pyx_v_min_n) {
   PyObject *__pyx_v_dd = NULL;
   PyObject *__pyx_7genexpr__pyx_v_k = NULL;
   PyObject *__pyx_7genexpr__pyx_v_v = NULL;
@@ -1213,7 +1215,7 @@ static PyObject *__pyx_pf_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_sel
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("threshold", 0);
 
-  /* "threshold.pyx":2
+  /* "cython_home/threshold.pyx":2
  * def threshold(data_dict, min_n=2):
  *     dd = {k:v for k, v in data_dict.items() if len(v) > min_n-1}             # <<<<<<<<<<<<<<
  *     return dd
@@ -1355,7 +1357,7 @@ static PyObject *__pyx_pf_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_v_dd = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "threshold.pyx":3
+  /* "cython_home/threshold.pyx":3
  * def threshold(data_dict, min_n=2):
  *     dd = {k:v for k, v in data_dict.items() if len(v) > min_n-1}
  *     return dd             # <<<<<<<<<<<<<<
@@ -1365,7 +1367,7 @@ static PyObject *__pyx_pf_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_r = __pyx_v_dd;
   goto __pyx_L0;
 
-  /* "threshold.pyx":1
+  /* "cython_home/threshold.pyx":1
  * def threshold(data_dict, min_n=2):             # <<<<<<<<<<<<<<
  *     dd = {k:v for k, v in data_dict.items() if len(v) > min_n-1}
  *     return dd
@@ -1379,7 +1381,7 @@ static PyObject *__pyx_pf_9threshold_threshold(CYTHON_UNUSED PyObject *__pyx_sel
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("threshold.threshold", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.threshold.threshold", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_dd);
@@ -1437,6 +1439,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+  {&__pyx_n_s_cython_home_threshold, __pyx_k_cython_home_threshold, sizeof(__pyx_k_cython_home_threshold), 0, 0, 1, 1},
   {&__pyx_n_s_data_dict, __pyx_k_data_dict, sizeof(__pyx_k_data_dict), 0, 0, 1, 1},
   {&__pyx_n_s_dd, __pyx_k_dd, sizeof(__pyx_k_dd), 0, 0, 1, 1},
   {&__pyx_n_s_items, __pyx_k_items, sizeof(__pyx_k_items), 0, 0, 1, 1},
@@ -1458,7 +1461,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "threshold.pyx":1
+  /* "cython_home/threshold.pyx":1
  * def threshold(data_dict, min_n=2):             # <<<<<<<<<<<<<<
  *     dd = {k:v for k, v in data_dict.items() if len(v) > min_n-1}
  *     return dd
@@ -1716,14 +1719,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_threshold) {
+  if (__pyx_module_is_main_cython_home__threshold) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "threshold")) {
-      if (unlikely(PyDict_SetItemString(modules, "threshold", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cython_home.threshold")) {
+      if (unlikely(PyDict_SetItemString(modules, "cython_home.threshold", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -1744,12 +1747,12 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "threshold.pyx":1
+  /* "cython_home/threshold.pyx":1
  * def threshold(data_dict, min_n=2):             # <<<<<<<<<<<<<<
  *     dd = {k:v for k, v in data_dict.items() if len(v) > min_n-1}
  *     return dd
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_9threshold_1threshold, NULL, __pyx_n_s_threshold); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_9threshold_1threshold, NULL, __pyx_n_s_cython_home_threshold); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_threshold, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -1765,11 +1768,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init threshold", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cython_home.threshold", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init threshold");
+    PyErr_SetString(PyExc_ImportError, "init cython_home.threshold");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

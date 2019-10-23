@@ -6,7 +6,6 @@ def gen_chunks(reader, chunksize=100):
 	Chunk generator. Take a CSV `reader` and yield
 	`chunksize` sized slices. 
 	"""
-	cdef int chunksize
 	cdef list line
 	cdef list chunk
 	chunk = []

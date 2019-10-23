@@ -1,21 +1,6 @@
 import gc
 import csv
 
-def gen_chunks(reader, chunksize=100):
-	""" 
-	Chunk generator. Take a CSV `reader` and yield
-	`chunksize` sized slices. 
-	"""
-	cdef list line
-	cdef list chunk
-	chunk = []
-	for i, line in enumerate(reader):
-		if (i % chunksize == 0 and i > 0):
-			yield chunk
-			del chunk[:]  # or: chunk = []
-		chunk.append(line)
-	yield chunk
-
 def csv_event_rows_to_dict(path,chunksize=10000):
 	"""
 	path: filepath :: the path of the csv file to be read
@@ -31,6 +16,21 @@ def csv_event_rows_to_dict(path,chunksize=10000):
 	cdef list all_rows
 	all_rows = []
 	data = {}
+
+	def gen_chunks(reader, chunksize=100):
+		""" 
+		Chunk generator. Take a CSV `reader` and yield
+		`chunksize` sized slices. 
+		"""
+		cdef list line
+		cdef list chunk
+		chunk = []
+		for i, line in enumerate(reader):
+			if (i % chunksize == 0 and i > 0):
+				yield chunk
+				del chunk[:]  # or: chunk = []
+			chunk.append(line)
+		yield chunk
 
 	with open(path, "r") as data_file:
 		csv_reader = csv.reader(data_file, delimiter="\t")

@@ -28,14 +28,15 @@ def csv_event_rows_to_dict_mp(path,chunksize=600000):
 		yield chunk
 
 
-	def process_chunk(csv_generator, data):
+	def process_chunk(csv_generator):
 		cdef list row
+		global data_dict
 		for chunk in csv_generator:
 			for row in chunk:
-				if row[0] in data.keys():
-					data[row[0]].append((row[1],row[2]))
+				if row[0] in data_dict.keys():
+					data_dict[row[0]].append((row[1],row[2]))
 				else:
-					data[row[0]] = [(row[1],row[2])]
+					data_dict[row[0]] = [(row[1],row[2])]
 			del chunk
 			gc.collect()
 	#return data
@@ -46,10 +47,10 @@ def csv_event_rows_to_dict_mp(path,chunksize=600000):
 	with open(path, "r") as data_file:
 		csv_reader = csv.reader(data_file, delimiter="\t")
 		csv_generator = gen_chunks(csv_reader, chunksize=chunksize)
-		p1 = Process(target=process_chunk, args=(csv_generator, data_dict))
-		p2 = Process(target=process_chunk, args=(csv_generator, data_dict))
-		p3 = Process(target=process_chunk, args=(csv_generator, data_dict))
-		p4 = Process(target=process_chunk, args=(csv_generator, data_dict))
+		p1 = Process(target=process_chunk, args=(csv_generator,))
+		p2 = Process(target=process_chunk, args=(csv_generator,))
+		p3 = Process(target=process_chunk, args=(csv_generator,))
+		p4 = Process(target=process_chunk, args=(csv_generator,))
 		p1.start()
 		p2.start()
 		p3.start()

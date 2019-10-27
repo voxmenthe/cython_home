@@ -30,7 +30,7 @@ def csv_event_rows_to_dict_mp(path,chunksize=600000):
 
 	def process_chunk(csv_generator, data):
 		cdef list row
-		for chunk in csv_generator
+		for chunk in csv_generator:
 			for row in chunk:
 				if row[0] in data.keys():
 					data[row[0]].append((row[1],row[2]))

@@ -12,6 +12,9 @@ def csv_event_rows_to_dict_mp(path,chunksize=600000):
 	Note: only numcols or truncate can be set but not both.
 	"""
 
+	manager = Manager()
+	data_dict = manager.dict()
+
 	def gen_chunks(reader, chunksize=600000):
 		""" 
 		Chunk generator. Take a CSV `reader` and yield
@@ -41,8 +44,6 @@ def csv_event_rows_to_dict_mp(path,chunksize=600000):
 			gc.collect()
 	#return data
 
-	manager = Manager()
-	data_dict = manager.dict()
 
 	with open(path, "r") as data_file:
 		csv_reader = csv.reader(data_file, delimiter="\t")

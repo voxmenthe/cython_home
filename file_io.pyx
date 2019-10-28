@@ -25,6 +25,10 @@ def read_file(filename):
     cdef char* fname = filename_byte_string
  
     cdef FILE* cfile
+    
+    cdef list output
+    output = []
+
     cfile = fopen(fname, "rb")
     if cfile == NULL:
         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
@@ -36,9 +40,9 @@ def read_file(filename):
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
- 
+        output.append(read)
         #yield line
  
     fclose(cfile)
  
-    return []
+    return output #[]

@@ -9,16 +9,17 @@ cdef extern from "stdio.h":
     ssize_t getline(char **, size_t *, FILE *)
  
 def read_file_slow(filename):
+    output = []
     f = open(filename, "rb")
     while True:
         line = f.readline()
         if not line: break
- 
+        output.append(line)
         #yield line
  
     f.close()
  
-    return []
+    return output
  
 def read_file(filename):
     filename_byte_string = filename.encode("UTF-8")

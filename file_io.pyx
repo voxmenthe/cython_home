@@ -129,14 +129,15 @@ def read_file4(filename):
     cdef char * line = NULL
     cdef size_t l = 0
     cdef ssize_t read
+    cdef Py_ssize_t length = 0
 
     
     while True:
-        read = getline(&line, &l, cfile)
+        read = getline(&line, &length, cfile)
         if read == -1: break
         
         # get pointer and length from a C function
-        get_a_c_string(&line, &l)
+        get_a_c_string(&line, &length)
 
         uline = line[:l].decode('UTF-8')
         output.append(uline.split('\t'))

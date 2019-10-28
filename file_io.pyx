@@ -1,4 +1,6 @@
 from libc.stdio cimport *
+from libc.stdlib cimport malloc
+from libc.string cimport strcpy, strlen
  
 cdef extern from "stdio.h":
     #FILE * fopen ( const char * filename, const char * mode )
@@ -7,6 +9,14 @@ cdef extern from "stdio.h":
     int fclose(FILE *)
     #ssize_t getline(char **lineptr, size_t *n, FILE *stream);
     ssize_t getline(char **, size_t *, FILE *)
+
+cdef void get_a_c_string(char** c_string_ptr, Py_ssize_t *length):
+    c_string_ptr[0] = <char *> malloc((n + 1) * sizeof(char))
+    if not c_string_ptr[0]:
+        raise MemoryError()
+
+    strcpy(c_string_ptr[0], hello_world)
+    length[0] = n
  
 def read_file_slow(filename):
     output = []
@@ -119,12 +129,17 @@ def read_file4(filename):
     cdef char * line = NULL
     cdef size_t l = 0
     cdef ssize_t read
- 
+
+    
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
-        line = <unicode>line
-        output.append(line.split('\t'))
+        
+        # get pointer and length from a C function
+        get_a_c_string(&line, &l)
+
+        uline = line[:l].decode('UTF-8')
+        output.append(uline.split('\t'))
         #yield line
  
     fclose(cfile)

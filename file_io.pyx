@@ -120,37 +120,37 @@ def read_file3(filename):
  
     return output #[]
 
-def read_file4(filename):
-    filename_byte_string = filename.encode("UTF-8")
-    cdef char* fname = filename_byte_string
+# def read_file4(filename):
+#     filename_byte_string = filename.encode("UTF-8")
+#     cdef char* fname = filename_byte_string
  
-    cdef FILE* cfile
+#     cdef FILE* cfile
     
-    cdef list output
-    output = []
+#     cdef list output
+#     output = []
 
-    cfile = fopen(fname, "rb")
-    if cfile == NULL:
-        raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+#     cfile = fopen(fname, "rb")
+#     if cfile == NULL:
+#         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
 
-    #cdef char * line = NULL
-    cdef char * l = c_call_returning_a_c_string()
-    #cdef size_t l = 0
-    #cdef Py_ssize_t l = 0
-    cdef ssize_t read
+#     #cdef char * line = NULL
+#     cdef char * l = c_call_returning_a_c_string()
+#     #cdef size_t l = 0
+#     #cdef Py_ssize_t l = 0
+#     cdef ssize_t read
     
-    while True:
-        read = getline(&line, &l, cfile)
-        if read == -1: break
+#     while True:
+#         read = getline(&line, &l, cfile)
+#         if read == -1: break
         
-        # get pointer and length from a C function
-        #get_a_c_string(&line, &l)
+#         # get pointer and length from a C function
+#         #get_a_c_string(&line, &l)
 
-        #uline = line[:l].decode('UTF-8')
-        uline = line.decode('UTF-8')
-        output.append(uline.split('\t'))
-        #yield line
+#         #uline = line[:l].decode('UTF-8')
+#         uline = line.decode('UTF-8')
+#         output.append(uline.split('\t'))
+#         #yield line
  
-    fclose(cfile)
+#     fclose(cfile)
  
-    return output #[]
+#     return output #[]

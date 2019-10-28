@@ -10,6 +10,13 @@ cdef extern from "stdio.h":
     #ssize_t getline(char **lineptr, size_t *n, FILE *stream);
     ssize_t getline(char **, size_t *, FILE *)
 
+cdef char* c_call_returning_a_c_string():
+    cdef char* c_string = <char *> malloc((n + 1) * sizeof(char))
+    if not c_string:
+        raise MemoryError()
+    strcpy(c_string, hello_world)
+    return c_string
+
 cdef void get_a_c_string(char** c_string_ptr, Py_ssize_t *length):
     c_string_ptr[0] = <char *> malloc((n + 1) * sizeof(char))
     if not c_string_ptr[0]:
@@ -126,9 +133,10 @@ def read_file4(filename):
     if cfile == NULL:
         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
 
-    cdef char * line = NULL
+    #cdef char * line = NULL
+    cdef char * l = c_call_returning_a_c_string()
     #cdef size_t l = 0
-    cdef Py_ssize_t l = 0
+    #cdef Py_ssize_t l = 0
     cdef ssize_t read
     
     while True:
@@ -136,9 +144,10 @@ def read_file4(filename):
         if read == -1: break
         
         # get pointer and length from a C function
-        get_a_c_string(&line, &l)
+        #get_a_c_string(&line, &l)
 
-        uline = line[:l].decode('UTF-8')
+        #uline = line[:l].decode('UTF-8')
+        uline = line.decode('UTF-8')
         output.append(uline.split('\t'))
         #yield line
  

@@ -69,7 +69,7 @@ def read_file2(filename):
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
-        output.append(line.split('\t'))
+        output.append(line.split(b'\t'))
         #yield line
  
     fclose(cfile)

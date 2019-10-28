@@ -210,7 +210,7 @@ def read_file_to_dict(filename):
         if row[0] in output.keys():
             output[row[0]].append((row[1],row[2]))
         else:
-            data[row[0]] = [(row[1],row[2])]
+            output[row[0]] = [(row[1],row[2])]
  
     fclose(cfile)
  

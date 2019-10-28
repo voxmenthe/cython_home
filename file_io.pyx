@@ -147,7 +147,7 @@ def read_file_to_dict(filename):
         read = getline(&line, &l, cfile)
         if read == -1: break
         row = line.decode("UTF-8").split('\t')
-        output.append((row[0]), (row[1], row[2]))
+        output.append((row[0], (row[1], row[2])))
         #yield line
  
     fclose(cfile)

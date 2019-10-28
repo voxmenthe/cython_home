@@ -1,6 +1,9 @@
 from libc.stdio cimport *
 from libc.stdlib cimport malloc
 from libc.string cimport strcpy, strlen
+
+import numpy as np
+cimport numpy as np
  
 cdef extern from "stdio.h":
     #FILE * fopen ( const char * filename, const char * mode )
@@ -113,7 +116,7 @@ def read_file3(filename):
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
-        output.append([str(x) for x in line.split(b'\t')])
+        output.append(np.array(line.split(b'\t'),dtype='<U64'))
         #yield line
  
     fclose(cfile)

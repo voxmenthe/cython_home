@@ -127,7 +127,8 @@ def read_file4(filename):
         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
 
     cdef char * line = NULL
-    cdef size_t l = 0
+    #cdef size_t l = 0
+    cdef Py_ssize_t l = 0
     cdef ssize_t read
     
     while True:

@@ -123,8 +123,8 @@ def read_file4(filename):
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
-        cdef char* line = nline
-        output.append(nline.split('\t'))
+        line = <unicode>line
+        output.append(line.split('\t'))
         #yield line
  
     fclose(cfile)

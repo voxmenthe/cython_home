@@ -21,7 +21,7 @@ def read_file_slow(filename):
  
     return output
  
-def read_file(filename):
+def read_file2(filename):
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
  
@@ -33,8 +33,7 @@ def read_file(filename):
     cfile = fopen(fname, "rb")
     if cfile == NULL:
         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
-    print("Len of cfile: ", len(cfile))
- 
+
     cdef char * line = NULL
     cdef size_t l = 0
     cdef ssize_t read
@@ -42,9 +41,10 @@ def read_file(filename):
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
-        output.append(line)
+        output.append(line.split('\t'))
         #yield line
  
     fclose(cfile)
  
     return output #[]
+

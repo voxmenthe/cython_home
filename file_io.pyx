@@ -33,6 +33,7 @@ def read_file(filename):
     cfile = fopen(fname, "rb")
     if cfile == NULL:
         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+    print("Len of cfile: ", len(cfile))
  
     cdef char * line = NULL
     cdef size_t l = 0

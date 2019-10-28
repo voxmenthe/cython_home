@@ -41,7 +41,7 @@ def read_file(filename):
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
-        output.append(read)
+        output.append(line)
         #yield line
  
     fclose(cfile)

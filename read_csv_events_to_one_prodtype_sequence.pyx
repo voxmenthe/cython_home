@@ -16,6 +16,7 @@ def read_csv_events_to_one_prodtype_sequence(filename, pid_ptype_dict):
     cdef str ptype
     cdef list row
     cdef dict ptype_all_seq
+    ptype_all_seq = {}
 
     cfile = fopen(fname, "rb")
     if cfile == NULL:

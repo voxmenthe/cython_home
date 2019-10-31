@@ -14,8 +14,8 @@ def load_attr_rows_new(filename):
     
     cdef str decoded
     cdef list row
-    cdef dict output
-    output = {}
+    cdef list output
+    output = []
 
     cfile = fopen(fname, "rb")
     if cfile == NULL:
@@ -30,10 +30,6 @@ def load_attr_rows_new(filename):
         if read == -1: break
         decoded = line.decode("UTF-8")
         row = decoded.split('\t')
-        # if row[0] in output.keys():
-        #     output[row[0]].append((row[1],row[2]))
-        # else:
-        #     output[row[0]] = [(row[1],row[2])]
         output.append(row)
  
     fclose(cfile)

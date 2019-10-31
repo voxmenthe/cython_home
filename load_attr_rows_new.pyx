@@ -6,7 +6,7 @@ cdef extern from "stdio.h":
     ssize_t getline(char **, size_t *, FILE *)
 
 
-def read_csv_events_to_dict(filename):
+def load_attr_rows_new(filename):
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
  

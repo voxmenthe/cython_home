@@ -22,7 +22,7 @@ def get_prodtype_counts_from_prodtype_sequences(sequences_list, all_prodtypes):
         seq = [x[1] for x in seq if x[1] != '']
         # mask = seq != ''
         # seq = seq[mask]
-        if seq.size > 0:
+        if len(seq) > 0:
             current_ptype = seq[0]
             for event in seq:
                 if event != current_ptype:

@@ -30,7 +30,7 @@ def get_ptype_cts_IA_from_ptype_seqs_2_new(sequences_list, all_prodtypes):
             for event in seq:
                 if event != current_ptype:                    
                     inner_dicts[current_ptype][event] += 1
-                    if past_ptype: inner_dicts[past_ptype][event] += 1
+                    if past_ptype1: inner_dicts[past_ptype1][event] += 1
                     past_ptype1 = current_ptype
                     current_ptype = event 
 

@@ -1,4 +1,4 @@
-def get_ptype_cts_IA_from_ptype_seqs_next_n(sequences_list, all_prodtypes,n_offset=0):
+def get_ptype_cts_IA_from_ptype_seqs_2_new(sequences_list, all_prodtypes):
     cdef dict inner_dicts
     inner_dicts = {}
 
@@ -14,6 +14,9 @@ def get_ptype_cts_IA_from_ptype_seqs_next_n(sequences_list, all_prodtypes,n_offs
     cdef str current_ptype
     current_ptype = ""
 
+    cdef str past_ptype1
+    past_ptype1 = ""
+
     cdef int seqlen
 
     for pt in all_prodtypes:
@@ -24,9 +27,12 @@ def get_ptype_cts_IA_from_ptype_seqs_next_n(sequences_list, all_prodtypes,n_offs
         seqlen = len(seq)
         if seqlen > 0:
             current_ptype = seq[0]
-            for i, event in enumerate(seq):
-                inner_dicts[current_ptype][seq[i+n_offset]] += 1
-                current_ptype = event
+            for event in seq:
+                if event != current_ptype:                    
+                    inner_dicts[current_ptype][event] += 1
+                    if past_ptype: inner_dicts[current_ptype][past_ptype1] += 1
+                    past_ptype1 = current_ptype
+                    current_ptype = event
                 if i + n_offset >= seqlen:
                     break 
 

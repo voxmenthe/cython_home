@@ -38,7 +38,7 @@ def load_attr_rows_basic(filename):
         if read == -1: break
         decoded = line.decode("UTF-8")
         row = decoded.split('\t')
-        output_rows.append( [ row[0:3], row[5:13], row[15], row[17:20], row[21], row[24] ] )
+        output_rows.append( row[0:3] + row[5:13] + [row[15]] + row[17:20] + [row[21]] + [row[24]] )
  
     fclose(cfile)
  

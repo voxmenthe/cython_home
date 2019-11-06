@@ -30,7 +30,7 @@ def get_userid_itemid_rows(filename):
         if read == -1: break
         decoded = line.decode("UTF-8")
         row = decoded.split('\t')
-        output.append([row[0:2]])
+        output.append(row[0:2])
  
     fclose(cfile)
  

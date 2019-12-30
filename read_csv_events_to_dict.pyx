@@ -6,7 +6,7 @@ cdef extern from "stdio.h":
     ssize_t getline(char **, size_t *, FILE *)
 
 
-def read_csv_events_to_dict(filename):
+def read_csv_events_to_dict(filename,by="user"):
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
  
@@ -24,16 +24,26 @@ def read_csv_events_to_dict(filename):
     cdef char * line = NULL
     cdef size_t l = 0
     cdef ssize_t read
+
+    cdef str key
  
     while True:
         read = getline(&line, &l, cfile)
         if read == -1: break
         decoded = line.decode("UTF-8")
         row = decoded.split('\t')
-        if row[0] in output.keys():
-            output[row[0]].append((row[1],row[2]))
+
+        if by == "user":
+            key = row[0]
+        elif by == "session":
+            key = row[3]
         else:
-            output[row[0]] = [(row[1],row[2])]
+            print("Must organize by either user or session")
+
+        if key in output.keys():
+            output[key].append((row[1],row[2]))
+        else:
+            output[key] = [(row[1],row[2])]
  
     fclose(cfile)
  

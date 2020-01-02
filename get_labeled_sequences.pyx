@@ -36,7 +36,7 @@ def get_labeled_sequences(view_dict, atb_dict, purchase_dict, unique=True):
 
     all_user_ids = puq(atbids + puids)
 
-    for uid in all_user_ids:
+    for user_id in all_user_ids:
 
         if view_dict:
             vs = sorted(view_dict[user_id],key=itemgetter(1))

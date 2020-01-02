@@ -23,13 +23,13 @@ def unique_by_indices(list_of_stuff, indices=[0,-1]):
     return result
 
 def get_labeled_sequences(atb_dict=None, purchase_dict=None, view_dict=None, unique=True):
-    cdef list vs
-    cdef list vsl
-    cdef list at
-    cdef list atl
-    cdef list pu
-    cdef list pul
-    cdef list all_user_ids
+    # cdef list vs
+    # cdef list vsl
+    # cdef list at
+    # cdef list atl
+    # cdef list pu
+    # cdef list pul
+    # cdef list all_user_ids
 
     atbids = list(atb_dict.keys())
     puids = list(purchase_dict.keys())

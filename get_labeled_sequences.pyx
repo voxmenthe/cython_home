@@ -1,5 +1,8 @@
 cimport cython
 
+import numpy as np
+cimport numpy as np
+
 from pandas import unique as puq
 from operator import itemgetter
 
@@ -7,6 +10,7 @@ def unique_by_indices(list_of_stuff, indices=[0,-1]):
     
     cdef set seen
     cdef list result
+    cdef tuple set_matcher
 
     seen = set()
     result = []

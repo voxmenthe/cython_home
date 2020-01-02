@@ -22,7 +22,7 @@ def unique_by_indices(list_of_stuff, indices=[0,-1]):
             seen.add(set_matcher)
     return result
 
-def get_labeled_sequences(view_dict, atb_dict, purchase_dict, unique=True):
+def get_labeled_sequences(atb_dict=None, purchase_dict=None, view_dict=None, unique=True):
     cdef list vs
     cdef list vsl
     cdef list at

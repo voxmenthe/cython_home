@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "a091569.cython_home.csv_to_dict_flex_new",
+        "name": "cython_home.csv_to_dict_flex_new",
         "sources": [
             "csv_to_dict_flex_new.pyx"
         ]
     },
-    "module_name": "a091569.cython_home.csv_to_dict_flex_new"
+    "module_name": "cython_home.csv_to_dict_flex_new"
 }
 END: Cython Metadata */
 
@@ -572,8 +572,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__a091569__cython_home__csv_to_dict_flex_new
-#define __PYX_HAVE_API__a091569__cython_home__csv_to_dict_flex_new
+#define __PYX_HAVE__cython_home__csv_to_dict_flex_new
+#define __PYX_HAVE_API__cython_home__csv_to_dict_flex_new
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -1158,12 +1158,12 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'libc.stdio' */
 
-/* Module declarations from 'a091569.cython_home.csv_to_dict_flex_new' */
-#define __Pyx_MODULE_NAME "a091569.cython_home.csv_to_dict_flex_new"
-extern int __pyx_module_is_main_a091569__cython_home__csv_to_dict_flex_new;
-int __pyx_module_is_main_a091569__cython_home__csv_to_dict_flex_new = 0;
+/* Module declarations from 'cython_home.csv_to_dict_flex_new' */
+#define __Pyx_MODULE_NAME "cython_home.csv_to_dict_flex_new"
+extern int __pyx_module_is_main_cython_home__csv_to_dict_flex_new;
+int __pyx_module_is_main_cython_home__csv_to_dict_flex_new = 0;
 
-/* Implementation of 'a091569.cython_home.csv_to_dict_flex_new' */
+/* Implementation of 'cython_home.csv_to_dict_flex_new' */
 static const char __pyx_k_l[] = "l";
 static const char __pyx_k__2[] = "\t";
 static const char __pyx_k_by[] = "by";
@@ -1197,19 +1197,19 @@ static const char __pyx_k_filename_byte_string[] = "filename_byte_string";
 static const char __pyx_k_csv_to_dict_flex_new_pyx[] = "csv_to_dict_flex_new.pyx";
 static const char __pyx_k_No_such_file_or_directory_s[] = "No such file or directory: '%s'";
 static const char __pyx_k_Must_organize_by_either_user_or[] = "Must organize by either user or session";
-static const char __pyx_k_a091569_cython_home_csv_to_dict[] = "a091569.cython_home.csv_to_dict_flex_new";
+static const char __pyx_k_cython_home_csv_to_dict_flex_new[] = "cython_home.csv_to_dict_flex_new";
 static PyObject *__pyx_n_s_FileNotFoundError;
 static PyObject *__pyx_kp_s_Must_organize_by_either_user_or;
 static PyObject *__pyx_kp_s_No_such_file_or_directory_s;
 static PyObject *__pyx_kp_s_UTF_8;
 static PyObject *__pyx_kp_s__2;
-static PyObject *__pyx_n_s_a091569_cython_home_csv_to_dict;
 static PyObject *__pyx_n_s_append;
 static PyObject *__pyx_n_s_by;
 static PyObject *__pyx_n_s_cfile;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_csv_to_dict_flex_new;
 static PyObject *__pyx_kp_s_csv_to_dict_flex_new_pyx;
+static PyObject *__pyx_n_s_cython_home_csv_to_dict_flex_new;
 static PyObject *__pyx_n_s_decoded;
 static PyObject *__pyx_n_s_dedup;
 static PyObject *__pyx_n_s_encode;
@@ -1232,7 +1232,7 @@ static PyObject *__pyx_n_s_session;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_user;
-static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup); /* proto */
+static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup); /* proto */
 static __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_keys = {0, &__pyx_n_s_keys, 0, 0, 0};
 static __Pyx_CachedCFunction __pyx_umethod_PyString_Type_split = {0, &__pyx_n_s_split, 0, 0, 0};
 static PyObject *__pyx_int_2;
@@ -1241,7 +1241,7 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
-/* "a091569/cython_home/csv_to_dict_flex_new.pyx":9
+/* "cython_home/csv_to_dict_flex_new.pyx":9
  * 
  * 
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
@@ -1250,9 +1250,9 @@ static PyObject *__pyx_codeobj__4;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7a091569_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_7a091569_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new = {"csv_to_dict_flex_new", (PyCFunction)__pyx_pw_7a091569_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7a091569_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new = {"csv_to_dict_flex_new", (PyCFunction)__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_filename = 0;
   PyObject *__pyx_v_by = 0;
   PyObject *__pyx_v_dedup = 0;
@@ -1317,18 +1317,18 @@ static PyObject *__pyx_pw_7a091569_11cython_home_20csv_to_dict_flex_new_1csv_to_
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("csv_to_dict_flex_new", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 9, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("a091569.cython_home.csv_to_dict_flex_new.csv_to_dict_flex_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new.csv_to_dict_flex_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(__pyx_self, __pyx_v_filename, __pyx_v_by, __pyx_v_dedup);
+  __pyx_r = __pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(__pyx_self, __pyx_v_filename, __pyx_v_by, __pyx_v_dedup);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup) {
+static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup) {
   PyObject *__pyx_v_filename_byte_string = NULL;
   char *__pyx_v_fname;
   FILE *__pyx_v_cfile;
@@ -1352,7 +1352,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   int __pyx_t_8;
   __Pyx_RefNannySetupContext("csv_to_dict_flex_new", 0);
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":10
+  /* "cython_home/csv_to_dict_flex_new.pyx":10
  * 
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):
  *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
@@ -1367,7 +1367,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   __pyx_v_filename_byte_string = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":11
+  /* "cython_home/csv_to_dict_flex_new.pyx":11
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string             # <<<<<<<<<<<<<<
@@ -1377,7 +1377,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   __pyx_t_3 = __Pyx_PyObject_AsWritableString(__pyx_v_filename_byte_string); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L1_error)
   __pyx_v_fname = __pyx_t_3;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":18
+  /* "cython_home/csv_to_dict_flex_new.pyx":18
  *     cdef list row
  *     cdef dict output
  *     output = {}             # <<<<<<<<<<<<<<
@@ -1389,7 +1389,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   __pyx_v_output = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":20
+  /* "cython_home/csv_to_dict_flex_new.pyx":20
  *     output = {}
  * 
  *     cfile = fopen(fname, "rb")             # <<<<<<<<<<<<<<
@@ -1398,7 +1398,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
   __pyx_v_cfile = fopen(__pyx_v_fname, ((char const *)"rb"));
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":21
+  /* "cython_home/csv_to_dict_flex_new.pyx":21
  * 
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:             # <<<<<<<<<<<<<<
@@ -1408,7 +1408,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   __pyx_t_4 = ((__pyx_v_cfile == NULL) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":22
+    /* "cython_home/csv_to_dict_flex_new.pyx":22
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:
  *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)             # <<<<<<<<<<<<<<
@@ -1435,7 +1435,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 22, __pyx_L1_error)
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":21
+    /* "cython_home/csv_to_dict_flex_new.pyx":21
  * 
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:             # <<<<<<<<<<<<<<
@@ -1444,7 +1444,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
   }
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":24
+  /* "cython_home/csv_to_dict_flex_new.pyx":24
  *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
  * 
  *     cdef char * line = NULL             # <<<<<<<<<<<<<<
@@ -1453,7 +1453,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
   __pyx_v_line = NULL;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":25
+  /* "cython_home/csv_to_dict_flex_new.pyx":25
  * 
  *     cdef char * line = NULL
  *     cdef size_t l = 0             # <<<<<<<<<<<<<<
@@ -1462,7 +1462,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
   __pyx_v_l = 0;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":30
+  /* "cython_home/csv_to_dict_flex_new.pyx":30
  *     cdef str key
  * 
  *     while True:             # <<<<<<<<<<<<<<
@@ -1471,7 +1471,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
   while (1) {
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":31
+    /* "cython_home/csv_to_dict_flex_new.pyx":31
  * 
  *     while True:
  *         read = getline(&line, &l, cfile)             # <<<<<<<<<<<<<<
@@ -1480,7 +1480,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
     __pyx_v_read = getline((&__pyx_v_line), (&__pyx_v_l), __pyx_v_cfile);
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":32
+    /* "cython_home/csv_to_dict_flex_new.pyx":32
  *     while True:
  *         read = getline(&line, &l, cfile)
  *         if read == -1: break             # <<<<<<<<<<<<<<
@@ -1492,7 +1492,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       goto __pyx_L5_break;
     }
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":33
+    /* "cython_home/csv_to_dict_flex_new.pyx":33
  *         read = getline(&line, &l, cfile)
  *         if read == -1: break
  *         decoded = line.decode("UTF-8")             # <<<<<<<<<<<<<<
@@ -1505,7 +1505,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __Pyx_XDECREF_SET(__pyx_v_decoded, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":34
+    /* "cython_home/csv_to_dict_flex_new.pyx":34
  *         if read == -1: break
  *         decoded = line.decode("UTF-8")
  *         row = decoded.split('\t')             # <<<<<<<<<<<<<<
@@ -1518,7 +1518,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":36
+    /* "cython_home/csv_to_dict_flex_new.pyx":36
  *         row = decoded.split('\t')
  * 
  *         if by == "user":             # <<<<<<<<<<<<<<
@@ -1528,7 +1528,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_user, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 36, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":37
+      /* "cython_home/csv_to_dict_flex_new.pyx":37
  * 
  *         if by == "user":
  *             key = row[0]             # <<<<<<<<<<<<<<
@@ -1545,7 +1545,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":36
+      /* "cython_home/csv_to_dict_flex_new.pyx":36
  *         row = decoded.split('\t')
  * 
  *         if by == "user":             # <<<<<<<<<<<<<<
@@ -1555,7 +1555,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       goto __pyx_L7;
     }
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":38
+    /* "cython_home/csv_to_dict_flex_new.pyx":38
  *         if by == "user":
  *             key = row[0]
  *         elif by == "session":             # <<<<<<<<<<<<<<
@@ -1565,7 +1565,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_session, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 38, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":39
+      /* "cython_home/csv_to_dict_flex_new.pyx":39
  *             key = row[0]
  *         elif by == "session":
  *             key = row[3]             # <<<<<<<<<<<<<<
@@ -1582,7 +1582,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":38
+      /* "cython_home/csv_to_dict_flex_new.pyx":38
  *         if by == "user":
  *             key = row[0]
  *         elif by == "session":             # <<<<<<<<<<<<<<
@@ -1592,7 +1592,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       goto __pyx_L7;
     }
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":41
+    /* "cython_home/csv_to_dict_flex_new.pyx":41
  *             key = row[3]
  *         else:
  *             print("Must organize by either user or session")             # <<<<<<<<<<<<<<
@@ -1604,7 +1604,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     }
     __pyx_L7:;
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":43
+    /* "cython_home/csv_to_dict_flex_new.pyx":43
  *             print("Must organize by either user or session")
  * 
  *         entry = (row[1],row[2])             # <<<<<<<<<<<<<<
@@ -1634,7 +1634,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __Pyx_XDECREF_SET(__pyx_v_entry, ((PyObject*)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":45
+    /* "cython_home/csv_to_dict_flex_new.pyx":45
  *         entry = (row[1],row[2])
  * 
  *         if key in output.keys():             # <<<<<<<<<<<<<<
@@ -1649,7 +1649,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
     __pyx_t_6 = (__pyx_t_4 != 0);
     if (__pyx_t_6) {
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":46
+      /* "cython_home/csv_to_dict_flex_new.pyx":46
  * 
  *         if key in output.keys():
  *             if dedup:             # <<<<<<<<<<<<<<
@@ -1659,7 +1659,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_dedup); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 46, __pyx_L1_error)
       if (__pyx_t_6) {
 
-        /* "a091569/cython_home/csv_to_dict_flex_new.pyx":47
+        /* "cython_home/csv_to_dict_flex_new.pyx":47
  *         if key in output.keys():
  *             if dedup:
  *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
@@ -1674,7 +1674,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
         __pyx_t_4 = (__pyx_t_6 != 0);
         if (__pyx_t_4) {
 
-          /* "a091569/cython_home/csv_to_dict_flex_new.pyx":48
+          /* "cython_home/csv_to_dict_flex_new.pyx":48
  *             if dedup:
  *                 if entry not in output[key]:
  *                     output[key].append((row[1],row[2]))             # <<<<<<<<<<<<<<
@@ -1708,7 +1708,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
           __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-          /* "a091569/cython_home/csv_to_dict_flex_new.pyx":47
+          /* "cython_home/csv_to_dict_flex_new.pyx":47
  *         if key in output.keys():
  *             if dedup:
  *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
@@ -1717,7 +1717,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
         }
 
-        /* "a091569/cython_home/csv_to_dict_flex_new.pyx":46
+        /* "cython_home/csv_to_dict_flex_new.pyx":46
  * 
  *         if key in output.keys():
  *             if dedup:             # <<<<<<<<<<<<<<
@@ -1727,7 +1727,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
         goto __pyx_L9;
       }
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":50
+      /* "cython_home/csv_to_dict_flex_new.pyx":50
  *                     output[key].append((row[1],row[2]))
  *             else:
  *                 output[key].append((row[1],row[2]))             # <<<<<<<<<<<<<<
@@ -1764,7 +1764,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       }
       __pyx_L9:;
 
-      /* "a091569/cython_home/csv_to_dict_flex_new.pyx":45
+      /* "cython_home/csv_to_dict_flex_new.pyx":45
  *         entry = (row[1],row[2])
  * 
  *         if key in output.keys():             # <<<<<<<<<<<<<<
@@ -1774,7 +1774,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
       goto __pyx_L8;
     }
 
-    /* "a091569/cython_home/csv_to_dict_flex_new.pyx":52
+    /* "cython_home/csv_to_dict_flex_new.pyx":52
  *                 output[key].append((row[1],row[2]))
  *         else:
  *             output[key] = [(row[1],row[2])]             # <<<<<<<<<<<<<<
@@ -1815,7 +1815,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   }
   __pyx_L5_break:;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":54
+  /* "cython_home/csv_to_dict_flex_new.pyx":54
  *             output[key] = [(row[1],row[2])]
  * 
  *     fclose(cfile)             # <<<<<<<<<<<<<<
@@ -1824,7 +1824,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
  */
   (void)(fclose(__pyx_v_cfile));
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":56
+  /* "cython_home/csv_to_dict_flex_new.pyx":56
  *     fclose(cfile)
  * 
  *     return output             # <<<<<<<<<<<<<<
@@ -1834,7 +1834,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   __pyx_r = __pyx_v_output;
   goto __pyx_L0;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":9
+  /* "cython_home/csv_to_dict_flex_new.pyx":9
  * 
  * 
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
@@ -1848,7 +1848,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_20csv_to_dict_flex_new_csv_to_d
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("a091569.cython_home.csv_to_dict_flex_new.csv_to_dict_flex_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new.csv_to_dict_flex_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_filename_byte_string);
@@ -1904,13 +1904,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_No_such_file_or_directory_s, __pyx_k_No_such_file_or_directory_s, sizeof(__pyx_k_No_such_file_or_directory_s), 0, 0, 1, 0},
   {&__pyx_kp_s_UTF_8, __pyx_k_UTF_8, sizeof(__pyx_k_UTF_8), 0, 0, 1, 0},
   {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
-  {&__pyx_n_s_a091569_cython_home_csv_to_dict, __pyx_k_a091569_cython_home_csv_to_dict, sizeof(__pyx_k_a091569_cython_home_csv_to_dict), 0, 0, 1, 1},
   {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
   {&__pyx_n_s_by, __pyx_k_by, sizeof(__pyx_k_by), 0, 0, 1, 1},
   {&__pyx_n_s_cfile, __pyx_k_cfile, sizeof(__pyx_k_cfile), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_csv_to_dict_flex_new, __pyx_k_csv_to_dict_flex_new, sizeof(__pyx_k_csv_to_dict_flex_new), 0, 0, 1, 1},
   {&__pyx_kp_s_csv_to_dict_flex_new_pyx, __pyx_k_csv_to_dict_flex_new_pyx, sizeof(__pyx_k_csv_to_dict_flex_new_pyx), 0, 0, 1, 0},
+  {&__pyx_n_s_cython_home_csv_to_dict_flex_new, __pyx_k_cython_home_csv_to_dict_flex_new, sizeof(__pyx_k_cython_home_csv_to_dict_flex_new), 0, 0, 1, 1},
   {&__pyx_n_s_decoded, __pyx_k_decoded, sizeof(__pyx_k_decoded), 0, 0, 1, 1},
   {&__pyx_n_s_dedup, __pyx_k_dedup, sizeof(__pyx_k_dedup), 0, 0, 1, 1},
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
@@ -1943,7 +1943,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":10
+  /* "cython_home/csv_to_dict_flex_new.pyx":10
  * 
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):
  *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
@@ -1954,7 +1954,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":9
+  /* "cython_home/csv_to_dict_flex_new.pyx":9
  * 
  * 
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
@@ -2191,14 +2191,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_a091569__cython_home__csv_to_dict_flex_new) {
+  if (__pyx_module_is_main_cython_home__csv_to_dict_flex_new) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "a091569.cython_home.csv_to_dict_flex_new")) {
-      if (unlikely(PyDict_SetItemString(modules, "a091569.cython_home.csv_to_dict_flex_new", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cython_home.csv_to_dict_flex_new")) {
+      if (unlikely(PyDict_SetItemString(modules, "cython_home.csv_to_dict_flex_new", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2219,19 +2219,19 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":9
+  /* "cython_home/csv_to_dict_flex_new.pyx":9
  * 
  * 
  * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7a091569_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new, NULL, __pyx_n_s_a091569_cython_home_csv_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new, NULL, __pyx_n_s_cython_home_csv_to_dict_flex_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv_to_dict_flex_new, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "a091569/cython_home/csv_to_dict_flex_new.pyx":1
+  /* "cython_home/csv_to_dict_flex_new.pyx":1
  * from libc.stdio cimport *             # <<<<<<<<<<<<<<
  * 
  * cdef extern from "stdio.h":
@@ -2248,11 +2248,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init a091569.cython_home.csv_to_dict_flex_new", 0, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cython_home.csv_to_dict_flex_new", 0, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init a091569.cython_home.csv_to_dict_flex_new");
+    PyErr_SetString(PyExc_ImportError, "init cython_home.csv_to_dict_flex_new");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

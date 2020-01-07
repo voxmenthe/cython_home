@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "a091569.cython_home.loaddata_PID_cyth_new",
+        "name": "cython_home.loaddata_PID_cyth_new",
         "sources": [
             "loaddata_PID_cyth_new.pyx"
         ]
     },
-    "module_name": "a091569.cython_home.loaddata_PID_cyth_new"
+    "module_name": "cython_home.loaddata_PID_cyth_new"
 }
 END: Cython Metadata */
 
@@ -572,8 +572,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__a091569__cython_home__loaddata_PID_cyth_new
-#define __PYX_HAVE_API__a091569__cython_home__loaddata_PID_cyth_new
+#define __PYX_HAVE__cython_home__loaddata_PID_cyth_new
+#define __PYX_HAVE_API__cython_home__loaddata_PID_cyth_new
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -1136,12 +1136,12 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'libc.stdio' */
 
-/* Module declarations from 'a091569.cython_home.loaddata_PID_cyth_new' */
-#define __Pyx_MODULE_NAME "a091569.cython_home.loaddata_PID_cyth_new"
-extern int __pyx_module_is_main_a091569__cython_home__loaddata_PID_cyth_new;
-int __pyx_module_is_main_a091569__cython_home__loaddata_PID_cyth_new = 0;
+/* Module declarations from 'cython_home.loaddata_PID_cyth_new' */
+#define __Pyx_MODULE_NAME "cython_home.loaddata_PID_cyth_new"
+extern int __pyx_module_is_main_cython_home__loaddata_PID_cyth_new;
+int __pyx_module_is_main_cython_home__loaddata_PID_cyth_new = 0;
 
-/* Implementation of 'a091569.cython_home.loaddata_PID_cyth_new' */
+/* Implementation of 'cython_home.loaddata_PID_cyth_new' */
 static PyObject *__pyx_builtin_KeyError;
 static const char __pyx_k_l[] = "l";
 static const char __pyx_k__2[] = "\t";
@@ -1168,16 +1168,16 @@ static const char __pyx_k_filename_byte_string[] = "filename_byte_string";
 static const char __pyx_k_loaddata_PID_cyth_new[] = "loaddata_PID_cyth_new";
 static const char __pyx_k_loaddata_PID_cyth_new_pyx[] = "loaddata_PID_cyth_new.pyx";
 static const char __pyx_k_No_such_file_or_directory_s[] = "No such file or directory: '%s'";
-static const char __pyx_k_a091569_cython_home_loaddata_PID[] = "a091569.cython_home.loaddata_PID_cyth_new";
+static const char __pyx_k_cython_home_loaddata_PID_cyth_ne[] = "cython_home.loaddata_PID_cyth_new";
 static PyObject *__pyx_n_s_FileNotFoundError;
 static PyObject *__pyx_n_s_KeyError;
 static PyObject *__pyx_kp_s_No_such_file_or_directory_s;
 static PyObject *__pyx_kp_s_UTF_8;
 static PyObject *__pyx_kp_s__2;
-static PyObject *__pyx_n_s_a091569_cython_home_loaddata_PID;
 static PyObject *__pyx_n_s_append;
 static PyObject *__pyx_n_s_cfile;
 static PyObject *__pyx_n_s_cline_in_traceback;
+static PyObject *__pyx_n_s_cython_home_loaddata_PID_cyth_ne;
 static PyObject *__pyx_n_s_data;
 static PyObject *__pyx_n_s_decoded;
 static PyObject *__pyx_n_s_encode;
@@ -1195,7 +1195,7 @@ static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_visitor_id;
-static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddata_PID_cyth_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data, PyObject *__pyx_v_filename); /* proto */
+static PyObject *__pyx_pf_11cython_home_21loaddata_PID_cyth_new_loaddata_PID_cyth_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data, PyObject *__pyx_v_filename); /* proto */
 static __Pyx_CachedCFunction __pyx_umethod_PyString_Type_split = {0, &__pyx_n_s_split, 0, 0, 0};
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
@@ -1203,7 +1203,7 @@ static PyObject *__pyx_tuple__3;
 static PyObject *__pyx_codeobj__4;
 /* Late includes */
 
-/* "a091569/cython_home/loaddata_PID_cyth_new.pyx":9
+/* "cython_home/loaddata_PID_cyth_new.pyx":9
  * 
  * 
  * def loaddata_PID_cyth_new(data, filename):             # <<<<<<<<<<<<<<
@@ -1212,9 +1212,9 @@ static PyObject *__pyx_codeobj__4;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7a091569_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_7a091569_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new = {"loaddata_PID_cyth_new", (PyCFunction)__pyx_pw_7a091569_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7a091569_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new = {"loaddata_PID_cyth_new", (PyCFunction)__pyx_pw_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_data = 0;
   PyObject *__pyx_v_filename = 0;
   PyObject *__pyx_r = 0;
@@ -1262,18 +1262,18 @@ static PyObject *__pyx_pw_7a091569_11cython_home_21loaddata_PID_cyth_new_1loadda
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("loaddata_PID_cyth_new", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 9, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("a091569.cython_home.loaddata_PID_cyth_new.loaddata_PID_cyth_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.loaddata_PID_cyth_new.loaddata_PID_cyth_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddata_PID_cyth_new(__pyx_self, __pyx_v_data, __pyx_v_filename);
+  __pyx_r = __pyx_pf_11cython_home_21loaddata_PID_cyth_new_loaddata_PID_cyth_new(__pyx_self, __pyx_v_data, __pyx_v_filename);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddata_PID_cyth_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data, PyObject *__pyx_v_filename) {
+static PyObject *__pyx_pf_11cython_home_21loaddata_PID_cyth_new_loaddata_PID_cyth_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data, PyObject *__pyx_v_filename) {
   PyObject *__pyx_v_filename_byte_string = NULL;
   char *__pyx_v_fname;
   FILE *__pyx_v_cfile;
@@ -1299,7 +1299,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   int __pyx_t_11;
   __Pyx_RefNannySetupContext("loaddata_PID_cyth_new", 0);
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":10
+  /* "cython_home/loaddata_PID_cyth_new.pyx":10
  * 
  * def loaddata_PID_cyth_new(data, filename):
  *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
@@ -1314,7 +1314,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   __pyx_v_filename_byte_string = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":11
+  /* "cython_home/loaddata_PID_cyth_new.pyx":11
  * def loaddata_PID_cyth_new(data, filename):
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string             # <<<<<<<<<<<<<<
@@ -1324,7 +1324,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   __pyx_t_3 = __Pyx_PyObject_AsWritableString(__pyx_v_filename_byte_string); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L1_error)
   __pyx_v_fname = __pyx_t_3;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":18
+  /* "cython_home/loaddata_PID_cyth_new.pyx":18
  *     cdef list row
  * 
  *     cfile = fopen(fname, "rb")             # <<<<<<<<<<<<<<
@@ -1333,7 +1333,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
   __pyx_v_cfile = fopen(__pyx_v_fname, ((char const *)"rb"));
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":19
+  /* "cython_home/loaddata_PID_cyth_new.pyx":19
  * 
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:             # <<<<<<<<<<<<<<
@@ -1343,7 +1343,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   __pyx_t_4 = ((__pyx_v_cfile == NULL) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":20
+    /* "cython_home/loaddata_PID_cyth_new.pyx":20
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:
  *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)             # <<<<<<<<<<<<<<
@@ -1370,7 +1370,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __PYX_ERR(0, 20, __pyx_L1_error)
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":19
+    /* "cython_home/loaddata_PID_cyth_new.pyx":19
  * 
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:             # <<<<<<<<<<<<<<
@@ -1379,7 +1379,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
   }
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":22
+  /* "cython_home/loaddata_PID_cyth_new.pyx":22
  *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
  * 
  *     cdef char * line = NULL             # <<<<<<<<<<<<<<
@@ -1388,7 +1388,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
   __pyx_v_line = NULL;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":23
+  /* "cython_home/loaddata_PID_cyth_new.pyx":23
  * 
  *     cdef char * line = NULL
  *     cdef size_t l = 0             # <<<<<<<<<<<<<<
@@ -1397,7 +1397,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
   __pyx_v_l = 0;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":29
+  /* "cython_home/loaddata_PID_cyth_new.pyx":29
  *     cdef str visitor_id
  * 
  *     while True:             # <<<<<<<<<<<<<<
@@ -1406,7 +1406,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
   while (1) {
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":30
+    /* "cython_home/loaddata_PID_cyth_new.pyx":30
  * 
  *     while True:
  *         read = getline(&line, &l, cfile)             # <<<<<<<<<<<<<<
@@ -1415,7 +1415,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
     __pyx_v_read = getline((&__pyx_v_line), (&__pyx_v_l), __pyx_v_cfile);
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":31
+    /* "cython_home/loaddata_PID_cyth_new.pyx":31
  *     while True:
  *         read = getline(&line, &l, cfile)
  *         if read == -1: break             # <<<<<<<<<<<<<<
@@ -1427,7 +1427,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
       goto __pyx_L5_break;
     }
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":32
+    /* "cython_home/loaddata_PID_cyth_new.pyx":32
  *         read = getline(&line, &l, cfile)
  *         if read == -1: break
  *         decoded = line.decode("UTF-8")             # <<<<<<<<<<<<<<
@@ -1440,7 +1440,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
     __Pyx_XDECREF_SET(__pyx_v_decoded, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":33
+    /* "cython_home/loaddata_PID_cyth_new.pyx":33
  *         if read == -1: break
  *         decoded = line.decode("UTF-8")
  *         row = decoded.split('\t')             # <<<<<<<<<<<<<<
@@ -1453,7 +1453,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
     __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":36
+    /* "cython_home/loaddata_PID_cyth_new.pyx":36
  * 
  * 
  *         product = str(row[1])             # <<<<<<<<<<<<<<
@@ -1473,7 +1473,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
     __Pyx_XDECREF_SET(__pyx_v_product, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":37
+    /* "cython_home/loaddata_PID_cyth_new.pyx":37
  * 
  *         product = str(row[1])
  *         visitor_id = row[3]             # <<<<<<<<<<<<<<
@@ -1490,7 +1490,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
     __Pyx_XDECREF_SET(__pyx_v_visitor_id, ((PyObject*)__pyx_t_5));
     __pyx_t_5 = 0;
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":39
+    /* "cython_home/loaddata_PID_cyth_new.pyx":39
  *         visitor_id = row[3]
  * 
  *         if visitor_id not in data:             # <<<<<<<<<<<<<<
@@ -1501,7 +1501,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
     __pyx_t_6 = (__pyx_t_4 != 0);
     if (__pyx_t_6) {
 
-      /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":40
+      /* "cython_home/loaddata_PID_cyth_new.pyx":40
  * 
  *         if visitor_id not in data:
  *             data[visitor_id] = []             # <<<<<<<<<<<<<<
@@ -1513,7 +1513,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
       if (unlikely(PyObject_SetItem(__pyx_v_data, __pyx_v_visitor_id, __pyx_t_5) < 0)) __PYX_ERR(0, 40, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":39
+      /* "cython_home/loaddata_PID_cyth_new.pyx":39
  *         visitor_id = row[3]
  * 
  *         if visitor_id not in data:             # <<<<<<<<<<<<<<
@@ -1522,7 +1522,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
     }
 
-    /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":41
+    /* "cython_home/loaddata_PID_cyth_new.pyx":41
  *         if visitor_id not in data:
  *             data[visitor_id] = []
  *         try:             # <<<<<<<<<<<<<<
@@ -1538,7 +1538,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
       __Pyx_XGOTREF(__pyx_t_9);
       /*try:*/ {
 
-        /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":42
+        /* "cython_home/loaddata_PID_cyth_new.pyx":42
  *             data[visitor_id] = []
  *         try:
  *             data[visitor_id].append(product)             # <<<<<<<<<<<<<<
@@ -1550,7 +1550,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
         __pyx_t_10 = __Pyx_PyObject_Append(__pyx_t_5, __pyx_v_product); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 42, __pyx_L8_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-        /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":41
+        /* "cython_home/loaddata_PID_cyth_new.pyx":41
  *         if visitor_id not in data:
  *             data[visitor_id] = []
  *         try:             # <<<<<<<<<<<<<<
@@ -1567,7 +1567,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":43
+      /* "cython_home/loaddata_PID_cyth_new.pyx":43
  *         try:
  *             data[visitor_id].append(product)
  *         except KeyError:             # <<<<<<<<<<<<<<
@@ -1576,13 +1576,13 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
       __pyx_t_11 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_KeyError);
       if (__pyx_t_11) {
-        __Pyx_AddTraceback("a091569.cython_home.loaddata_PID_cyth_new.loaddata_PID_cyth_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+        __Pyx_AddTraceback("cython_home.loaddata_PID_cyth_new.loaddata_PID_cyth_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
         if (__Pyx_GetException(&__pyx_t_5, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 43, __pyx_L10_except_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_GOTREF(__pyx_t_2);
 
-        /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":44
+        /* "cython_home/loaddata_PID_cyth_new.pyx":44
  *             data[visitor_id].append(product)
  *         except KeyError:
  *              continue             # <<<<<<<<<<<<<<
@@ -1599,7 +1599,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
       goto __pyx_L10_except_error;
       __pyx_L10_except_error:;
 
-      /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":41
+      /* "cython_home/loaddata_PID_cyth_new.pyx":41
  *         if visitor_id not in data:
  *             data[visitor_id] = []
  *         try:             # <<<<<<<<<<<<<<
@@ -1623,7 +1623,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   }
   __pyx_L5_break:;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":48
+  /* "cython_home/loaddata_PID_cyth_new.pyx":48
  *         #     break
  * 
  *     fclose(cfile)             # <<<<<<<<<<<<<<
@@ -1632,7 +1632,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
  */
   (void)(fclose(__pyx_v_cfile));
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":50
+  /* "cython_home/loaddata_PID_cyth_new.pyx":50
  *     fclose(cfile)
  * 
  *     return data             # <<<<<<<<<<<<<<
@@ -1644,7 +1644,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   __pyx_r = __pyx_v_data;
   goto __pyx_L0;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":9
+  /* "cython_home/loaddata_PID_cyth_new.pyx":9
  * 
  * 
  * def loaddata_PID_cyth_new(data, filename):             # <<<<<<<<<<<<<<
@@ -1657,7 +1657,7 @@ static PyObject *__pyx_pf_7a091569_11cython_home_21loaddata_PID_cyth_new_loaddat
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("a091569.cython_home.loaddata_PID_cyth_new.loaddata_PID_cyth_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.loaddata_PID_cyth_new.loaddata_PID_cyth_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_filename_byte_string);
@@ -1712,10 +1712,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_No_such_file_or_directory_s, __pyx_k_No_such_file_or_directory_s, sizeof(__pyx_k_No_such_file_or_directory_s), 0, 0, 1, 0},
   {&__pyx_kp_s_UTF_8, __pyx_k_UTF_8, sizeof(__pyx_k_UTF_8), 0, 0, 1, 0},
   {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
-  {&__pyx_n_s_a091569_cython_home_loaddata_PID, __pyx_k_a091569_cython_home_loaddata_PID, sizeof(__pyx_k_a091569_cython_home_loaddata_PID), 0, 0, 1, 1},
   {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
   {&__pyx_n_s_cfile, __pyx_k_cfile, sizeof(__pyx_k_cfile), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+  {&__pyx_n_s_cython_home_loaddata_PID_cyth_ne, __pyx_k_cython_home_loaddata_PID_cyth_ne, sizeof(__pyx_k_cython_home_loaddata_PID_cyth_ne), 0, 0, 1, 1},
   {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
   {&__pyx_n_s_decoded, __pyx_k_decoded, sizeof(__pyx_k_decoded), 0, 0, 1, 1},
   {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
@@ -1746,7 +1746,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":10
+  /* "cython_home/loaddata_PID_cyth_new.pyx":10
  * 
  * def loaddata_PID_cyth_new(data, filename):
  *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
@@ -1757,7 +1757,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":9
+  /* "cython_home/loaddata_PID_cyth_new.pyx":9
  * 
  * 
  * def loaddata_PID_cyth_new(data, filename):             # <<<<<<<<<<<<<<
@@ -1993,14 +1993,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_a091569__cython_home__loaddata_PID_cyth_new) {
+  if (__pyx_module_is_main_cython_home__loaddata_PID_cyth_new) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "a091569.cython_home.loaddata_PID_cyth_new")) {
-      if (unlikely(PyDict_SetItemString(modules, "a091569.cython_home.loaddata_PID_cyth_new", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cython_home.loaddata_PID_cyth_new")) {
+      if (unlikely(PyDict_SetItemString(modules, "cython_home.loaddata_PID_cyth_new", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2021,19 +2021,19 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":9
+  /* "cython_home/loaddata_PID_cyth_new.pyx":9
  * 
  * 
  * def loaddata_PID_cyth_new(data, filename):             # <<<<<<<<<<<<<<
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7a091569_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new, NULL, __pyx_n_s_a091569_cython_home_loaddata_PID); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_21loaddata_PID_cyth_new_1loaddata_PID_cyth_new, NULL, __pyx_n_s_cython_home_loaddata_PID_cyth_ne); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_loaddata_PID_cyth_new, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "a091569/cython_home/loaddata_PID_cyth_new.pyx":1
+  /* "cython_home/loaddata_PID_cyth_new.pyx":1
  * from libc.stdio cimport *             # <<<<<<<<<<<<<<
  * 
  * cdef extern from "stdio.h":
@@ -2050,11 +2050,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init a091569.cython_home.loaddata_PID_cyth_new", 0, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cython_home.loaddata_PID_cyth_new", 0, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init a091569.cython_home.loaddata_PID_cyth_new");
+    PyErr_SetString(PyExc_ImportError, "init cython_home.loaddata_PID_cyth_new");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

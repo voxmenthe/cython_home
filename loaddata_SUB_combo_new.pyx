@@ -39,7 +39,7 @@ def loaddata_SUB_combo_new(event_csv_path, mapping_dict, min_n=2):
 		user_id = row[0]
 		product_id = row[1]
 		try:
-			subbed_attr = mapping_dict[product_id]
+			subbed_attr = mapping_dict[int(product_id)]
 			if user_id not in output:
 				output[user_id] = []
 			else:

@@ -29,7 +29,6 @@ def loaddata_SUB_combo_new(event_csv_path, mapping_dict, min_n=2):
 	cdef ssize_t read
 
 	cdef str user_id
-	cdef int product_id
 	cdef str subbed_attr
  
 	while True:
@@ -38,7 +37,7 @@ def loaddata_SUB_combo_new(event_csv_path, mapping_dict, min_n=2):
 		decoded = line.decode("UTF-8")
 		row = decoded.split('\t')
 		user_id = row[0]
-		product_id = int(row[1])
+		product_id = row[1]
 		subbed_attr = mapping_dict[product_id]
 		if user_id not in output:
 			output[user_id] = []

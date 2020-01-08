@@ -38,11 +38,14 @@ def loaddata_SUB_combo_new(event_csv_path, mapping_dict, min_n=2):
 		row = decoded.split('\t')
 		user_id = row[0]
 		product_id = row[1]
-		subbed_attr = mapping_dict[product_id]
-		if user_id not in output:
-			output[user_id] = []
-		else:
-			output[user_id].append(subbed_attr)
+		try:
+			subbed_attr = mapping_dict[product_id]
+			if user_id not in output:
+				output[user_id] = []
+			else:
+				output[user_id].append(subbed_attr)
+		except:
+			continue
  
 	fclose(cfile)
  

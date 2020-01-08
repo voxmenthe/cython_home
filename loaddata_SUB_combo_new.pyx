@@ -22,7 +22,7 @@ def loaddata_SUB_combo_new(event_csv_path, mapping_dict, min_n=2):
 
 	cfile = fopen(fname, "rb")
 	if cfile == NULL:
-		raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+		raise FileNotFoundError(2, "No such file or directory: '%s'" % event_csv_path)
 
 	cdef char * line = NULL
 	cdef size_t l = 0

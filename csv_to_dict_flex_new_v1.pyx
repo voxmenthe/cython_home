@@ -13,7 +13,7 @@ cdef extern from "stdio.h":
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
-def csv_to_dict_flex_new(filename,by="user",dedup=False):
+def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
  

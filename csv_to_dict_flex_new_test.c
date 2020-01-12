@@ -4,12 +4,12 @@
 {
     "distutils": {
         "depends": [],
-        "name": "cython_home.csv_to_dict_flex_new",
+        "name": "cython_home.csv_to_dict_flex_new_test",
         "sources": [
-            "csv_to_dict_flex_new.pyx"
+            "csv_to_dict_flex_new_test.pyx"
         ]
     },
-    "module_name": "cython_home.csv_to_dict_flex_new"
+    "module_name": "cython_home.csv_to_dict_flex_new_test"
 }
 END: Cython Metadata */
 
@@ -572,8 +572,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__cython_home__csv_to_dict_flex_new
-#define __PYX_HAVE_API__cython_home__csv_to_dict_flex_new
+#define __PYX_HAVE__cython_home__csv_to_dict_flex_new_test
+#define __PYX_HAVE_API__cython_home__csv_to_dict_flex_new_test
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -781,7 +781,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "csv_to_dict_flex_new.pyx",
+  "csv_to_dict_flex_new_test.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -974,28 +974,6 @@ static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int 
 #define __Pyx_PyString_Equals __Pyx_PyBytes_Equals
 #endif
 
-/* GetItemInt.proto */
-#define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_Fast(o, (Py_ssize_t)i, is_list, wraparound, boundscheck) :\
-    (is_list ? (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL) :\
-               __Pyx_GetItemInt_Generic(o, to_py_func(i))))
-#define __Pyx_GetItemInt_List(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_List_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
-    (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL))
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              int wraparound, int boundscheck);
-#define __Pyx_GetItemInt_Tuple(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
-    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
-    __Pyx_GetItemInt_Tuple_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
-    (PyErr_SetString(PyExc_IndexError, "tuple index out of range"), (PyObject*)NULL))
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              int wraparound, int boundscheck);
-static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
-                                                     int is_list, int wraparound, int boundscheck);
-
 /* None.proto */
 static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
 
@@ -1089,6 +1067,28 @@ static PyObject* __Pyx__PyObject_CallMethod1(PyObject* method, PyObject* arg);
 /* append.proto */
 static CYTHON_INLINE int __Pyx_PyObject_Append(PyObject* L, PyObject* x);
 
+/* GetItemInt.proto */
+#define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_GetItemInt_Fast(o, (Py_ssize_t)i, is_list, wraparound, boundscheck) :\
+    (is_list ? (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL) :\
+               __Pyx_GetItemInt_Generic(o, to_py_func(i))))
+#define __Pyx_GetItemInt_List(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_GetItemInt_List_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
+    (PyErr_SetString(PyExc_IndexError, "list index out of range"), (PyObject*)NULL))
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+                                                              int wraparound, int boundscheck);
+#define __Pyx_GetItemInt_Tuple(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
+    (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
+    __Pyx_GetItemInt_Tuple_Fast(o, (Py_ssize_t)i, wraparound, boundscheck) :\
+    (PyErr_SetString(PyExc_IndexError, "tuple index out of range"), (PyObject*)NULL))
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
+                                                              int wraparound, int boundscheck);
+static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
+                                                     int is_list, int wraparound, int boundscheck);
+
 /* CLineInTraceback.proto */
 #ifdef CYTHON_CLINE_IN_TRACEBACK
 #define __Pyx_CLineForTraceback(tstate, c_line)  (((CYTHON_CLINE_IN_TRACEBACK)) ? c_line : 0)
@@ -1154,16 +1154,18 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
+/* Module declarations from 'cython' */
+
 /* Module declarations from 'libc.string' */
 
 /* Module declarations from 'libc.stdio' */
 
-/* Module declarations from 'cython_home.csv_to_dict_flex_new' */
-#define __Pyx_MODULE_NAME "cython_home.csv_to_dict_flex_new"
-extern int __pyx_module_is_main_cython_home__csv_to_dict_flex_new;
-int __pyx_module_is_main_cython_home__csv_to_dict_flex_new = 0;
+/* Module declarations from 'cython_home.csv_to_dict_flex_new_test' */
+#define __Pyx_MODULE_NAME "cython_home.csv_to_dict_flex_new_test"
+extern int __pyx_module_is_main_cython_home__csv_to_dict_flex_new_test;
+int __pyx_module_is_main_cython_home__csv_to_dict_flex_new_test = 0;
 
-/* Implementation of 'cython_home.csv_to_dict_flex_new' */
+/* Implementation of 'cython_home.csv_to_dict_flex_new_test' */
 static const char __pyx_k_l[] = "l";
 static const char __pyx_k__2[] = "\t";
 static const char __pyx_k_by[] = "by";
@@ -1188,16 +1190,20 @@ static const char __pyx_k_append[] = "append";
 static const char __pyx_k_encode[] = "encode";
 static const char __pyx_k_output[] = "output";
 static const char __pyx_k_decoded[] = "decoded";
+static const char __pyx_k_item_id[] = "item_id";
 static const char __pyx_k_session[] = "session";
 static const char __pyx_k_filename[] = "filename";
+static const char __pyx_k_timestamp[] = "timestamp";
 static const char __pyx_k_FileNotFoundError[] = "FileNotFoundError";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_csv_to_dict_flex_new[] = "csv_to_dict_flex_new";
 static const char __pyx_k_filename_byte_string[] = "filename_byte_string";
-static const char __pyx_k_csv_to_dict_flex_new_pyx[] = "csv_to_dict_flex_new.pyx";
+static const char __pyx_k_csv_to_dict_flex_new_v1[] = "csv_to_dict_flex_new_v1";
+static const char __pyx_k_csv_to_dict_flex_new_v2[] = "csv_to_dict_flex_new_v2";
+static const char __pyx_k_csv_to_dict_flex_new_v3[] = "csv_to_dict_flex_new_v3";
 static const char __pyx_k_No_such_file_or_directory_s[] = "No such file or directory: '%s'";
+static const char __pyx_k_csv_to_dict_flex_new_test_pyx[] = "csv_to_dict_flex_new_test.pyx";
 static const char __pyx_k_Must_organize_by_either_user_or[] = "Must organize by either user or session";
-static const char __pyx_k_cython_home_csv_to_dict_flex_new[] = "cython_home.csv_to_dict_flex_new";
+static const char __pyx_k_cython_home_csv_to_dict_flex_new[] = "cython_home.csv_to_dict_flex_new_test";
 static PyObject *__pyx_n_s_FileNotFoundError;
 static PyObject *__pyx_kp_s_Must_organize_by_either_user_or;
 static PyObject *__pyx_kp_s_No_such_file_or_directory_s;
@@ -1207,8 +1213,10 @@ static PyObject *__pyx_n_s_append;
 static PyObject *__pyx_n_s_by;
 static PyObject *__pyx_n_s_cfile;
 static PyObject *__pyx_n_s_cline_in_traceback;
-static PyObject *__pyx_n_s_csv_to_dict_flex_new;
-static PyObject *__pyx_kp_s_csv_to_dict_flex_new_pyx;
+static PyObject *__pyx_kp_s_csv_to_dict_flex_new_test_pyx;
+static PyObject *__pyx_n_s_csv_to_dict_flex_new_v1;
+static PyObject *__pyx_n_s_csv_to_dict_flex_new_v2;
+static PyObject *__pyx_n_s_csv_to_dict_flex_new_v3;
 static PyObject *__pyx_n_s_cython_home_csv_to_dict_flex_new;
 static PyObject *__pyx_n_s_decoded;
 static PyObject *__pyx_n_s_dedup;
@@ -1219,6 +1227,7 @@ static PyObject *__pyx_n_s_file;
 static PyObject *__pyx_n_s_filename;
 static PyObject *__pyx_n_s_filename_byte_string;
 static PyObject *__pyx_n_s_fname;
+static PyObject *__pyx_n_s_item_id;
 static PyObject *__pyx_n_s_key;
 static PyObject *__pyx_n_s_keys;
 static PyObject *__pyx_n_s_l;
@@ -1231,34 +1240,43 @@ static PyObject *__pyx_n_s_row;
 static PyObject *__pyx_n_s_session;
 static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_timestamp;
 static PyObject *__pyx_n_s_user;
-static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup); /* proto */
+static PyObject *__pyx_pf_11cython_home_25csv_to_dict_flex_new_test_csv_to_dict_flex_new_v1(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup); /* proto */
+static PyObject *__pyx_pf_11cython_home_25csv_to_dict_flex_new_test_2csv_to_dict_flex_new_v2(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup); /* proto */
+static PyObject *__pyx_pf_11cython_home_25csv_to_dict_flex_new_test_4csv_to_dict_flex_new_v3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup); /* proto */
 static __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_keys = {0, &__pyx_n_s_keys, 0, 0, 0};
 static __Pyx_CachedCFunction __pyx_umethod_PyString_Type_split = {0, &__pyx_n_s_split, 0, 0, 0};
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__3;
-static PyObject *__pyx_codeobj__4;
+static PyObject *__pyx_tuple__4;
+static PyObject *__pyx_tuple__5;
+static PyObject *__pyx_tuple__7;
+static PyObject *__pyx_tuple__9;
+static PyObject *__pyx_codeobj__6;
+static PyObject *__pyx_codeobj__8;
+static PyObject *__pyx_codeobj__10;
 /* Late includes */
 
-/* "cython_home/csv_to_dict_flex_new.pyx":9
- * 
- * 
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+/* "cython_home/csv_to_dict_flex_new_test.pyx":16
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new = {"csv_to_dict_flex_new", (PyCFunction)__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_1csv_to_dict_flex_new_v1(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_25csv_to_dict_flex_new_test_1csv_to_dict_flex_new_v1 = {"csv_to_dict_flex_new_v1", (PyCFunction)__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_1csv_to_dict_flex_new_v1, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_1csv_to_dict_flex_new_v1(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_filename = 0;
   PyObject *__pyx_v_by = 0;
   PyObject *__pyx_v_dedup = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("csv_to_dict_flex_new (wrapper)", 0);
+  __Pyx_RefNannySetupContext("csv_to_dict_flex_new_v1 (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_filename,&__pyx_n_s_by,&__pyx_n_s_dedup,0};
     PyObject* values[3] = {0,0,0};
@@ -1296,7 +1314,7 @@ static PyObject *__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "csv_to_dict_flex_new") < 0)) __PYX_ERR(0, 9, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "csv_to_dict_flex_new_v1") < 0)) __PYX_ERR(0, 16, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1315,20 +1333,20 @@ static PyObject *__pyx_pw_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("csv_to_dict_flex_new", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 9, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("csv_to_dict_flex_new_v1", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 16, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new.csv_to_dict_flex_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new_test.csv_to_dict_flex_new_v1", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(__pyx_self, __pyx_v_filename, __pyx_v_by, __pyx_v_dedup);
+  __pyx_r = __pyx_pf_11cython_home_25csv_to_dict_flex_new_test_csv_to_dict_flex_new_v1(__pyx_self, __pyx_v_filename, __pyx_v_by, __pyx_v_dedup);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_new(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup) {
+static PyObject *__pyx_pf_11cython_home_25csv_to_dict_flex_new_test_csv_to_dict_flex_new_v1(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup) {
   PyObject *__pyx_v_filename_byte_string = NULL;
   char *__pyx_v_fname;
   FILE *__pyx_v_cfile;
@@ -1349,46 +1367,46 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
   PyObject *__pyx_t_5 = NULL;
   int __pyx_t_6;
   int __pyx_t_7;
-  __Pyx_RefNannySetupContext("csv_to_dict_flex_new", 0);
+  __Pyx_RefNannySetupContext("csv_to_dict_flex_new_v1", 0);
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":10
- * 
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":17
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):
  *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
  *     cdef char* fname = filename_byte_string
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_filename, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_filename, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_filename_byte_string = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":11
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":18
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string             # <<<<<<<<<<<<<<
  * 
  *     cdef FILE* cfile
  */
-  __pyx_t_3 = __Pyx_PyObject_AsWritableString(__pyx_v_filename_byte_string); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_AsWritableString(__pyx_v_filename_byte_string); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L1_error)
   __pyx_v_fname = __pyx_t_3;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":18
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":25
  *     cdef list row
  *     cdef dict output
  *     output = {}             # <<<<<<<<<<<<<<
  * 
  *     cfile = fopen(fname, "rb")
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_output = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":20
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":27
  *     output = {}
  * 
  *     cfile = fopen(fname, "rb")             # <<<<<<<<<<<<<<
@@ -1397,7 +1415,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
   __pyx_v_cfile = fopen(__pyx_v_fname, ((char const *)"rb"));
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":21
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":28
  * 
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:             # <<<<<<<<<<<<<<
@@ -1407,18 +1425,18 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
   __pyx_t_4 = ((__pyx_v_cfile == NULL) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":22
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":29
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:
  *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)             # <<<<<<<<<<<<<<
  * 
  *     cdef char * line = NULL
  */
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_FileNotFoundError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_FileNotFoundError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 29, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_No_such_file_or_directory_s, __pyx_v_filename); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_No_such_file_or_directory_s, __pyx_v_filename); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 29, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_INCREF(__pyx_int_2);
     __Pyx_GIVEREF(__pyx_int_2);
@@ -1426,15 +1444,15 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_1);
     __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 22, __pyx_L1_error)
+    __PYX_ERR(0, 29, __pyx_L1_error)
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":21
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":28
  * 
  *     cfile = fopen(fname, "rb")
  *     if cfile == NULL:             # <<<<<<<<<<<<<<
@@ -1443,7 +1461,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
   }
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":24
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":31
  *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
  * 
  *     cdef char * line = NULL             # <<<<<<<<<<<<<<
@@ -1452,7 +1470,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
   __pyx_v_line = NULL;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":25
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":32
  * 
  *     cdef char * line = NULL
  *     cdef size_t l = 0             # <<<<<<<<<<<<<<
@@ -1461,7 +1479,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
   __pyx_v_l = 0;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":30
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":37
  *     cdef str key
  * 
  *     while True:             # <<<<<<<<<<<<<<
@@ -1470,7 +1488,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
   while (1) {
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":31
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":38
  * 
  *     while True:
  *         read = getline(&line, &l, cfile)             # <<<<<<<<<<<<<<
@@ -1479,7 +1497,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
     __pyx_v_read = getline((&__pyx_v_line), (&__pyx_v_l), __pyx_v_cfile);
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":32
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":39
  *     while True:
  *         read = getline(&line, &l, cfile)
  *         if read == -1: break             # <<<<<<<<<<<<<<
@@ -1491,43 +1509,43 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
       goto __pyx_L5_break;
     }
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":33
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":40
  *         read = getline(&line, &l, cfile)
  *         if read == -1: break
  *         decoded = line.decode("UTF-8")             # <<<<<<<<<<<<<<
  *         row = decoded.split('\t')
  * 
  */
-    __pyx_t_1 = __Pyx_decode_c_string(__pyx_v_line, 0, strlen(__pyx_v_line), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_decode_c_string(__pyx_v_line, 0, strlen(__pyx_v_line), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!(likely(PyString_CheckExact(__pyx_t_1))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 33, __pyx_L1_error)
+    if (!(likely(PyString_CheckExact(__pyx_t_1))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 40, __pyx_L1_error)
     __Pyx_XDECREF_SET(__pyx_v_decoded, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":34
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":41
  *         if read == -1: break
  *         decoded = line.decode("UTF-8")
  *         row = decoded.split('\t')             # <<<<<<<<<<<<<<
  * 
  *         if by == "user":
  */
-    __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_decoded, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_decoded, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 34, __pyx_L1_error)
+    if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":36
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":43
  *         row = decoded.split('\t')
  * 
  *         if by == "user":             # <<<<<<<<<<<<<<
  *             key = row[0]
  *         elif by == "session":
  */
-    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_user, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_user, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 43, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":37
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":44
  * 
  *         if by == "user":
  *             key = row[0]             # <<<<<<<<<<<<<<
@@ -1536,15 +1554,15 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
       if (unlikely(__pyx_v_row == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 37, __pyx_L1_error)
+        __PYX_ERR(0, 44, __pyx_L1_error)
       }
-      __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!(likely(PyString_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 37, __pyx_L1_error)
+      if (!(likely(PyString_CheckExact(PyList_GET_ITEM(__pyx_v_row, 0)))||((PyList_GET_ITEM(__pyx_v_row, 0)) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(PyList_GET_ITEM(__pyx_v_row, 0))->tp_name), 0))) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_1 = PyList_GET_ITEM(__pyx_v_row, 0);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":36
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":43
  *         row = decoded.split('\t')
  * 
  *         if by == "user":             # <<<<<<<<<<<<<<
@@ -1554,17 +1572,17 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
       goto __pyx_L7;
     }
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":38
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":45
  *         if by == "user":
  *             key = row[0]
  *         elif by == "session":             # <<<<<<<<<<<<<<
  *             key = row[3]
  *         else:
  */
-    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_session, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 38, __pyx_L1_error)
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_session, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":39
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":46
  *             key = row[0]
  *         elif by == "session":
  *             key = row[3]             # <<<<<<<<<<<<<<
@@ -1573,15 +1591,15 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
       if (unlikely(__pyx_v_row == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 39, __pyx_L1_error)
+        __PYX_ERR(0, 46, __pyx_L1_error)
       }
-      __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 3, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!(likely(PyString_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 39, __pyx_L1_error)
+      if (!(likely(PyString_CheckExact(PyList_GET_ITEM(__pyx_v_row, 3)))||((PyList_GET_ITEM(__pyx_v_row, 3)) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(PyList_GET_ITEM(__pyx_v_row, 3))->tp_name), 0))) __PYX_ERR(0, 46, __pyx_L1_error)
+      __pyx_t_1 = PyList_GET_ITEM(__pyx_v_row, 3);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":38
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":45
  *         if by == "user":
  *             key = row[0]
  *         elif by == "session":             # <<<<<<<<<<<<<<
@@ -1591,7 +1609,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
       goto __pyx_L7;
     }
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":41
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":48
  *             key = row[3]
  *         else:
  *             print("Must organize by either user or session")             # <<<<<<<<<<<<<<
@@ -1599,11 +1617,11 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  *         entry = (row[1],row[2])
  */
     /*else*/ {
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Must_organize_by_either_user_or) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Must_organize_by_either_user_or) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
     }
     __pyx_L7:;
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":43
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":50
  *             print("Must organize by either user or session")
  * 
  *         entry = (row[1],row[2])             # <<<<<<<<<<<<<<
@@ -1612,81 +1630,77 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
     if (unlikely(__pyx_v_row == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      __PYX_ERR(0, 43, __pyx_L1_error)
+      __PYX_ERR(0, 50, __pyx_L1_error)
     }
-    __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
     if (unlikely(__pyx_v_row == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      __PYX_ERR(0, 43, __pyx_L1_error)
+      __PYX_ERR(0, 50, __pyx_L1_error)
     }
-    __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_row, 2, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_5);
-    PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(PyList_GET_ITEM(__pyx_v_row, 1));
+    __Pyx_GIVEREF(PyList_GET_ITEM(__pyx_v_row, 1));
+    PyTuple_SET_ITEM(__pyx_t_1, 0, PyList_GET_ITEM(__pyx_v_row, 1));
+    __Pyx_INCREF(PyList_GET_ITEM(__pyx_v_row, 2));
+    __Pyx_GIVEREF(PyList_GET_ITEM(__pyx_v_row, 2));
+    PyTuple_SET_ITEM(__pyx_t_1, 1, PyList_GET_ITEM(__pyx_v_row, 2));
+    __Pyx_XDECREF_SET(__pyx_v_entry, ((PyObject*)__pyx_t_1));
     __pyx_t_1 = 0;
-    __pyx_t_5 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_entry, ((PyObject*)__pyx_t_2));
-    __pyx_t_2 = 0;
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":45
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":52
  *         entry = (row[1],row[2])
  * 
  *         if key in output.keys():             # <<<<<<<<<<<<<<
  *             if dedup:
  *                 if entry not in output[key]:
  */
-    if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 45, __pyx_L1_error) }
-    __pyx_t_2 = __Pyx_PyDict_Keys(__pyx_v_output); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 45, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_v_key, __pyx_t_2, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 52, __pyx_L1_error) }
+    __pyx_t_1 = __Pyx_PyDict_Keys(__pyx_v_output); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_v_key, __pyx_t_1, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_6 = (__pyx_t_4 != 0);
     if (__pyx_t_6) {
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":46
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":53
  * 
  *         if key in output.keys():
  *             if dedup:             # <<<<<<<<<<<<<<
  *                 if entry not in output[key]:
  *                     output[key].append(entry)
  */
-      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_dedup); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 46, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_dedup); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 53, __pyx_L1_error)
       if (__pyx_t_6) {
 
-        /* "cython_home/csv_to_dict_flex_new.pyx":47
+        /* "cython_home/csv_to_dict_flex_new_test.pyx":54
  *         if key in output.keys():
  *             if dedup:
  *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
  *                     output[key].append(entry)
  *             else:
  */
-        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 47, __pyx_L1_error) }
-        __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_v_entry, __pyx_t_2, Py_NE)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 47, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 54, __pyx_L1_error) }
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_v_entry, __pyx_t_1, Py_NE)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 54, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_4 = (__pyx_t_6 != 0);
         if (__pyx_t_4) {
 
-          /* "cython_home/csv_to_dict_flex_new.pyx":48
+          /* "cython_home/csv_to_dict_flex_new_test.pyx":55
  *             if dedup:
  *                 if entry not in output[key]:
  *                     output[key].append(entry)             # <<<<<<<<<<<<<<
  *             else:
  *                 output[key].append(entry)
  */
-          if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 48, __pyx_L1_error) }
-          __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 48, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 48, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 55, __pyx_L1_error) }
+          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 55, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-          /* "cython_home/csv_to_dict_flex_new.pyx":47
+          /* "cython_home/csv_to_dict_flex_new_test.pyx":54
  *         if key in output.keys():
  *             if dedup:
  *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
@@ -1695,7 +1709,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
         }
 
-        /* "cython_home/csv_to_dict_flex_new.pyx":46
+        /* "cython_home/csv_to_dict_flex_new_test.pyx":53
  * 
  *         if key in output.keys():
  *             if dedup:             # <<<<<<<<<<<<<<
@@ -1705,7 +1719,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
         goto __pyx_L9;
       }
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":50
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":57
  *                     output[key].append(entry)
  *             else:
  *                 output[key].append(entry)             # <<<<<<<<<<<<<<
@@ -1713,15 +1727,15 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  *             output[key] = [entry]
  */
       /*else*/ {
-        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 50, __pyx_L1_error) }
-        __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_2, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 50, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 57, __pyx_L1_error) }
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 57, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
       __pyx_L9:;
 
-      /* "cython_home/csv_to_dict_flex_new.pyx":45
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":52
  *         entry = (row[1],row[2])
  * 
  *         if key in output.keys():             # <<<<<<<<<<<<<<
@@ -1731,7 +1745,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
       goto __pyx_L8;
     }
 
-    /* "cython_home/csv_to_dict_flex_new.pyx":52
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":59
  *                 output[key].append(entry)
  *         else:
  *             output[key] = [entry]             # <<<<<<<<<<<<<<
@@ -1739,20 +1753,20 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  *     fclose(cfile)
  */
     /*else*/ {
-      __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_entry);
       __Pyx_GIVEREF(__pyx_v_entry);
-      PyList_SET_ITEM(__pyx_t_2, 0, __pyx_v_entry);
-      if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 52, __pyx_L1_error) }
-      if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_key, __pyx_t_2) < 0)) __PYX_ERR(0, 52, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      PyList_SET_ITEM(__pyx_t_1, 0, __pyx_v_entry);
+      if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 59, __pyx_L1_error) }
+      if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_key, __pyx_t_1) < 0)) __PYX_ERR(0, 59, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
     __pyx_L8:;
   }
   __pyx_L5_break:;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":54
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":61
  *             output[key] = [entry]
  * 
  *     fclose(cfile)             # <<<<<<<<<<<<<<
@@ -1761,20 +1775,22 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
  */
   (void)(fclose(__pyx_v_cfile));
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":56
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":63
  *     fclose(cfile)
  * 
  *     return output             # <<<<<<<<<<<<<<
+ * 
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_output);
   __pyx_r = __pyx_v_output;
   goto __pyx_L0;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":9
- * 
- * 
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":16
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string
  */
@@ -1784,7 +1800,7 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new.csv_to_dict_flex_new", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new_test.csv_to_dict_flex_new_v1", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_filename_byte_string);
@@ -1798,6 +1814,1175 @@ static PyObject *__pyx_pf_11cython_home_20csv_to_dict_flex_new_csv_to_dict_flex_
   return __pyx_r;
 }
 
+/* "cython_home/csv_to_dict_flex_new_test.pyx":66
+ * 
+ * 
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_3csv_to_dict_flex_new_v2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_25csv_to_dict_flex_new_test_3csv_to_dict_flex_new_v2 = {"csv_to_dict_flex_new_v2", (PyCFunction)__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_3csv_to_dict_flex_new_v2, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_3csv_to_dict_flex_new_v2(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_filename = 0;
+  PyObject *__pyx_v_by = 0;
+  PyObject *__pyx_v_dedup = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("csv_to_dict_flex_new_v2 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_filename,&__pyx_n_s_by,&__pyx_n_s_dedup,0};
+    PyObject* values[3] = {0,0,0};
+    values[1] = ((PyObject *)__pyx_n_s_user);
+    values[2] = ((PyObject *)Py_False);
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_filename)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_by);
+          if (value) { values[1] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_dedup);
+          if (value) { values[2] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "csv_to_dict_flex_new_v2") < 0)) __PYX_ERR(0, 66, __pyx_L3_error)
+      }
+    } else {
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_filename = values[0];
+    __pyx_v_by = values[1];
+    __pyx_v_dedup = values[2];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("csv_to_dict_flex_new_v2", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 66, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new_test.csv_to_dict_flex_new_v2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_11cython_home_25csv_to_dict_flex_new_test_2csv_to_dict_flex_new_v2(__pyx_self, __pyx_v_filename, __pyx_v_by, __pyx_v_dedup);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_11cython_home_25csv_to_dict_flex_new_test_2csv_to_dict_flex_new_v2(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup) {
+  PyObject *__pyx_v_filename_byte_string = NULL;
+  char *__pyx_v_fname;
+  FILE *__pyx_v_cfile;
+  PyObject *__pyx_v_decoded = 0;
+  PyObject *__pyx_v_row = 0;
+  PyObject *__pyx_v_output = 0;
+  char *__pyx_v_line;
+  size_t __pyx_v_l;
+  Py_ssize_t __pyx_v_read;
+  PyObject *__pyx_v_key = 0;
+  PyObject *__pyx_v_item_id = 0;
+  PyObject *__pyx_v_timestamp = 0;
+  PyObject *__pyx_v_entry = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  char *__pyx_t_3;
+  int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("csv_to_dict_flex_new_v2", 0);
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":67
+ * 
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):
+ *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
+ *     cdef char* fname = filename_byte_string
+ * 
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_filename, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_filename_byte_string = __pyx_t_2;
+  __pyx_t_2 = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":68
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string             # <<<<<<<<<<<<<<
+ * 
+ *     cdef FILE* cfile
+ */
+  __pyx_t_3 = __Pyx_PyObject_AsWritableString(__pyx_v_filename_byte_string); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_v_fname = __pyx_t_3;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":75
+ *     cdef list row
+ *     cdef dict output
+ *     output = {}             # <<<<<<<<<<<<<<
+ * 
+ *     cfile = fopen(fname, "rb")
+ */
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_v_output = ((PyObject*)__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":77
+ *     output = {}
+ * 
+ *     cfile = fopen(fname, "rb")             # <<<<<<<<<<<<<<
+ *     if cfile == NULL:
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ */
+  __pyx_v_cfile = fopen(__pyx_v_fname, ((char const *)"rb"));
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":78
+ * 
+ *     cfile = fopen(fname, "rb")
+ *     if cfile == NULL:             # <<<<<<<<<<<<<<
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ * 
+ */
+  __pyx_t_4 = ((__pyx_v_cfile == NULL) != 0);
+  if (unlikely(__pyx_t_4)) {
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":79
+ *     cfile = fopen(fname, "rb")
+ *     if cfile == NULL:
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)             # <<<<<<<<<<<<<<
+ * 
+ *     cdef char * line = NULL
+ */
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_FileNotFoundError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_No_such_file_or_directory_s, __pyx_v_filename); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_INCREF(__pyx_int_2);
+    __Pyx_GIVEREF(__pyx_int_2);
+    PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_int_2);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_1);
+    __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 79, __pyx_L1_error)
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":78
+ * 
+ *     cfile = fopen(fname, "rb")
+ *     if cfile == NULL:             # <<<<<<<<<<<<<<
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ * 
+ */
+  }
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":81
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ * 
+ *     cdef char * line = NULL             # <<<<<<<<<<<<<<
+ *     cdef size_t l = 0
+ *     cdef ssize_t read
+ */
+  __pyx_v_line = NULL;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":82
+ * 
+ *     cdef char * line = NULL
+ *     cdef size_t l = 0             # <<<<<<<<<<<<<<
+ *     cdef ssize_t read
+ * 
+ */
+  __pyx_v_l = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":89
+ *     cdef str timestamp
+ * 
+ *     while True:             # <<<<<<<<<<<<<<
+ *         read = getline(&line, &l, cfile)
+ *         if read == -1: break
+ */
+  while (1) {
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":90
+ * 
+ *     while True:
+ *         read = getline(&line, &l, cfile)             # <<<<<<<<<<<<<<
+ *         if read == -1: break
+ *         decoded = line.decode("UTF-8")
+ */
+    __pyx_v_read = getline((&__pyx_v_line), (&__pyx_v_l), __pyx_v_cfile);
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":91
+ *     while True:
+ *         read = getline(&line, &l, cfile)
+ *         if read == -1: break             # <<<<<<<<<<<<<<
+ *         decoded = line.decode("UTF-8")
+ *         row = decoded.split('\t')
+ */
+    __pyx_t_4 = ((__pyx_v_read == -1L) != 0);
+    if (__pyx_t_4) {
+      goto __pyx_L5_break;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":92
+ *         read = getline(&line, &l, cfile)
+ *         if read == -1: break
+ *         decoded = line.decode("UTF-8")             # <<<<<<<<<<<<<<
+ *         row = decoded.split('\t')
+ * 
+ */
+    __pyx_t_1 = __Pyx_decode_c_string(__pyx_v_line, 0, strlen(__pyx_v_line), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 92, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!(likely(PyString_CheckExact(__pyx_t_1))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 92, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_decoded, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":93
+ *         if read == -1: break
+ *         decoded = line.decode("UTF-8")
+ *         row = decoded.split('\t')             # <<<<<<<<<<<<<<
+ * 
+ *         if by == "user":
+ */
+    __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_decoded, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 93, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":95
+ *         row = decoded.split('\t')
+ * 
+ *         if by == "user":             # <<<<<<<<<<<<<<
+ *             key = row[0]
+ *         elif by == "session":
+ */
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_user, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 95, __pyx_L1_error)
+    if (__pyx_t_4) {
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":96
+ * 
+ *         if by == "user":
+ *             key = row[0]             # <<<<<<<<<<<<<<
+ *         elif by == "session":
+ *             key = row[3]
+ */
+      if (unlikely(__pyx_v_row == Py_None)) {
+        PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+        __PYX_ERR(0, 96, __pyx_L1_error)
+      }
+      __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!(likely(PyString_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 96, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
+      __pyx_t_1 = 0;
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":95
+ *         row = decoded.split('\t')
+ * 
+ *         if by == "user":             # <<<<<<<<<<<<<<
+ *             key = row[0]
+ *         elif by == "session":
+ */
+      goto __pyx_L7;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":97
+ *         if by == "user":
+ *             key = row[0]
+ *         elif by == "session":             # <<<<<<<<<<<<<<
+ *             key = row[3]
+ *         else:
+ */
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_session, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 97, __pyx_L1_error)
+    if (__pyx_t_4) {
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":98
+ *             key = row[0]
+ *         elif by == "session":
+ *             key = row[3]             # <<<<<<<<<<<<<<
+ *         else:
+ *             print("Must organize by either user or session")
+ */
+      if (unlikely(__pyx_v_row == Py_None)) {
+        PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+        __PYX_ERR(0, 98, __pyx_L1_error)
+      }
+      __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 3, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!(likely(PyString_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 98, __pyx_L1_error)
+      __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
+      __pyx_t_1 = 0;
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":97
+ *         if by == "user":
+ *             key = row[0]
+ *         elif by == "session":             # <<<<<<<<<<<<<<
+ *             key = row[3]
+ *         else:
+ */
+      goto __pyx_L7;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":100
+ *             key = row[3]
+ *         else:
+ *             print("Must organize by either user or session")             # <<<<<<<<<<<<<<
+ * 
+ *         item_id = row[1]
+ */
+    /*else*/ {
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Must_organize_by_either_user_or) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
+    }
+    __pyx_L7:;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":102
+ *             print("Must organize by either user or session")
+ * 
+ *         item_id = row[1]             # <<<<<<<<<<<<<<
+ *         timestamp = row[2]
+ *         #entry = (row[1],row[2])
+ */
+    if (unlikely(__pyx_v_row == Py_None)) {
+      PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+      __PYX_ERR(0, 102, __pyx_L1_error)
+    }
+    __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 1, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!(likely(PyString_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 102, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_item_id, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":103
+ * 
+ *         item_id = row[1]
+ *         timestamp = row[2]             # <<<<<<<<<<<<<<
+ *         #entry = (row[1],row[2])
+ *         entry = (item_id,timestamp)
+ */
+    if (unlikely(__pyx_v_row == Py_None)) {
+      PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+      __PYX_ERR(0, 103, __pyx_L1_error)
+    }
+    __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_row, 2, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!(likely(PyString_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 103, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_timestamp, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":105
+ *         timestamp = row[2]
+ *         #entry = (row[1],row[2])
+ *         entry = (item_id,timestamp)             # <<<<<<<<<<<<<<
+ * 
+ *         if key in output.keys():
+ */
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v_item_id);
+    __Pyx_GIVEREF(__pyx_v_item_id);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_item_id);
+    __Pyx_INCREF(__pyx_v_timestamp);
+    __Pyx_GIVEREF(__pyx_v_timestamp);
+    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_timestamp);
+    __Pyx_XDECREF_SET(__pyx_v_entry, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":107
+ *         entry = (item_id,timestamp)
+ * 
+ *         if key in output.keys():             # <<<<<<<<<<<<<<
+ *             if dedup:
+ *                 if entry not in output[key]:
+ */
+    if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 107, __pyx_L1_error) }
+    __pyx_t_1 = __Pyx_PyDict_Keys(__pyx_v_output); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_v_key, __pyx_t_1, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_6 = (__pyx_t_4 != 0);
+    if (__pyx_t_6) {
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":108
+ * 
+ *         if key in output.keys():
+ *             if dedup:             # <<<<<<<<<<<<<<
+ *                 if entry not in output[key]:
+ *                     output[key].append(entry)
+ */
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_dedup); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 108, __pyx_L1_error)
+      if (__pyx_t_6) {
+
+        /* "cython_home/csv_to_dict_flex_new_test.pyx":109
+ *         if key in output.keys():
+ *             if dedup:
+ *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
+ *                     output[key].append(entry)
+ *             else:
+ */
+        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 109, __pyx_L1_error) }
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_v_entry, __pyx_t_1, Py_NE)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 109, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_4 = (__pyx_t_6 != 0);
+        if (__pyx_t_4) {
+
+          /* "cython_home/csv_to_dict_flex_new_test.pyx":110
+ *             if dedup:
+ *                 if entry not in output[key]:
+ *                     output[key].append(entry)             # <<<<<<<<<<<<<<
+ *             else:
+ *                 output[key].append(entry)
+ */
+          if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 110, __pyx_L1_error) }
+          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 110, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+          /* "cython_home/csv_to_dict_flex_new_test.pyx":109
+ *         if key in output.keys():
+ *             if dedup:
+ *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
+ *                     output[key].append(entry)
+ *             else:
+ */
+        }
+
+        /* "cython_home/csv_to_dict_flex_new_test.pyx":108
+ * 
+ *         if key in output.keys():
+ *             if dedup:             # <<<<<<<<<<<<<<
+ *                 if entry not in output[key]:
+ *                     output[key].append(entry)
+ */
+        goto __pyx_L9;
+      }
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":112
+ *                     output[key].append(entry)
+ *             else:
+ *                 output[key].append(entry)             # <<<<<<<<<<<<<<
+ *         else:
+ *             output[key] = [entry]
+ */
+      /*else*/ {
+        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 112, __pyx_L1_error) }
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 112, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      }
+      __pyx_L9:;
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":107
+ *         entry = (item_id,timestamp)
+ * 
+ *         if key in output.keys():             # <<<<<<<<<<<<<<
+ *             if dedup:
+ *                 if entry not in output[key]:
+ */
+      goto __pyx_L8;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":114
+ *                 output[key].append(entry)
+ *         else:
+ *             output[key] = [entry]             # <<<<<<<<<<<<<<
+ * 
+ *     fclose(cfile)
+ */
+    /*else*/ {
+      __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_INCREF(__pyx_v_entry);
+      __Pyx_GIVEREF(__pyx_v_entry);
+      PyList_SET_ITEM(__pyx_t_1, 0, __pyx_v_entry);
+      if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 114, __pyx_L1_error) }
+      if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_key, __pyx_t_1) < 0)) __PYX_ERR(0, 114, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    }
+    __pyx_L8:;
+  }
+  __pyx_L5_break:;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":116
+ *             output[key] = [entry]
+ * 
+ *     fclose(cfile)             # <<<<<<<<<<<<<<
+ * 
+ *     return output
+ */
+  (void)(fclose(__pyx_v_cfile));
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":118
+ *     fclose(cfile)
+ * 
+ *     return output             # <<<<<<<<<<<<<<
+ * 
+ * @cython.boundscheck(False)
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_output);
+  __pyx_r = __pyx_v_output;
+  goto __pyx_L0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":66
+ * 
+ * 
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new_test.csv_to_dict_flex_new_v2", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_filename_byte_string);
+  __Pyx_XDECREF(__pyx_v_decoded);
+  __Pyx_XDECREF(__pyx_v_row);
+  __Pyx_XDECREF(__pyx_v_output);
+  __Pyx_XDECREF(__pyx_v_key);
+  __Pyx_XDECREF(__pyx_v_item_id);
+  __Pyx_XDECREF(__pyx_v_timestamp);
+  __Pyx_XDECREF(__pyx_v_entry);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cython_home/csv_to_dict_flex_new_test.pyx":122
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_5csv_to_dict_flex_new_v3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_11cython_home_25csv_to_dict_flex_new_test_5csv_to_dict_flex_new_v3 = {"csv_to_dict_flex_new_v3", (PyCFunction)__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_5csv_to_dict_flex_new_v3, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_11cython_home_25csv_to_dict_flex_new_test_5csv_to_dict_flex_new_v3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_filename = 0;
+  PyObject *__pyx_v_by = 0;
+  PyObject *__pyx_v_dedup = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("csv_to_dict_flex_new_v3 (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_filename,&__pyx_n_s_by,&__pyx_n_s_dedup,0};
+    PyObject* values[3] = {0,0,0};
+    values[1] = ((PyObject *)__pyx_n_s_user);
+    values[2] = ((PyObject *)Py_False);
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_filename)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_by);
+          if (value) { values[1] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_dedup);
+          if (value) { values[2] = value; kw_args--; }
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "csv_to_dict_flex_new_v3") < 0)) __PYX_ERR(0, 122, __pyx_L3_error)
+      }
+    } else {
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_filename = values[0];
+    __pyx_v_by = values[1];
+    __pyx_v_dedup = values[2];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("csv_to_dict_flex_new_v3", 0, 1, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 122, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new_test.csv_to_dict_flex_new_v3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_11cython_home_25csv_to_dict_flex_new_test_4csv_to_dict_flex_new_v3(__pyx_self, __pyx_v_filename, __pyx_v_by, __pyx_v_dedup);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_11cython_home_25csv_to_dict_flex_new_test_4csv_to_dict_flex_new_v3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_filename, PyObject *__pyx_v_by, PyObject *__pyx_v_dedup) {
+  PyObject *__pyx_v_filename_byte_string = NULL;
+  char *__pyx_v_fname;
+  FILE *__pyx_v_cfile;
+  PyObject *__pyx_v_decoded = 0;
+  PyObject *__pyx_v_row = 0;
+  PyObject *__pyx_v_output = 0;
+  char *__pyx_v_line;
+  size_t __pyx_v_l;
+  Py_ssize_t __pyx_v_read;
+  PyObject *__pyx_v_key = 0;
+  PyObject *__pyx_v_item_id = 0;
+  PyObject *__pyx_v_timestamp = 0;
+  PyObject *__pyx_v_entry = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  char *__pyx_t_3;
+  int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  __Pyx_RefNannySetupContext("csv_to_dict_flex_new_v3", 0);
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":123
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):
+ *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
+ *     cdef char* fname = filename_byte_string
+ * 
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_filename, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_filename_byte_string = __pyx_t_2;
+  __pyx_t_2 = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":124
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string             # <<<<<<<<<<<<<<
+ * 
+ *     cdef FILE* cfile
+ */
+  __pyx_t_3 = __Pyx_PyObject_AsWritableString(__pyx_v_filename_byte_string); if (unlikely((!__pyx_t_3) && PyErr_Occurred())) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_v_fname = __pyx_t_3;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":131
+ *     cdef list row
+ *     cdef dict output
+ *     output = {}             # <<<<<<<<<<<<<<
+ * 
+ *     cfile = fopen(fname, "rb")
+ */
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_v_output = ((PyObject*)__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":133
+ *     output = {}
+ * 
+ *     cfile = fopen(fname, "rb")             # <<<<<<<<<<<<<<
+ *     if cfile == NULL:
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ */
+  __pyx_v_cfile = fopen(__pyx_v_fname, ((char const *)"rb"));
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":134
+ * 
+ *     cfile = fopen(fname, "rb")
+ *     if cfile == NULL:             # <<<<<<<<<<<<<<
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ * 
+ */
+  __pyx_t_4 = ((__pyx_v_cfile == NULL) != 0);
+  if (unlikely(__pyx_t_4)) {
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":135
+ *     cfile = fopen(fname, "rb")
+ *     if cfile == NULL:
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)             # <<<<<<<<<<<<<<
+ * 
+ *     cdef char * line = NULL
+ */
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_FileNotFoundError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_No_such_file_or_directory_s, __pyx_v_filename); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_INCREF(__pyx_int_2);
+    __Pyx_GIVEREF(__pyx_int_2);
+    PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_int_2);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_1);
+    __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 135, __pyx_L1_error)
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":134
+ * 
+ *     cfile = fopen(fname, "rb")
+ *     if cfile == NULL:             # <<<<<<<<<<<<<<
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ * 
+ */
+  }
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":137
+ *         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
+ * 
+ *     cdef char * line = NULL             # <<<<<<<<<<<<<<
+ *     cdef size_t l = 0
+ *     cdef ssize_t read
+ */
+  __pyx_v_line = NULL;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":138
+ * 
+ *     cdef char * line = NULL
+ *     cdef size_t l = 0             # <<<<<<<<<<<<<<
+ *     cdef ssize_t read
+ * 
+ */
+  __pyx_v_l = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":145
+ *     cdef str timestamp
+ * 
+ *     while True:             # <<<<<<<<<<<<<<
+ *         read = getline(&line, &l, cfile)
+ *         if read == -1: break
+ */
+  while (1) {
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":146
+ * 
+ *     while True:
+ *         read = getline(&line, &l, cfile)             # <<<<<<<<<<<<<<
+ *         if read == -1: break
+ *         decoded = line.decode("UTF-8")
+ */
+    __pyx_v_read = getline((&__pyx_v_line), (&__pyx_v_l), __pyx_v_cfile);
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":147
+ *     while True:
+ *         read = getline(&line, &l, cfile)
+ *         if read == -1: break             # <<<<<<<<<<<<<<
+ *         decoded = line.decode("UTF-8")
+ *         row = decoded.split('\t')
+ */
+    __pyx_t_4 = ((__pyx_v_read == -1L) != 0);
+    if (__pyx_t_4) {
+      goto __pyx_L5_break;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":148
+ *         read = getline(&line, &l, cfile)
+ *         if read == -1: break
+ *         decoded = line.decode("UTF-8")             # <<<<<<<<<<<<<<
+ *         row = decoded.split('\t')
+ * 
+ */
+    __pyx_t_1 = __Pyx_decode_c_string(__pyx_v_line, 0, strlen(__pyx_v_line), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!(likely(PyString_CheckExact(__pyx_t_1))||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 148, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_decoded, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":149
+ *         if read == -1: break
+ *         decoded = line.decode("UTF-8")
+ *         row = decoded.split('\t')             # <<<<<<<<<<<<<<
+ * 
+ *         if by == "user":
+ */
+    __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_decoded, __pyx_kp_s__2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "list", Py_TYPE(__pyx_t_1)->tp_name), 0))) __PYX_ERR(0, 149, __pyx_L1_error)
+    __Pyx_XDECREF_SET(__pyx_v_row, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":151
+ *         row = decoded.split('\t')
+ * 
+ *         if by == "user":             # <<<<<<<<<<<<<<
+ *             key = row[0]
+ *         elif by == "session":
+ */
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_user, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 151, __pyx_L1_error)
+    if (__pyx_t_4) {
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":152
+ * 
+ *         if by == "user":
+ *             key = row[0]             # <<<<<<<<<<<<<<
+ *         elif by == "session":
+ *             key = row[3]
+ */
+      if (unlikely(__pyx_v_row == Py_None)) {
+        PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+        __PYX_ERR(0, 152, __pyx_L1_error)
+      }
+      if (!(likely(PyString_CheckExact(PyList_GET_ITEM(__pyx_v_row, 0)))||((PyList_GET_ITEM(__pyx_v_row, 0)) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(PyList_GET_ITEM(__pyx_v_row, 0))->tp_name), 0))) __PYX_ERR(0, 152, __pyx_L1_error)
+      __pyx_t_1 = PyList_GET_ITEM(__pyx_v_row, 0);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
+      __pyx_t_1 = 0;
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":151
+ *         row = decoded.split('\t')
+ * 
+ *         if by == "user":             # <<<<<<<<<<<<<<
+ *             key = row[0]
+ *         elif by == "session":
+ */
+      goto __pyx_L7;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":153
+ *         if by == "user":
+ *             key = row[0]
+ *         elif by == "session":             # <<<<<<<<<<<<<<
+ *             key = row[3]
+ *         else:
+ */
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_by, __pyx_n_s_session, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 153, __pyx_L1_error)
+    if (__pyx_t_4) {
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":154
+ *             key = row[0]
+ *         elif by == "session":
+ *             key = row[3]             # <<<<<<<<<<<<<<
+ *         else:
+ *             print("Must organize by either user or session")
+ */
+      if (unlikely(__pyx_v_row == Py_None)) {
+        PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+        __PYX_ERR(0, 154, __pyx_L1_error)
+      }
+      if (!(likely(PyString_CheckExact(PyList_GET_ITEM(__pyx_v_row, 3)))||((PyList_GET_ITEM(__pyx_v_row, 3)) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(PyList_GET_ITEM(__pyx_v_row, 3))->tp_name), 0))) __PYX_ERR(0, 154, __pyx_L1_error)
+      __pyx_t_1 = PyList_GET_ITEM(__pyx_v_row, 3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_XDECREF_SET(__pyx_v_key, ((PyObject*)__pyx_t_1));
+      __pyx_t_1 = 0;
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":153
+ *         if by == "user":
+ *             key = row[0]
+ *         elif by == "session":             # <<<<<<<<<<<<<<
+ *             key = row[3]
+ *         else:
+ */
+      goto __pyx_L7;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":156
+ *             key = row[3]
+ *         else:
+ *             print("Must organize by either user or session")             # <<<<<<<<<<<<<<
+ * 
+ *         item_id = row[1]
+ */
+    /*else*/ {
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Must_organize_by_either_user_or) < 0) __PYX_ERR(0, 156, __pyx_L1_error)
+    }
+    __pyx_L7:;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":158
+ *             print("Must organize by either user or session")
+ * 
+ *         item_id = row[1]             # <<<<<<<<<<<<<<
+ *         timestamp = row[2]
+ *         #entry = (row[1],row[2])
+ */
+    if (unlikely(__pyx_v_row == Py_None)) {
+      PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+      __PYX_ERR(0, 158, __pyx_L1_error)
+    }
+    if (!(likely(PyString_CheckExact(PyList_GET_ITEM(__pyx_v_row, 1)))||((PyList_GET_ITEM(__pyx_v_row, 1)) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(PyList_GET_ITEM(__pyx_v_row, 1))->tp_name), 0))) __PYX_ERR(0, 158, __pyx_L1_error)
+    __pyx_t_1 = PyList_GET_ITEM(__pyx_v_row, 1);
+    __Pyx_INCREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_item_id, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":159
+ * 
+ *         item_id = row[1]
+ *         timestamp = row[2]             # <<<<<<<<<<<<<<
+ *         #entry = (row[1],row[2])
+ *         entry = (item_id,timestamp)
+ */
+    if (unlikely(__pyx_v_row == Py_None)) {
+      PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+      __PYX_ERR(0, 159, __pyx_L1_error)
+    }
+    if (!(likely(PyString_CheckExact(PyList_GET_ITEM(__pyx_v_row, 2)))||((PyList_GET_ITEM(__pyx_v_row, 2)) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(PyList_GET_ITEM(__pyx_v_row, 2))->tp_name), 0))) __PYX_ERR(0, 159, __pyx_L1_error)
+    __pyx_t_1 = PyList_GET_ITEM(__pyx_v_row, 2);
+    __Pyx_INCREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_timestamp, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":161
+ *         timestamp = row[2]
+ *         #entry = (row[1],row[2])
+ *         entry = (item_id,timestamp)             # <<<<<<<<<<<<<<
+ * 
+ *         if key in output.keys():
+ */
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v_item_id);
+    __Pyx_GIVEREF(__pyx_v_item_id);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_item_id);
+    __Pyx_INCREF(__pyx_v_timestamp);
+    __Pyx_GIVEREF(__pyx_v_timestamp);
+    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_timestamp);
+    __Pyx_XDECREF_SET(__pyx_v_entry, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":163
+ *         entry = (item_id,timestamp)
+ * 
+ *         if key in output.keys():             # <<<<<<<<<<<<<<
+ *             if dedup:
+ *                 if entry not in output[key]:
+ */
+    if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 163, __pyx_L1_error) }
+    __pyx_t_1 = __Pyx_PyDict_Keys(__pyx_v_output); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_v_key, __pyx_t_1, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 163, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_6 = (__pyx_t_4 != 0);
+    if (__pyx_t_6) {
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":164
+ * 
+ *         if key in output.keys():
+ *             if dedup:             # <<<<<<<<<<<<<<
+ *                 if entry not in output[key]:
+ *                     output[key].append(entry)
+ */
+      __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_dedup); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 164, __pyx_L1_error)
+      if (__pyx_t_6) {
+
+        /* "cython_home/csv_to_dict_flex_new_test.pyx":165
+ *         if key in output.keys():
+ *             if dedup:
+ *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
+ *                     output[key].append(entry)
+ *             else:
+ */
+        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 165, __pyx_L1_error) }
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_v_entry, __pyx_t_1, Py_NE)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 165, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_4 = (__pyx_t_6 != 0);
+        if (__pyx_t_4) {
+
+          /* "cython_home/csv_to_dict_flex_new_test.pyx":166
+ *             if dedup:
+ *                 if entry not in output[key]:
+ *                     output[key].append(entry)             # <<<<<<<<<<<<<<
+ *             else:
+ *                 output[key].append(entry)
+ */
+          if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 166, __pyx_L1_error) }
+          __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 166, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+          /* "cython_home/csv_to_dict_flex_new_test.pyx":165
+ *         if key in output.keys():
+ *             if dedup:
+ *                 if entry not in output[key]:             # <<<<<<<<<<<<<<
+ *                     output[key].append(entry)
+ *             else:
+ */
+        }
+
+        /* "cython_home/csv_to_dict_flex_new_test.pyx":164
+ * 
+ *         if key in output.keys():
+ *             if dedup:             # <<<<<<<<<<<<<<
+ *                 if entry not in output[key]:
+ *                     output[key].append(entry)
+ */
+        goto __pyx_L9;
+      }
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":168
+ *                     output[key].append(entry)
+ *             else:
+ *                 output[key].append(entry)             # <<<<<<<<<<<<<<
+ *         else:
+ *             output[key] = [entry]
+ */
+      /*else*/ {
+        if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 168, __pyx_L1_error) }
+        __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_output, __pyx_v_key); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_7 = __Pyx_PyObject_Append(__pyx_t_1, __pyx_v_entry); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 168, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      }
+      __pyx_L9:;
+
+      /* "cython_home/csv_to_dict_flex_new_test.pyx":163
+ *         entry = (item_id,timestamp)
+ * 
+ *         if key in output.keys():             # <<<<<<<<<<<<<<
+ *             if dedup:
+ *                 if entry not in output[key]:
+ */
+      goto __pyx_L8;
+    }
+
+    /* "cython_home/csv_to_dict_flex_new_test.pyx":170
+ *                 output[key].append(entry)
+ *         else:
+ *             output[key] = [entry]             # <<<<<<<<<<<<<<
+ * 
+ *     fclose(cfile)
+ */
+    /*else*/ {
+      __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_INCREF(__pyx_v_entry);
+      __Pyx_GIVEREF(__pyx_v_entry);
+      PyList_SET_ITEM(__pyx_t_1, 0, __pyx_v_entry);
+      if (unlikely(!__pyx_v_key)) { __Pyx_RaiseUnboundLocalError("key"); __PYX_ERR(0, 170, __pyx_L1_error) }
+      if (unlikely(PyDict_SetItem(__pyx_v_output, __pyx_v_key, __pyx_t_1) < 0)) __PYX_ERR(0, 170, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    }
+    __pyx_L8:;
+  }
+  __pyx_L5_break:;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":172
+ *             output[key] = [entry]
+ * 
+ *     fclose(cfile)             # <<<<<<<<<<<<<<
+ * 
+ *     return output
+ */
+  (void)(fclose(__pyx_v_cfile));
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":174
+ *     fclose(cfile)
+ * 
+ *     return output             # <<<<<<<<<<<<<<
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_output);
+  __pyx_r = __pyx_v_output;
+  goto __pyx_L0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":122
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("cython_home.csv_to_dict_flex_new_test.csv_to_dict_flex_new_v3", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_filename_byte_string);
+  __Pyx_XDECREF(__pyx_v_decoded);
+  __Pyx_XDECREF(__pyx_v_row);
+  __Pyx_XDECREF(__pyx_v_output);
+  __Pyx_XDECREF(__pyx_v_key);
+  __Pyx_XDECREF(__pyx_v_item_id);
+  __Pyx_XDECREF(__pyx_v_timestamp);
+  __Pyx_XDECREF(__pyx_v_entry);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 static PyMethodDef __pyx_methods[] = {
   {0, 0, 0, 0}
 };
@@ -1805,17 +2990,17 @@ static PyMethodDef __pyx_methods[] = {
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_csv_to_dict_flex_new(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_csv_to_dict_flex_new_test(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_csv_to_dict_flex_new},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_csv_to_dict_flex_new_test},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "csv_to_dict_flex_new",
+    "csv_to_dict_flex_new_test",
     0, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -1844,8 +3029,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_by, __pyx_k_by, sizeof(__pyx_k_by), 0, 0, 1, 1},
   {&__pyx_n_s_cfile, __pyx_k_cfile, sizeof(__pyx_k_cfile), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
-  {&__pyx_n_s_csv_to_dict_flex_new, __pyx_k_csv_to_dict_flex_new, sizeof(__pyx_k_csv_to_dict_flex_new), 0, 0, 1, 1},
-  {&__pyx_kp_s_csv_to_dict_flex_new_pyx, __pyx_k_csv_to_dict_flex_new_pyx, sizeof(__pyx_k_csv_to_dict_flex_new_pyx), 0, 0, 1, 0},
+  {&__pyx_kp_s_csv_to_dict_flex_new_test_pyx, __pyx_k_csv_to_dict_flex_new_test_pyx, sizeof(__pyx_k_csv_to_dict_flex_new_test_pyx), 0, 0, 1, 0},
+  {&__pyx_n_s_csv_to_dict_flex_new_v1, __pyx_k_csv_to_dict_flex_new_v1, sizeof(__pyx_k_csv_to_dict_flex_new_v1), 0, 0, 1, 1},
+  {&__pyx_n_s_csv_to_dict_flex_new_v2, __pyx_k_csv_to_dict_flex_new_v2, sizeof(__pyx_k_csv_to_dict_flex_new_v2), 0, 0, 1, 1},
+  {&__pyx_n_s_csv_to_dict_flex_new_v3, __pyx_k_csv_to_dict_flex_new_v3, sizeof(__pyx_k_csv_to_dict_flex_new_v3), 0, 0, 1, 1},
   {&__pyx_n_s_cython_home_csv_to_dict_flex_new, __pyx_k_cython_home_csv_to_dict_flex_new, sizeof(__pyx_k_cython_home_csv_to_dict_flex_new), 0, 0, 1, 1},
   {&__pyx_n_s_decoded, __pyx_k_decoded, sizeof(__pyx_k_decoded), 0, 0, 1, 1},
   {&__pyx_n_s_dedup, __pyx_k_dedup, sizeof(__pyx_k_dedup), 0, 0, 1, 1},
@@ -1856,6 +3043,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_filename, __pyx_k_filename, sizeof(__pyx_k_filename), 0, 0, 1, 1},
   {&__pyx_n_s_filename_byte_string, __pyx_k_filename_byte_string, sizeof(__pyx_k_filename_byte_string), 0, 0, 1, 1},
   {&__pyx_n_s_fname, __pyx_k_fname, sizeof(__pyx_k_fname), 0, 0, 1, 1},
+  {&__pyx_n_s_item_id, __pyx_k_item_id, sizeof(__pyx_k_item_id), 0, 0, 1, 1},
   {&__pyx_n_s_key, __pyx_k_key, sizeof(__pyx_k_key), 0, 0, 1, 1},
   {&__pyx_n_s_keys, __pyx_k_keys, sizeof(__pyx_k_keys), 0, 0, 1, 1},
   {&__pyx_n_s_l, __pyx_k_l, sizeof(__pyx_k_l), 0, 0, 1, 1},
@@ -1868,6 +3056,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_session, __pyx_k_session, sizeof(__pyx_k_session), 0, 0, 1, 1},
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_timestamp, __pyx_k_timestamp, sizeof(__pyx_k_timestamp), 0, 0, 1, 1},
   {&__pyx_n_s_user, __pyx_k_user, sizeof(__pyx_k_user), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
@@ -1879,28 +3068,74 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":10
- * 
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":17
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):
  *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
  *     cdef char* fname = filename_byte_string
  * 
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_UTF_8); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_UTF_8); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":9
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":67
  * 
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):
+ *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
+ *     cdef char* fname = filename_byte_string
  * 
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ */
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_kp_s_UTF_8); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":123
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):
+ *     filename_byte_string = filename.encode("UTF-8")             # <<<<<<<<<<<<<<
+ *     cdef char* fname = filename_byte_string
+ * 
+ */
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_UTF_8); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":16
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string
  */
-  __pyx_tuple__3 = PyTuple_Pack(14, __pyx_n_s_filename, __pyx_n_s_by, __pyx_n_s_dedup, __pyx_n_s_filename_byte_string, __pyx_n_s_fname, __pyx_n_s_cfile, __pyx_n_s_decoded, __pyx_n_s_row, __pyx_n_s_output, __pyx_n_s_line, __pyx_n_s_l, __pyx_n_s_read, __pyx_n_s_key, __pyx_n_s_entry); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 9, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__3);
-  __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(3, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_csv_to_dict_flex_new_pyx, __pyx_n_s_csv_to_dict_flex_new, 9, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(14, __pyx_n_s_filename, __pyx_n_s_by, __pyx_n_s_dedup, __pyx_n_s_filename_byte_string, __pyx_n_s_fname, __pyx_n_s_cfile, __pyx_n_s_decoded, __pyx_n_s_row, __pyx_n_s_output, __pyx_n_s_line, __pyx_n_s_l, __pyx_n_s_read, __pyx_n_s_key, __pyx_n_s_entry); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(3, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_csv_to_dict_flex_new_test_pyx, __pyx_n_s_csv_to_dict_flex_new_v1, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 16, __pyx_L1_error)
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":66
+ * 
+ * 
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+  __pyx_tuple__7 = PyTuple_Pack(16, __pyx_n_s_filename, __pyx_n_s_by, __pyx_n_s_dedup, __pyx_n_s_filename_byte_string, __pyx_n_s_fname, __pyx_n_s_cfile, __pyx_n_s_decoded, __pyx_n_s_row, __pyx_n_s_output, __pyx_n_s_line, __pyx_n_s_l, __pyx_n_s_read, __pyx_n_s_key, __pyx_n_s_item_id, __pyx_n_s_timestamp, __pyx_n_s_entry); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(3, 0, 16, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_csv_to_dict_flex_new_test_pyx, __pyx_n_s_csv_to_dict_flex_new_v2, 66, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 66, __pyx_L1_error)
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":122
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+  __pyx_tuple__9 = PyTuple_Pack(16, __pyx_n_s_filename, __pyx_n_s_by, __pyx_n_s_dedup, __pyx_n_s_filename_byte_string, __pyx_n_s_fname, __pyx_n_s_cfile, __pyx_n_s_decoded, __pyx_n_s_row, __pyx_n_s_output, __pyx_n_s_line, __pyx_n_s_l, __pyx_n_s_read, __pyx_n_s_key, __pyx_n_s_item_id, __pyx_n_s_timestamp, __pyx_n_s_entry); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(3, 0, 16, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_csv_to_dict_flex_new_test_pyx, __pyx_n_s_csv_to_dict_flex_new_v3, 122, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 122, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2008,11 +3243,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initcsv_to_dict_flex_new(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initcsv_to_dict_flex_new(void)
+__Pyx_PyMODINIT_FUNC initcsv_to_dict_flex_new_test(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initcsv_to_dict_flex_new_test(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_csv_to_dict_flex_new(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_csv_to_dict_flex_new(void)
+__Pyx_PyMODINIT_FUNC PyInit_csv_to_dict_flex_new_test(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_csv_to_dict_flex_new_test(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -2052,7 +3287,7 @@ bad:
 }
 
 
-static int __pyx_pymod_exec_csv_to_dict_flex_new(PyObject *__pyx_pyinit_module)
+static int __pyx_pymod_exec_csv_to_dict_flex_new_test(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -2072,7 +3307,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_csv_to_dict_flex_new(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_csv_to_dict_flex_new_test(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -2108,7 +3343,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("csv_to_dict_flex_new", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("csv_to_dict_flex_new_test", __pyx_methods, 0, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -2127,14 +3362,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_cython_home__csv_to_dict_flex_new) {
+  if (__pyx_module_is_main_cython_home__csv_to_dict_flex_new_test) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "cython_home.csv_to_dict_flex_new")) {
-      if (unlikely(PyDict_SetItemString(modules, "cython_home.csv_to_dict_flex_new", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "cython_home.csv_to_dict_flex_new_test")) {
+      if (unlikely(PyDict_SetItemString(modules, "cython_home.csv_to_dict_flex_new_test", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2155,22 +3390,46 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":9
- * 
- * 
- * def csv_to_dict_flex_new(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":16
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
  *     filename_byte_string = filename.encode("UTF-8")
  *     cdef char* fname = filename_byte_string
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_20csv_to_dict_flex_new_1csv_to_dict_flex_new, NULL, __pyx_n_s_cython_home_csv_to_dict_flex_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_25csv_to_dict_flex_new_test_1csv_to_dict_flex_new_v1, NULL, __pyx_n_s_cython_home_csv_to_dict_flex_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv_to_dict_flex_new, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv_to_dict_flex_new_v1, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cython_home/csv_to_dict_flex_new.pyx":1
- * from libc.stdio cimport *             # <<<<<<<<<<<<<<
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":66
  * 
- * cdef extern from "stdio.h":
+ * 
+ * def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_25csv_to_dict_flex_new_test_3csv_to_dict_flex_new_v2, NULL, __pyx_n_s_cython_home_csv_to_dict_flex_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv_to_dict_flex_new_v2, __pyx_t_1) < 0) __PYX_ERR(0, 66, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":122
+ * @cython.boundscheck(False)
+ * @cython.wraparound(False)
+ * def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):             # <<<<<<<<<<<<<<
+ *     filename_byte_string = filename.encode("UTF-8")
+ *     cdef char* fname = filename_byte_string
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_home_25csv_to_dict_flex_new_test_5csv_to_dict_flex_new_v3, NULL, __pyx_n_s_cython_home_csv_to_dict_flex_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csv_to_dict_flex_new_v3, __pyx_t_1) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cython_home/csv_to_dict_flex_new_test.pyx":1
+ * import cython             # <<<<<<<<<<<<<<
+ * cimport cython
+ * 
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -2184,11 +3443,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init cython_home.csv_to_dict_flex_new", 0, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init cython_home.csv_to_dict_flex_new_test", 0, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init cython_home.csv_to_dict_flex_new");
+    PyErr_SetString(PyExc_ImportError, "init cython_home.csv_to_dict_flex_new_test");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2873,93 +4132,6 @@ return_ne:
 #endif
 }
 
-/* GetItemInt */
-    static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
-    PyObject *r;
-    if (!j) return NULL;
-    r = PyObject_GetItem(o, j);
-    Py_DECREF(j);
-    return r;
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyList_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely((0 <= wrapped_i) & (wrapped_i < PyList_GET_SIZE(o)))) {
-        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyTuple_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely((0 <= wrapped_i) & (wrapped_i < PyTuple_GET_SIZE(o)))) {
-        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
-                                                     CYTHON_NCP_UNUSED int wraparound,
-                                                     CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
-    if (is_list || PyList_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
-        if ((!boundscheck) || (likely((n >= 0) & (n < PyList_GET_SIZE(o))))) {
-            PyObject *r = PyList_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    }
-    else if (PyTuple_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
-        if ((!boundscheck) || likely((n >= 0) & (n < PyTuple_GET_SIZE(o)))) {
-            PyObject *r = PyTuple_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    } else {
-        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
-        if (likely(m && m->sq_item)) {
-            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
-                Py_ssize_t l = m->sq_length(o);
-                if (likely(l >= 0)) {
-                    i += l;
-                } else {
-                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
-                        return NULL;
-                    PyErr_Clear();
-                }
-            }
-            return m->sq_item(o, i);
-        }
-    }
-#else
-    if (is_list || PySequence_Check(o)) {
-        return PySequence_GetItem(o, i);
-    }
-#endif
-    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
-}
-
 /* None */
     static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
     PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
@@ -3276,6 +4448,93 @@ static PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name
         Py_DECREF(retval);
     }
     return 0;
+}
+
+/* GetItemInt */
+    static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
+    PyObject *r;
+    if (!j) return NULL;
+    r = PyObject_GetItem(o, j);
+    Py_DECREF(j);
+    return r;
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyList_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely((0 <= wrapped_i) & (wrapped_i < PyList_GET_SIZE(o)))) {
+        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyTuple_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely((0 <= wrapped_i) & (wrapped_i < PyTuple_GET_SIZE(o)))) {
+        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
+                                                     CYTHON_NCP_UNUSED int wraparound,
+                                                     CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
+    if (is_list || PyList_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
+        if ((!boundscheck) || (likely((n >= 0) & (n < PyList_GET_SIZE(o))))) {
+            PyObject *r = PyList_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    }
+    else if (PyTuple_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
+        if ((!boundscheck) || likely((n >= 0) & (n < PyTuple_GET_SIZE(o)))) {
+            PyObject *r = PyTuple_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    } else {
+        PySequenceMethods *m = Py_TYPE(o)->tp_as_sequence;
+        if (likely(m && m->sq_item)) {
+            if (wraparound && unlikely(i < 0) && likely(m->sq_length)) {
+                Py_ssize_t l = m->sq_length(o);
+                if (likely(l >= 0)) {
+                    i += l;
+                } else {
+                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
+                        return NULL;
+                    PyErr_Clear();
+                }
+            }
+            return m->sq_item(o, i);
+        }
+    }
+#else
+    if (is_list || PySequence_Check(o)) {
+        return PySequence_GetItem(o, i);
+    }
+#endif
+    return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
 }
 
 /* CLineInTraceback */

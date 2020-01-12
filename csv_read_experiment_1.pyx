@@ -1,3 +1,4 @@
+import cython
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

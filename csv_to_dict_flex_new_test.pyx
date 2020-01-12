@@ -62,8 +62,9 @@ def csv_to_dict_flex_new_v1(filename,by="user",dedup=False):
  
     return output
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
+# @cython.boundscheck(False)
+# @cython.wraparound(False)
+
 def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
@@ -84,31 +85,35 @@ def csv_to_dict_flex_new_v2(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
+    cdef str item_id
+    cdef str timestamp
  
-    with nogil:
-        while True:
-            read = getline(&line, &l, cfile)
-            if read == -1: break
-            decoded = line.decode("UTF-8")
-            row = decoded.split('\t')
+    while True:
+        read = getline(&line, &l, cfile)
+        if read == -1: break
+        decoded = line.decode("UTF-8")
+        row = decoded.split('\t')
 
-            if by == "user":
-                key = row[0]
-            elif by == "session":
-                key = row[3]
+        if by == "user":
+            key = row[0]
+        elif by == "session":
+            key = row[3]
+        else:
+            print("Must organize by either user or session")
+
+        item_id = row[1]
+        timestamp = row[2]
+        #entry = (row[1],row[2])
+        entry = (item_id,timestamp)
+
+        if key in output.keys():
+            if dedup:
+                if entry not in output[key]:
+                    output[key].append(entry)                    
             else:
-                print("Must organize by either user or session")
-
-            entry = (row[1],row[2])
-
-            if key in output.keys():
-                if dedup:
-                    if entry not in output[key]:
-                        output[key].append(entry)                    
-                else:
-                    output[key].append(entry)
-            else:
-                output[key] = [entry]
+                output[key].append(entry)
+        else:
+            output[key] = [entry]
  
     fclose(cfile)
  

@@ -173,6 +173,10 @@ def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):
  
     return output
 
+# For use in csv_to_dict_flex_new_v4 and maybe subsequent versions
+cdef struct entry:
+    int item_id
+    str timestamp
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
@@ -198,10 +202,6 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef str key
     cdef str item_id
     cdef str timestamp
-
-    cdef struct entry:
-        int item_id
-        str timestamp
  
     while True:
         read = getline(&line, &l, cfile)

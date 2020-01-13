@@ -176,7 +176,7 @@ def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):
 # For use in csv_to_dict_flex_new_v4 and maybe subsequent versions
 cdef struct entry:
     int item_id
-    str timestamp
+    char* timestamp
 
 @cython.boundscheck(False)
 @cython.wraparound(False)

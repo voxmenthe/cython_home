@@ -174,7 +174,7 @@ def csv_to_dict_flex_new_v3(filename,by="user",dedup=False):
     return output
 
 # For use in csv_to_dict_flex_new_v4 and maybe subsequent versions
-cdef struct entry:
+cdef struct ENTRY:
     int item_id
     char* timestamp
 
@@ -203,7 +203,7 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef str item_id
     cdef str timestamp
 
-    cdef entry myentry
+    cdef ENTRY myentry
  
     while True:
         read = getline(&line, &l, cfile)
@@ -225,7 +225,7 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
 
         if key in output.keys():
             if dedup:
-                if entry not in output[key]:
+                if myentry not in output[key]:
                     output[key].append(myentry)                    
             else:
                 output[key].append(myentry)
@@ -283,7 +283,7 @@ def csv_to_dict_flex_new_v5(filename,by="user",dedup=False):
 
         if key in output.keys():
             if dedup:
-                if entry not in output[key]:
+                if myentry not in output[key]:
                     output[key].append(myentry)                    
             else:
                 output[key].append(myentry)
@@ -338,7 +338,7 @@ def csv_to_dict_flex_new_v6(filename,by="user",dedup=False):
 
         if key in output.keys():
             if dedup:
-                if entry not in output[key]:
+                if myentry not in output[key]:
                     output[key].append(myentry)                    
             else:
                 output[key].append(myentry)

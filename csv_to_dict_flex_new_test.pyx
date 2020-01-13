@@ -258,8 +258,8 @@ def csv_to_dict_flex_new_v5(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
-    cdef str item_id
-    cdef str timestamp
+    cdef char* item_id
+    cdef char* timestamp
 
     cdef (char*, char*) myentry
  

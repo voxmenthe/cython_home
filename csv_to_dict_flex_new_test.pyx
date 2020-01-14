@@ -200,8 +200,8 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
-    cdef str item_id
-    cdef str timestamp
+    cdef bytes item_id
+    cdef bytes timestamp
 
     #cdef ENTRY myentry
     cdef (char*, char*) myentry

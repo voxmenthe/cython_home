@@ -199,9 +199,9 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef size_t l = 0
     cdef ssize_t read
 
-    cdef char* key = NULL
-    cdef char* item_id = NULL
-    cdef char* timestamp = NULL
+    cdef str key
+    cdef str item_id
+    cdef str timestamp
 
     #cdef ENTRY myentry
     cdef (char*, char*) myentry

@@ -204,7 +204,7 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef str timestamp
 
     #cdef ENTRY myentry
-    cdef (str, str) myentry
+    cdef tuple myentry
  
     while True:
         read = getline(&line, &l, cfile)

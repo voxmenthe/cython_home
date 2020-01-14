@@ -200,11 +200,11 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
-    cdef bytes item_id
-    cdef bytes timestamp
+    cdef str item_id
+    cdef str timestamp
 
     #cdef ENTRY myentry
-    cdef (char*, char*) myentry
+    cdef (str, str) myentry
  
     while True:
         read = getline(&line, &l, cfile)
@@ -259,10 +259,10 @@ def csv_to_dict_flex_new_v5(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
-    cdef char* item_id
-    cdef char* timestamp
+    cdef str item_id
+    cdef str timestamp
 
-    cdef (char*, char*) myentry
+    cdef (str, str) myentry
  
     while True:
         read = getline(&line, &l, cfile)
@@ -313,10 +313,10 @@ def csv_to_dict_flex_new_v6(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
-    cdef char* item_id
-    cdef char* timestamp
+    cdef str item_id
+    cdef str timestamp
 
-    cdef (char*, char*) myentry
+    cdef (str, str) myentry
  
     while True:
         temp_events_list = []
@@ -350,7 +350,12 @@ def csv_to_dict_flex_new_v6(filename,by="user",dedup=False):
  
     return output
 
+from libcpp.list cimport list as cpplist
+
 def csv_to_dict_flex_new_v7(filename,by="user",dedup=False):
+
+    cdef cpplist[str] temp
+
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
  
@@ -368,10 +373,10 @@ def csv_to_dict_flex_new_v7(filename,by="user",dedup=False):
     cdef ssize_t read
 
     cdef str key
-    cdef char* item_id
-    cdef char* timestamp
+    cdef str item_id
+    cdef str timestamp
 
-    cdef (char*, char*) myentry
+    cdef (str, str) myentry
  
     while True:
         temp_events_list = []

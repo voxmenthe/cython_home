@@ -186,7 +186,7 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
  
     cdef FILE* cfile
     
-    cdef char* decoded
+    cdef str decoded
     cdef list row
     cdef dict output
     output = {}

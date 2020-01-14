@@ -186,7 +186,7 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
  
     cdef FILE* cfile
     
-    cdef str decoded
+    cdef char* decoded
     cdef list row
     cdef dict output
     output = {}
@@ -199,11 +199,12 @@ def csv_to_dict_flex_new_v4(filename,by="user",dedup=False):
     cdef size_t l = 0
     cdef ssize_t read
 
-    cdef str key
-    cdef str item_id
-    cdef str timestamp
+    cdef char* key
+    cdef char* item_id
+    cdef char* timestamp
 
-    cdef ENTRY myentry
+    #cdef ENTRY myentry
+    cdef (char*, char*) myentry
  
     while True:
         read = getline(&line, &l, cfile)
@@ -349,66 +350,57 @@ def csv_to_dict_flex_new_v6(filename,by="user",dedup=False):
  
     return output
 
-
-# from libcpp.list cimport list as cpplist
-
-# def csv_to_dict_flex_new_v6(filename,by="user",dedup=False):
-#     filename_byte_string = filename.encode("UTF-8")
-#     cdef char* fname = filename_byte_string
+def csv_to_dict_flex_new_v7(filename,by="user",dedup=False):
+    filename_byte_string = filename.encode("UTF-8")
+    cdef char* fname = filename_byte_string
  
-#     cdef FILE* cfile
+    cdef FILE* cfile
     
-#     cdef str decoded
-#     cdef list row
-#     cdef dict output
-#     output = {}
+    cdef str decoded
+    cdef list row
+    cdef dict output = {}
+    cdef list temp_events_list = []
 
-#     cdef (char*, char*) myentry
+    cfile = fopen(fname, "rb")
 
-#     cdef cpplist[myentry]
-#     cdef int N = temp.size()
-#     cdef list eventslist = N*[0]
+    cdef char * line = NULL
+    cdef size_t l = 0
+    cdef ssize_t read
 
+    cdef str key
+    cdef char* item_id
+    cdef char* timestamp
 
-#     cfile = fopen(fname, "rb")
-#     if cfile == NULL:
-#         raise FileNotFoundError(2, "No such file or directory: '%s'" % filename)
-
-#     cdef char * line = NULL
-#     cdef size_t l = 0
-#     cdef ssize_t read
-
-#     cdef str key
-#     cdef str item_id
-#     cdef str timestamp
+    cdef (char*, char*) myentry
  
-#     while True:
-#         read = getline(&line, &l, cfile)
-#         if read == -1: break
-#         decoded = line.decode("UTF-8")
-#         row = decoded.split('\t')
+    while True:
+        temp_events_list = []
+        read = getline(&line, &l, cfile)
+        if read == -1: break
+        decoded = line.decode("UTF-8")
+        row = decoded.split('\t')
 
-#         if by == "user":
-#             key = row[0]
-#         elif by == "session":
-#             key = row[3]
-#         else:
-#             print("Must organize by either user or session")
+        if by == "user":
+            key = row[0]
+        elif by == "session":
+            key = row[3]
+        else:
+            print("Must organize by either user or session")
 
-#         item_id = row[1]
-#         timestamp = row[2]
-#         #entry = (row[1],row[2])
-#         entry = (item_id,timestamp)
+        item_id = row[1]
+        timestamp = row[2]
+        #entry = (row[1],row[2])
+        myentry = (item_id,timestamp)
 
-#         if key in output.keys():
-#             if dedup:
-#                 if entry not in output[key]:
-#                     output[key].append(entry)                    
-#             else:
-#                 output[key].append(entry)
-#         else:
-#             output[key] = [entry]
+        if key in output.keys():
+            if dedup:
+                if myentry not in output[key]:
+                    output[key].append(myentry)                    
+            else:
+                output[key].append(myentry)
+        else:
+            output[key] = [myentry]
  
-#     fclose(cfile)
+    fclose(cfile)
  
-#     return output
+    return output

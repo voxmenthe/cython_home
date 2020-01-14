@@ -262,7 +262,7 @@ def csv_to_dict_flex_new_v5(filename,by="user",dedup=False):
     cdef str item_id
     cdef str timestamp
 
-    cdef (str, str) myentry
+    cdef tuple myentry
  
     while True:
         read = getline(&line, &l, cfile)
@@ -316,7 +316,7 @@ def csv_to_dict_flex_new_v6(filename,by="user",dedup=False):
     cdef str item_id
     cdef str timestamp
 
-    cdef (str, str) myentry
+    cdef tuple myentry
  
     while True:
         temp_events_list = []
@@ -354,7 +354,7 @@ from libcpp.list cimport list as cpplist
 
 def csv_to_dict_flex_new_v7(filename,by="user",dedup=False):
 
-    cdef cpplist[str] temp
+    cdef cpplist row
 
     filename_byte_string = filename.encode("UTF-8")
     cdef char* fname = filename_byte_string
@@ -362,7 +362,7 @@ def csv_to_dict_flex_new_v7(filename,by="user",dedup=False):
     cdef FILE* cfile
     
     cdef str decoded
-    cdef list row
+    #cdef list row
     cdef dict output = {}
     cdef list temp_events_list = []
 
@@ -376,7 +376,7 @@ def csv_to_dict_flex_new_v7(filename,by="user",dedup=False):
     cdef str item_id
     cdef str timestamp
 
-    cdef (str, str) myentry
+    cdef tuple myentry
  
     while True:
         temp_events_list = []

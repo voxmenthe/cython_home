@@ -23,6 +23,7 @@ def sort_by_timestamp_while_reading(eventfile):
 	cdef list row
 
 	cdef list output
+	output = []
 
 	ecfile = fopen(fname, "rb")
 

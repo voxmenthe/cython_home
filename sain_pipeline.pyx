@@ -6,7 +6,7 @@ cimport cython
 # cimport numpy as np
 
 # cimport numpy as np
-import datetime
+import datetime, bisect
 # import numpy as np
 # import pandas as pd
 from libc.stdlib cimport atoi, malloc, free 

@@ -51,6 +51,8 @@ def sort_by_timestamp_while_reading(eventfile):
 		else:
 			output = [row] + output
 
+		last_timestamp = timestamp
+
 	return output
 
 """

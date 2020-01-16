@@ -38,7 +38,7 @@ def sort_by_timestamp_while_reading(eventfile):
 	last_timestamp = ''
  
 	while True:
-		read = getline(&line, &l, vcfile)
+		read = getline(&line, &l, ecfile)
 		if read == -1: break
 		decoded = line.decode("UTF-8")
 		row = decoded.split('\t')

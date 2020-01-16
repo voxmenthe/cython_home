@@ -66,6 +66,7 @@ from cpython cimport array
 from: https://stackoverflow.com/questions/46980273/what-is-the-fastest-way-in-cython-to-create-a-new-array-from-an-existing-array-a
 """
 
+"""
 def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup=False):
 	viewfile_byte_string = viewfile.encode("UTF-8")
 	atbfile_byte_string = atbfile.encode("UTF-8")
@@ -101,7 +102,7 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 		read = getline(&line, &l, vcfile)
 		if read == -1: break
 		decoded = line.decode("UTF-8")
-		row = decoded.split('\t')
+		#row = decoded.split('\t')
 
 		if by == "user":
 			key = row[0]
@@ -127,3 +128,4 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 	fclose(cfile)
  
 	return output
+"""

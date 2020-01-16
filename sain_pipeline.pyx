@@ -5,12 +5,69 @@ cimport cython
 # import numpy as np
 # cimport numpy as np
 
+cimport numpy as np
+import datetime
+import numpy as np
+import pandas as pd
+from libc.stdlib cimport atoi, malloc, free 
+from libc.string cimport strcpy
+
+### Modified code from Michael WS:
+### https://stackoverflow.com/a/15812787/2447082
+
+###########################################################
+###########################################################
+###########################################################
+
 from libc.stdio cimport *
 
 cdef extern from "stdio.h":
 	FILE *fopen(const char *, const char *)
 	int fclose(FILE *)
 	ssize_t getline(char **, size_t *, FILE *)
+
+###########################################################
+###########################################################
+###########################################################
+
+### Modified code from Michael WS:
+### https://stackoverflow.com/a/15812787/2447082
+
+def convert_date_fast(np.ndarray date_vec, np.ndarray time_vec):
+    cdef int i, d_year, d_month, d_day, t_hour, t_min, t_sec, t_ms
+    cdef int N = len(date_vec)
+    cdef np.ndarray out_ar = np.empty(N, dtype=np.object)  
+    cdef bytes prev_date = <bytes> 'xx/xx/xxxx'
+    cdef char *date_str = <char *> malloc(20)
+    cdef char *time_str = <char *> malloc(20)
+
+    for i in range(N):
+        if date_vec[i] != prev_date:
+            prev_date = date_vec[i] 
+            strcpy(date_str, prev_date) ### xx/xx/xxxx
+            date_str[2] = 0 
+            date_str[5] = 0 
+            d_year = atoi(date_str+6)
+            d_month = atoi(date_str+3)
+            d_day = atoi(date_str)
+
+        strcpy(time_str, time_vec[i])   ### xx:xx:xx:xxxxxx
+        time_str[2] = 0
+        time_str[5] = 0
+        time_str[8] = 0
+        t_hour = atoi(time_str)
+        t_min = atoi(time_str+3)
+        t_sec = atoi(time_str+6)
+        t_ms = atoi(time_str+9)
+
+        out_ar[i] = datetime.datetime(d_year, d_month, d_day, t_hour, t_min, t_sec, t_ms)
+    free(date_str)
+    free(time_str)
+    return pd.to_datetime(out_ar)
+
+###########################################################
+###########################################################
+
 
 # intermediate test
 def sort_by_timestamp_while_reading(eventfile):

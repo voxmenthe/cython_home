@@ -12,6 +12,8 @@ import pandas as pd
 from libc.stdlib cimport atoi, malloc, free 
 from libc.string cimport strcpy
 
+define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
+
 ### Modified code from Michael WS:
 ### https://stackoverflow.com/a/15812787/2447082
 

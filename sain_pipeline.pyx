@@ -82,7 +82,7 @@ def sort_by_timestamp(eventfile):
 
 	cdef str decoded
 	cdef list row
-    
+	
 	cdef list timestamps
 	timestamps = []
 
@@ -98,7 +98,7 @@ def sort_by_timestamp(eventfile):
 	cdef str user_id
 	cdef str item_id
 	#cdef str timestamp
-    
+	
 	while True:
 		read = getline(&line, &l, ecfile)
 		if read == -1: break
@@ -110,13 +110,13 @@ def sort_by_timestamp(eventfile):
 		if row[2] == 'evnt_ts':
 			continue
 		timestamp = datetime.datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
-        
+		
 		row.append('EVENT_TYPE')
-        
+		
 		idx = bisect.bisect(timestamps, timestamp)
 		bisect.insort(timestamps, timestamp)
 		output.insert(idx, row)
-        
+		
 	return output
 
 """
@@ -173,7 +173,7 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 					'purchase' : {'file': pcfile, 'event_type': 'PURCHASE'}
 				}
  
- 	for EVT in eventfiles: 		
+	for EVT in eventfiles: 		
 		while True:
 			vread = getline(&line, &l, vcfile)
 			if vread != -1:

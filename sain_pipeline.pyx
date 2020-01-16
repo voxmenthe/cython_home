@@ -167,50 +167,122 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 
 	cdef dict entryfiles
 
-	eventfiles = {
-					'view' : {'file': vcfile, 'event_type': 'VIEW'},
-					'atb' : {'file': acfile, 'event_type': 'ATB'},
-					'purchase' : {'file': pcfile, 'event_type': 'PURCHASE'}
-				}
+	# eventfiles = {
+	# 				'view' : {'file': vcfile, 'event_type': 'VIEW'},
+	# 				'atb' : {'file': acfile, 'event_type': 'ATB'},
+	# 				'purchase' : {'file': pcfile, 'event_type': 'PURCHASE'}
+	# 			}
  
-	for EVT in eventfiles: 		
-		while True:
-			vread = getline(&line, &l, vcfile)
-			if vread != -1:
-				decoded = line.decode("UTF-8")
-				row = decoded.split('\t')
+	# for EVT in eventfiles: 		
+	while True:
+		vread = getline(&line, &l, vcfile)
+		if vread != -1:
+			decoded = line.decode("UTF-8")
+			row = decoded.split('\t')
 
-				# if by == "user":
-				# 	key = row[0]
-				# elif by == "session":
-				# 	key = row[3]
-				# else:
-				# 	print("Must organize by either user or session")
+			# if by == "user":
+			# 	key = row[0]
+			# elif by == "session":
+			# 	key = row[3]
+			# else:
+			# 	print("Must organize by either user or session")
 
-				key = row[0]
-				item_id = row[1]
-				#timestamp = row[2]
-				if row[2] == 'evnt_ts':
-					continue
-				timestamp = datetime.datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
+			key = row[0]
+			item_id = row[1]
+			#timestamp = row[2]
+			if row[2] == 'evnt_ts':
+				continue
+			timestamp = datetime.datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
 
-				myentry = (item_id,timestamp, 'VIEW')
+			myentry = (item_id,timestamp, 'VIEW')
 
-				if key in output.keys():
-					if dedup:
-						if myentry not in output[key]:
-							idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
-							bisect.insort(output[key]['TIMESTAMPS'], timestamp)
-							output[key]['FULL_SEQUENCE'].insert(idx,myentry)                    
-					else:
+			if key in output.keys():
+				if dedup:
+					if myentry not in output[key]:
 						idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
 						bisect.insort(output[key]['TIMESTAMPS'], timestamp)
-						output[key]['FULL_SEQUENCE'].insert(idx,myentry)
+						output[key]['FULL_SEQUENCE'].insert(idx,myentry)                    
 				else:
-					output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
- 
+					idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
+					bisect.insort(output[key]['TIMESTAMPS'], timestamp)
+					output[key]['FULL_SEQUENCE'].insert(idx,myentry)
+			else:
+				output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
+
 	fclose(vcfile)
+
+	while True:
+		vread = getline(&line, &l, acfile)
+		if vread != -1:
+			decoded = line.decode("UTF-8")
+			row = decoded.split('\t')
+
+			# if by == "user":
+			# 	key = row[0]
+			# elif by == "session":
+			# 	key = row[3]
+			# else:
+			# 	print("Must organize by either user or session")
+
+			key = row[0]
+			item_id = row[1]
+			#timestamp = row[2]
+			if row[2] == 'evnt_ts':
+				continue
+			timestamp = datetime.datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
+
+			myentry = (item_id,timestamp, 'ATB')
+
+			if key in output.keys():
+				if dedup:
+					if myentry not in output[key]:
+						idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
+						bisect.insort(output[key]['TIMESTAMPS'], timestamp)
+						output[key]['FULL_SEQUENCE'].insert(idx,myentry)                    
+				else:
+					idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
+					bisect.insort(output[key]['TIMESTAMPS'], timestamp)
+					output[key]['FULL_SEQUENCE'].insert(idx,myentry)
+			else:
+				output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
+
 	fclose(acfile)
+
+	while True:
+		vread = getline(&line, &l, pcfile)
+		if vread != -1:
+			decoded = line.decode("UTF-8")
+			row = decoded.split('\t')
+
+			# if by == "user":
+			# 	key = row[0]
+			# elif by == "session":
+			# 	key = row[3]
+			# else:
+			# 	print("Must organize by either user or session")
+
+			key = row[0]
+			item_id = row[1]
+			#timestamp = row[2]
+			if row[2] == 'evnt_ts':
+				continue
+			timestamp = datetime.datetime.strptime(row[2], '%Y-%m-%d %H:%M:%S')
+
+			myentry = (item_id,timestamp, 'PURCHASE')
+
+			if key in output.keys():
+				if dedup:
+					if myentry not in output[key]:
+						idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
+						bisect.insort(output[key]['TIMESTAMPS'], timestamp)
+						output[key]['FULL_SEQUENCE'].insert(idx,myentry)                    
+				else:
+					idx = bisect.bisect(output[key]['TIMESTAMPS'], timestamp)
+					bisect.insort(output[key]['TIMESTAMPS'], timestamp)
+					output[key]['FULL_SEQUENCE'].insert(idx,myentry)
+			else:
+				output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
+
 	fclose(pcfile)
  
 	return output

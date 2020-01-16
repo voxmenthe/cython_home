@@ -1,6 +1,7 @@
 import cython
 cimport cython
 
+
 # import numpy as np
 # cimport numpy as np
 
@@ -12,8 +13,44 @@ cdef extern from "stdio.h":
     ssize_t getline(char **, size_t *, FILE *)
 
 # intermediate test
-def sort_by_timestamp_while_reading
+def sort_by_timestamp_while_reading(eventfile):
+	
+	eventfile_byte_string = eventfile.encode("UTF-8")
+	cdef char* fname = eventfile_byte_string
+	cdef FILE* ecfile
 
+    cdef str decoded
+    cdef list row
+
+    cdef list output
+
+    ecfile = fopen(fname, "rb")
+
+    cdef char * line = NULL
+    cdef size_t l = 0
+    cdef ssize_t read
+
+    cdef str user_id
+    cdef str item_id
+    cdef str timestamp
+    cdef str last_timestamp
+
+    last_timestamp = ''
+ 
+    while True:
+        read = getline(&line, &l, vcfile)
+        if read == -1: break
+        decoded = line.decode("UTF-8")
+        row = decoded.split('\t')
+
+        timestamp = row[2]
+
+        if timestamp >= last_timestamp:
+        	output.append(row)
+        else:
+        	output = [row] + output
+
+	return output
 
 """
 Note this:

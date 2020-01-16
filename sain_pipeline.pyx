@@ -210,6 +210,7 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 				output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
 
 	fclose(vcfile)
+	print("Finished view file")
 
 	while True:
 		vread = getline(&line, &l, acfile)
@@ -247,6 +248,7 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 				output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
 
 	fclose(acfile)
+	print("Finished atb file")
 
 	while True:
 		vread = getline(&line, &l, pcfile)
@@ -284,5 +286,6 @@ def all_event_csvs_to_one_dict(viewfile, atbfile, purchasefile, by="user", dedup
 				output[key] = {'FULL_SEQUENCE' : [myentry], 'TIMESTAMPS' : [timestamp]}
 
 	fclose(pcfile)
+	print("Finished purchase file")
  
 	return output

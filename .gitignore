@@ -2,3 +2,7 @@
 create_precs.cpython-36m-x86_64-linux-gnu.so get_attr_data.cpython-36m-x86_64-linux-gnu.so get_baskets_cdef.cpython-36m-x86_64-linux-gnu.so get_baskets.cpython-36m-x86_64-linux-gnu.so get_csv_rows.cpython-36m-x86_64-linux-gnu.so load_csv_delims.cpython-36m-x86_64-linux-gnu.so loaddata_PID.cpython-36m-x86_64-linux-gnu.so loaddata_PID.cpython-37m-x86_64-linux-gnu.so load_P_recs.cpython-36m-x86_64-linux-gnu.so threshold.cpython-36m-x86_64-linux-gnu.so threshold.cpython-37m-x86_64-linux-gnu.so
 create_precs.c create_ur_recs.c create_ur_recs_dict_and_csv_full_row.c csv_event_rows_to_dict.c csv_event_rows_to_dict_mp.c csv_event_rows_to_dict_parallel.c cy_cosine.c cy_cos_sim.c events_to_rows.c file_io.c gen_chunks.c get_attr_data.c get_attr_rows.c get_baskets.c get_baskets_cdef.c get_csv_rows.c get_csv_rows_mcols.c get_csv_rows_v2.c get_prodtype_counts_from_prodtype_sequences.c get_prodtype_counts_IA_from_prodtype_sequences.c get_ptype_cts_IA_from_ptype_seqs_2_new.c get_ptype_cts_IA_from_ptype_seqs_next_n.c load_attr_rows_basic.c load_attr_rows_new.c load_csv_delims.c loaddata_PID_by_x.c loaddata_PID.c loaddata_PID_cyth_new.c loaddata_SUB.c loaddata_SUB_from_rows.c load_gensim_vec_csv.c load_new_UR_recs.c load_pid_ptype_dict_from_attr.c load_P_recs.c load_ptype_sequences.c process_chunk.c read_csv_events_to_dict.c read_csv_events_to_one_prodtype_sequence.c read_gensim_vocab_file.c read_pros_csv_events_to_sequence.c threshold.c
 *.o
+*.c
+*.so
+.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*
